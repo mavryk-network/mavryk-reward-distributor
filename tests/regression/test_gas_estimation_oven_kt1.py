@@ -8,7 +8,7 @@ from src.Constants import (
     PUBLIC_NODE_URL,
     RewardsType,
     PRIVATE_SIGNER_URL,
-    MUTEZ_PER_TEZ,
+    MUMAV_PER_MAV,
 )
 from src.api.provider_factory import ProviderFactory
 from src.config.yaml_baking_conf_parser import BakingYamlConfParser
@@ -38,7 +38,7 @@ baking_config = make_config(
 
 
 PAYOUT_CYCLE = 500
-PAYMENT_ADDRESS_BALANCE = int(1000 * MUTEZ_PER_TEZ)
+PAYMENT_ADDRESS_BALANCE = int(1000 * MUMAV_PER_MAV)
 forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
 
 
@@ -66,7 +66,7 @@ forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
 )
 def test_batch_payer_total_payout_amount():
     # NOTE: For better payment tests we are doing actual tzkz api calls for reward calculation
-    factory = ProviderFactory(provider="tzkt")
+    factory = ProviderFactory(provider="mvkt")
     parser = BakingYamlConfParser(
         baking_config, None, None, None, None, block_api=factory, api_base_url=None
     )
@@ -92,7 +92,7 @@ def test_batch_payer_total_payout_amount():
         owners_map=baking_cfg.get_owners_map(),
         service_fee_calculator=srvc_fee_calc,
         min_delegation_amount=int(
-            baking_cfg.get_min_delegation_amount() * MUTEZ_PER_TEZ
+            baking_cfg.get_min_delegation_amount() * MUMAV_PER_MAV
         ),
         min_payment_amount=0,
         rules_model=rules_model,

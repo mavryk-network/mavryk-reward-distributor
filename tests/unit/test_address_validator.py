@@ -41,10 +41,10 @@ def test_address_validator_passes(type, input, expected):
         ("baking address", "tz1234567", Exception),
     ],
 )
-def test_address_tz_validator_throws(type, input, expected):
+def test_address_mv_validator_throws(type, input, expected):
     with pytest.raises(expected):
         validator = AddressValidator(type)
-        validator.tz_validate(input)
+        validator.mv_validate(input)
 
 
 @pytest.mark.parametrize(
@@ -53,9 +53,9 @@ def test_address_tz_validator_throws(type, input, expected):
         ("baking address", "tz1234567891011121314151617181920212", None),
     ],
 )
-def test_address_tz_validator_passes(type, input, expected):
+def test_address_mv_validator_passes(type, input, expected):
     validator = AddressValidator(type)
-    validation = validator.tz_validate(input)
+    validation = validator.mv_validate(input)
     assert validation is expected
 
 
@@ -77,24 +77,24 @@ def test_isaddress(type, input, expected):
 def test_validate_baking_address():
     validator = AddressValidator()
 
-    # Test valid tz address
+    # Test valid mv address
     baking_address = "tz1qwertyuiopasdfghjklzxcvbnm1234567"
     validator.validate_baking_address(baking_address)
 
     # Test invalid address prefix
-    with pytest.raises(Exception, match="Baking address must be a valid tz address"):
+    with pytest.raises(Exception, match="Baking address must be a valid mv address"):
         baking_address = "not_valid_prefix1abcdefghijklmno"
         validator.validate_baking_address(baking_address)
 
     # Test invalid address lenght
-    with pytest.raises(Exception, match="Baking address must be a valid tz address"):
+    with pytest.raises(Exception, match="Baking address must be a valid mv address"):
         baking_address = "tz1abcdefghijklmnopqrstuvwxyz"
         validator.validate_baking_address(baking_address)
 
     # Test KT address
     with pytest.raises(
         Exception,
-        match="KT addresses cannot act as bakers. Only tz addresses can be registered to bake.",
+        match="KT addresses cannot act as bakers. Only mv addresses can be registered to bake.",
     ):
         baking_address = "KT1qwertyuiopasdfghjklzxcvbnm1234567"
         validator.validate_baking_address(baking_address)

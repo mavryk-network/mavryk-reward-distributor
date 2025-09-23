@@ -1,18 +1,18 @@
-from tzkt.tzkt_api import TzKTApi, TzKTApiError
+from mvkt.mvkt_api import MvKTApi, MvKTApiError
 from api.block_api import BlockApi
 from log_config import main_logger
 from typing import Tuple
 
-logger = main_logger.getChild("tzkt_block_api")
+logger = main_logger.getChild("mvkt_block_api")
 
 
-class TzKTBlockApiImpl(BlockApi):
+class MvKTBlockApiImpl(BlockApi):
     def __init__(self, nw, base_url=None):
-        super(TzKTBlockApiImpl, self).__init__(nw)
+        super(MvKTBlockApiImpl, self).__init__(nw)
         if base_url is None:
-            self.api = TzKTApi.from_network(nw["NAME"])
+            self.api = MvKTApi.from_network(nw["NAME"])
         else:
-            self.api = TzKTApi.from_url(base_url)
+            self.api = MvKTApi.from_url(base_url)
 
     def get_current_cycle_and_level(self) -> Tuple[int, int]:
         """
@@ -21,7 +21,7 @@ class TzKTBlockApiImpl(BlockApi):
         """
         head = self.api.get_head()
         if not head.get("synced"):
-            raise TzKTApiError("Not synced")
+            raise MvKTApiError("Not synced")
 
         current_cycle = int(head["cycle"])
         current_level = int(head["level"])

@@ -1,6 +1,6 @@
 import logging
 
-from Constants import MUTEZ_PER_TEZ
+from Constants import MUMAV_PER_MAV
 from log_config import verbose_logger
 from plugins import plugins
 
@@ -37,7 +37,7 @@ class TelegramPlugin(plugins.Plugin):
         # Do template replacements
         payout_message = (
             self.telegram_text.replace("%CYCLE%", str(cycle))
-            .replace("%TREWARDS%", str(round(payout_amount / MUTEZ_PER_TEZ, 2)))
+            .replace("%TREWARDS%", str(round(payout_amount / MUMAV_PER_MAV, 2)))
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
 

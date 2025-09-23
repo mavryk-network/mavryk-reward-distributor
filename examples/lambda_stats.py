@@ -1,5 +1,5 @@
 """This file powers the AWS Lambda serverless function for accepting
-   anonymous TRD statistics. It requires an AWS DynamoDB table to
+   anonymous MRD statistics. It requires an AWS DynamoDB table to
    store all of the data. Logs are generated automatically and stored
    in AWS CloudWatch.
 """

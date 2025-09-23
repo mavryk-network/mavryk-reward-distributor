@@ -7,14 +7,14 @@ from src.Constants import (
     DEFAULT_NETWORK_CONFIG_MAP,
     MAX_SEQUENT_CALLS,
 )
-from src.tzkt.tzkt_reward_api import TzKTRewardApiImpl, RewardLog
+from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl, RewardLog
 from tests.utils import Constants
 
 MAINNET_ADDRESS_STAKENOW_BAKER = Constants.MAINNET_ADDRESS_STAKENOW_BAKER
 CYCLE = 100
 
 """
-These tests are cached. To re-run, delete contents of the tzkt_data folder.
+These tests are cached. To re-run, delete contents of the mvkt_data folder.
 """
 
 dummy_addr_dict = dict(
@@ -27,9 +27,9 @@ dummy_addr_dict = dict(
 )
 
 
-@patch("src.tzkt.tzkt_reward_api.sleep", MagicMock())
+@patch("src.mvkt.mvkt_reward_api.sleep", MagicMock())
 @vcr.use_cassette(
-    "tests/integration/cassettes/tzkt_api/test_update_current_balances.yaml",
+    "tests/integration/cassettes/mvkt_api/test_update_current_balances.yaml",
     filter_headers=["X-API-Key", "authorization"],
     decode_compressed_response=True,
 )
@@ -42,17 +42,17 @@ def test_update_current_balances():
             current_balance=0,
         )
     ]
-    tzkt_impl = TzKTRewardApiImpl(
+    mvkt_impl = MvKTRewardApiImpl(
         nw=DEFAULT_NETWORK_CONFIG_MAP["MAINNET"],
         baking_address="tz1gk3TDbU7cJuiBRMhwQXVvgDnjsxuWhcEA",
     )
-    tzkt_impl.update_current_balances(log_items)
+    mvkt_impl.update_current_balances(log_items)
     assert 0 != log_items[0].current_balance
 
 
 @pytest.fixture
 def address_api():
-    return TzKTRewardApiImpl(
+    return MvKTRewardApiImpl(
         nw=DEFAULT_NETWORK_CONFIG_MAP["MAINNET"],
         baking_address=MAINNET_ADDRESS_STAKENOW_BAKER,
     )
@@ -72,15 +72,15 @@ class Mock_404_Response:
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=Mock_404_Response()),
 )
-@patch("tzkt.tzkt_api.sleep", MagicMock())
-@patch("tzkt.tzkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
-def test_tzkt_terminate_404(address_api):
+@patch("mvkt.mvkt_api.sleep", MagicMock())
+@patch("mvkt.mvkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
+def test_mvkt_terminate_404(address_api):
     with pytest.raises(
         Exception,
-        match="TzKT returned 404 error:\n404 Error happened",
+        match="MvKT returned 404 error:\n404 Error happened",
     ):
         _ = address_api.get_rewards_for_cycle_map(
             cycle=CYCLE, rewards_type=RewardsType.ACTUAL
@@ -101,12 +101,12 @@ class Mock_500_Response:
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=Mock_500_Response()),
 )
-@patch("tzkt.tzkt_api.sleep", MagicMock())
-@patch("tzkt.tzkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
-def test_tzkt_retry_500(address_api):
+@patch("mvkt.mvkt_api.sleep", MagicMock())
+@patch("mvkt.mvkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
+def test_mvkt_retry_500(address_api):
     with pytest.raises(
         Exception,
         match=r"Max sequent calls number exceeded \({}\)".format(MAX_SEQUENT_CALLS),
@@ -130,12 +130,12 @@ class Mock_204_Response:
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=Mock_204_Response()),
 )
-@patch("tzkt.tzkt_api.sleep", MagicMock())
-@patch("tzkt.tzkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
-def test_tzkt_retry_204(address_api):
+@patch("mvkt.mvkt_api.sleep", MagicMock())
+@patch("mvkt.mvkt_api.logger", MagicMock(debug=MagicMock(side_effect=print)))
+def test_mvkt_retry_204(address_api):
     with pytest.raises(
         Exception,
         match=r"Max sequent calls number exceeded \({}\)".format(MAX_SEQUENT_CALLS),

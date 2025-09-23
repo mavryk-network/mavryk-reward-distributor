@@ -9,12 +9,12 @@ def test_print_banner():
     sys.stdout = capturedOutput
     print_banner("test", "test script")
     sys.stdout = sys.__stdout__
+    assert "Mavryk Dynamics: info@mavryk.io" in capturedOutput.getvalue()
     assert (
-        "TRD Organization: Copyright 2021-2024, see contributors.csv"
+        "MRD Organization: Copyright 2021-2024, see contributors.csv"
         in capturedOutput.getvalue()
     )
-    assert "huseyinabanox@gmail.com" in capturedOutput.getvalue()
     assert (
-        "Tezos Reward Distributor (TRD)test script is Starting"
+        "Mavryk Reward Distributor (MRD)test script is Starting"
         in capturedOutput.getvalue()
     )

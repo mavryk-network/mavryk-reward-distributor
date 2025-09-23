@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import patch, MagicMock
 from src.Constants import DEFAULT_NETWORK_CONFIG_MAP
-from src.tzkt.tzkt_block_api import TzKTBlockApiImpl
+from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 from tests.utils import Constants
 
 MAINNET_ADDRESS_DELEGATOR = Constants.MAINNET_ADDRESS_DELEGATOR
@@ -19,7 +19,7 @@ class MockResponse:
 
 @pytest.fixture
 def address_api():
-    return TzKTBlockApiImpl(DEFAULT_NETWORK_CONFIG_MAP["MAINNET"])
+    return MvKTBlockApiImpl(DEFAULT_NETWORK_CONFIG_MAP["MAINNET"])
 
 
 class MockRelevationResponse(MockResponse):
@@ -28,7 +28,7 @@ class MockRelevationResponse(MockResponse):
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockRelevationResponse()),
 )
 def test_get_revelation(address_api):
@@ -41,7 +41,7 @@ class MockCycleLevelResponse(MockResponse):
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockCycleLevelResponse()),
 )
 def test_get_current_cycle_and_level(address_api):
@@ -54,7 +54,7 @@ class MockDelegatableResponse(MockResponse):
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockDelegatableResponse()),
 )
 def test_get_delegatable_baker(address_api):
@@ -67,7 +67,7 @@ class MockNonDelegatableResponse(MockResponse):
 
 
 @patch(
-    "src.tzkt.tzkt_api.requests.get",
+    "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockNonDelegatableResponse()),
 )
 def test_get_delegatable_non_baker(address_api):

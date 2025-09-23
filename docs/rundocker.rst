@@ -1,7 +1,7 @@
-How to run TRD in Docker
+How to run MRD in Docker
 ========================
 
-It is possible to run TRD within Docker.
+It is possible to run MRD within Docker.
 
 You will need a pre-existing configuration file. It is recommended to run `configure.py` script outside of docker, then put the configuration yaml file in the `cfg` folder mounted in the container.
 
@@ -18,20 +18,20 @@ Here are the steps:
 
   ::
 
-    docker build -t trdo/tezos-reward-distributor .
+    docker build -t trdo/mavryk-reward-distributor .
 
-2. Alternatively, you can pull directly the official tezos-reward-distributor Docker image:
+2. Alternatively, you can pull directly the official mavryk-reward-distributor Docker image:
 
   ::
 
-    docker pull trdo/tezos-reward-distributor
+    docker pull trdo/mavryk-reward-distributor
 
 3. Run the container:
 
   ::
 
-      docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z trdo/tezos-reward-distributor --base_directory /app/pymnt <ARGS>
+      docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z trdo/mavryk-reward-distributor --base_directory /app/pymnt <ARGS>
 
-<ARGS> are the other arguments that you would normally pass to the TRD program.
+<ARGS> are the other arguments that you would normally pass to the MRD program.
 
-In a microservice environment, omit `--network=host`, instead, specify the signer service using the `--signer_endpoint` and the Tezos node service using the `--node_endpoint` arguments to TRD.
+In a microservice environment, omit `--network=host`, instead, specify the signer service using the `--signer_endpoint` and the Mavryk node service using the `--node_endpoint` arguments to MRD.

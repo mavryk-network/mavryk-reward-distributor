@@ -1,5 +1,5 @@
 from unittest.mock import patch, MagicMock
-from src.pay.batch_payer import BatchPayer, TX_FEES, MUTEZ_PER_GAS_UNIT
+from src.pay.batch_payer import BatchPayer, TX_FEES, MUMAV_PER_GAS_UNIT
 from src.model.reward_log import RewardLog
 from src.cli.client_manager import ClientManager
 from http import HTTPStatus
@@ -57,14 +57,14 @@ def test_simulate_single_operation():
     )
     reward_log.amount = 15577803
     reward_log.skipped = False
-    # TODO: Simulate operation got deprecated https://tezos.gitlab.io/introduction/breaking_changes.html?highlight=run_operation#deprecation
+    # TODO: Simulate operation got deprecated https://protocol.mavryk.org/introduction/breaking_changes.html?highlight=run_operation#deprecation
     simulation_status, simulation_results = batch_payer.simulate_single_operation(
         reward_log, reward_log.amount, "hash", "unittest"
     )
     assert simulation_status.is_done()
     consumed_gas, tx_fee, storage = simulation_results
     assert 250 == consumed_gas
-    assert 323.0 == default_fee + consumed_gas * MUTEZ_PER_GAS_UNIT
+    assert 323.0 == default_fee + consumed_gas * MUMAV_PER_GAS_UNIT
     assert int == type(storage)  # type of storage should be int
     assert 24 == storage
 

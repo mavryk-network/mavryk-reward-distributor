@@ -5,18 +5,18 @@ import math
 from Constants import PaymentStatus
 
 
-MINIMUM_FEE_MUTEZ = 100
-MUTEZ_PER_GAS_UNIT = 0.1
-MUTEZ_PER_BYTE = 1
+MINIMUM_FEE_MUMAV = 100
+MUMAV_PER_GAS_UNIT = 0.1
+MUMAV_PER_BYTE = 1
 RUNOPS_JSON = '{"branch": "%BRANCH%","contents":[%CONTENT%], "signature":"edsigtXomBKi5CTRf5cjATJWSyaRvhfYNHqSUGrn4SdbYRcGwQrUGjzEfQDTuqHhuA8b2d8NarZjz8TRf65WkpQmo423BtomS8Q"}'
 JSON_WRAP = '{"operation": %JSON%,"chain_id":"%chain_id%"}'
-MAX_TX_PER_BLOCK_TZ = 550
+MAX_TX_PER_BLOCK_MV = 550
 MAX_TX_PER_BLOCK_KT = 25
 
 
 def calculate_required_fee(consumed_gas, size):
     return math.ceil(
-        MINIMUM_FEE_MUTEZ + MUTEZ_PER_GAS_UNIT * consumed_gas + MUTEZ_PER_BYTE * size
+        MINIMUM_FEE_MUMAV + MUMAV_PER_GAS_UNIT * consumed_gas + MUMAV_PER_BYTE * size
     )
 
 
@@ -101,7 +101,7 @@ def init_payment_logs(payment_items):
     payment_logs.extend(payment_logs_injected)
     for payment_item in payment_logs:
         main_logger.debug(
-            "Reward already %s for cycle %s address %s amount %f tz type %s",
+            "Reward already %s for cycle %s address %s amount %f mv type %s",
             payment_item.paid,
             payment_item.cycle,
             payment_item.address,
@@ -129,25 +129,25 @@ def calculate_estimated_amount_to_pay(
 
 
 def sort_and_chunk_payment_items(payment_items):
-    payment_items_tz = [
+    payment_items_mv = [
         payment_item
         for payment_item in payment_items
-        if payment_item.paymentaddress.startswith("tz")
+        if payment_item.paymentaddress.startswith("mv")
     ]
     payment_items_KT = [
         payment_item
         for payment_item in payment_items
         if payment_item.paymentaddress.startswith("KT")
     ]
-    payment_items_chunks_tz = [
-        payment_items_tz[i : i + MAX_TX_PER_BLOCK_TZ]
-        for i in range(0, len(payment_items_tz), MAX_TX_PER_BLOCK_TZ)
+    payment_items_chunks_mv = [
+        payment_items_mv[i : i + MAX_TX_PER_BLOCK_MV]
+        for i in range(0, len(payment_items_mv), MAX_TX_PER_BLOCK_MV)
     ]
     payment_items_chunks_KT = [
         payment_items_KT[i : i + MAX_TX_PER_BLOCK_KT]
         for i in range(0, len(payment_items_KT), MAX_TX_PER_BLOCK_KT)
     ]
-    return payment_items_chunks_tz + payment_items_chunks_KT
+    return payment_items_chunks_mv + payment_items_chunks_KT
 
 
 def calculate_future_payable_cycles(payment_address_balance, estimated_amount_to_pay):

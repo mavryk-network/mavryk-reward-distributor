@@ -8,7 +8,7 @@ from Constants import BASE_DIR, CONFIG_DIR
 
 def command_line_arguments():
     parser = argparse.ArgumentParser(
-        description="Stop the running trd process.", prog="trd_stopper"
+        description="Stop the running mrd process.", prog="trd_stopper"
     )
     default_config_dir = os.path.join(os.path.normpath(BASE_DIR), CONFIG_DIR, "")
     parser.add_argument(

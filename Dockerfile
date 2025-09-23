@@ -2,13 +2,13 @@ FROM python:3.11.7-alpine3.19
 
 COPY . /app
 # Create a unprivileged user
-RUN addgroup trd \
-    && adduser -G trd -D -h /app trd \
+RUN addgroup mrd \
+    && adduser -G mrd -D -h /app mrd \
     && mkdir /app/config \
-    && chown -R trd:trd /app
+    && chown -R mrd:mrd /app
 
 WORKDIR /app
-USER trd
+USER mrd
 RUN pip install -r requirements.txt
 
 ENTRYPOINT [ "python", "src/main.py" ]

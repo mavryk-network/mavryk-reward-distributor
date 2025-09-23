@@ -1,4 +1,4 @@
-How to get and install TRD?
+How to get and install MRD?
 =====================================================
 
 Requirements and Setup
@@ -22,7 +22,7 @@ Linux:
     sudo apt-get update
     sudo apt-get -y install python3-pip
 
-Tezos
+Mavryk
 -----------
 
 Mac: 
@@ -33,20 +33,20 @@ Mac:
 
 Mac & Linux:
 
-Follow instructions found here: https://tezos.gitlab.io/introduction/howtoget.html
+Follow instructions found here: https://protocol.mavryk.org/introduction/howtoget.html
 
-TRD
+MRD
 -----------
 
 ::
 
-    git clone https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor.git
+    git clone https://github.com/mavryk-network/mavryk-reward-distributor.git
 
 To install required modules, use pip with requirements.txt provided:
 
 ::
 
-    cd tezos-reward-distributor
+    cd mavryk-reward-distributor
     pip3 install -r requirements.txt
 
 To install required pre-commit hooks into .git folder:

@@ -11,7 +11,7 @@ To run the tests locally you need to have `pytest <https://pypi.org/project/pyte
 Structure
 --------------
 
-The tests which are executed in TRD are as follows:
+The tests which are executed in MRD are as follows:
 
 1. unit tests
 
@@ -37,7 +37,7 @@ Regression tests
 Regression tests are tests which document fixed bugs.
 To implement a regression test you need to do the following:
 
-1. Have a bug in trd (see bug label in issues)
+1. Have a bug in mrd (see bug label in issues)
 
 2. Reproduce the bug in a test under the `regression/` directory.
 
@@ -47,11 +47,11 @@ To implement a regression test you need to do the following:
 
 Integration tests
 -------------------
-Integration tests test the behaviour of trd. Meaning it tests the interaction between multiple functions or classes.
+Integration tests test the behaviour of mrd. Meaning it tests the interaction between multiple functions or classes.
 
 Smoke tests
 -------------------
-Smoke tests test if trd starts, runs and ends under different cirumstances.
+Smoke tests test if mrd starts, runs and ends under different cirumstances.
 
 Acceptance test (WIP)
 -----------------------
@@ -60,7 +60,7 @@ E.g. the correct and reliable distribution of rewards.
 
 Non functional tests (WIP)
 ---------------------------
-Non functional tests test the performance, load time, transaction speed etc. of trd.
+Non functional tests test the performance, load time, transaction speed etc. of mrd.
 
 Verification (WIP)
 -------------------

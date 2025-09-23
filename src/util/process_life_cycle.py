@@ -87,7 +87,7 @@ class ProcessLifeCycle:
     def get_fsm_builder(self):
         fsm_builder = TransitionsFsmBuilder()
         fsm_builder.add_initial_state(
-            TrdState.INITIAL, on_leave=lambda e: logger.debug("TRD is starting...")
+            TrdState.INITIAL, on_leave=lambda e: logger.debug("MRD is starting...")
         )
         fsm_builder.add_state(TrdState.CMD_ARGS_PARSED, on_enter=self.do_parse_args)
         fsm_builder.add_state(
@@ -254,7 +254,7 @@ class ProcessLifeCycle:
 
     def print_argument_configuration(self, e=None):
         mode = "daemon" if self.args.background_service else "interactive"
-        logger.info("TRD version {} is running in {} mode.".format(VERSION, mode))
+        logger.info("MRD version {} is running in {} mode.".format(VERSION, mode))
 
         if self.args.dry_run:
             logger.info(LINER)
@@ -373,7 +373,7 @@ class ProcessLifeCycle:
         ).start()
 
     def do_shut_down(self, e):
-        logger.info("TRD is shutting down...")
+        logger.info("MRD is shutting down...")
 
         logger.info("--------------------------------------------------------")
         logger.info("Sensitive operations are in progress!")

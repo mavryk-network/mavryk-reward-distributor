@@ -1,7 +1,7 @@
-TRD State Machines
+MRD State Machines
 ====================
 
-TRD is designed as a state machine for reliability.
+MRD is designed as a state machine for reliability.
 
 Launch state machine diagram
 --------------------------------

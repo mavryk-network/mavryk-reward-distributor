@@ -4,9 +4,9 @@ from datetime import datetime
 from http import HTTPStatus
 
 from Constants import (
-    TEZOS_RPC_PORT,
+    MAVRYK_RPC_PORT,
     PUBLIC_NODE_URL,
-    TZKT_PUBLIC_API_URL,
+    MVKT_PUBLIC_API_URL,
     CURRENT_TESTNET,
     PRIVATE_SIGNER_URL,
 )
@@ -21,8 +21,8 @@ MAX_NB_TRIES = 3
 PUBLIC_NODE_URLS = [
     PUBLIC_NODE_URL[CURRENT_TESTNET],
     PUBLIC_NODE_URL["MAINNET"],
-    TZKT_PUBLIC_API_URL[CURRENT_TESTNET],
-    TZKT_PUBLIC_API_URL["MAINNET"],
+    MVKT_PUBLIC_API_URL[CURRENT_TESTNET],
+    MVKT_PUBLIC_API_URL["MAINNET"],
 ]
 
 
@@ -41,7 +41,7 @@ class ClientManager:
         if len(self.node_endpoint.split(":")) < 3:
             # public node urls does not need to have port assignments
             if self.node_endpoint not in PUBLIC_NODE_URLS:
-                self.node_endpoint += f":{TEZOS_RPC_PORT}"
+                self.node_endpoint += f":{MAVRYK_RPC_PORT}"
         self.signer_endpoint = signer_endpoint
 
     def get_node_url(self) -> str:

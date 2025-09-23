@@ -57,7 +57,7 @@ def parse_dexter_storage(storage_input):
                     (pair (pair (address :manager)
                                 (address :tokenAddress))
                           (pair (nat :tokenPool)
-                                (mutez :xtzPool)))));
+                                (mumav :mvrkPool)))));
     """
     storage = {}
     try:  # Json map format
@@ -83,7 +83,7 @@ def parse_dexter_storage(storage_input):
         storage["tokenPool"] = storage_input["args"][1]["args"][1]["args"][1]["args"][
             0
         ]["int"]
-        storage["xtzPool"] = storage_input["args"][1]["args"][1]["args"][1]["args"][0][
+        storage["mvrkPool"] = storage_input["args"][1]["args"][1]["args"][1]["args"][0][
             "int"
         ]
 
@@ -103,7 +103,7 @@ def parse_dexter_storage(storage_input):
                 "manager",
                 "tokenAddress",
                 "tokenPool",
-                "xtzPool",
+                "mvrkPool",
             ]
             for i in range(len(storage_fields)):
                 storage[storage_fields[i]] = data[i]

@@ -7,7 +7,7 @@ from src.util.exit_program import exit_program, ExitCode
 
 def command_line_arguments():
     parser = argparse.ArgumentParser(
-        description="Stop the running trd process.", prog="trd_stopper"
+        description="Stop the running mrd process.", prog="trd_stopper"
     )
     default_config_dir = os.path.join(os.path.normpath(BASE_DIR), CONFIG_DIR, "")
     parser.add_argument(
@@ -22,13 +22,13 @@ def command_line_arguments():
 
 
 def main():
-    path_template = "tezos-reward.service_template"
+    path_template = "mavryk-reward.service_template"
     args = command_line_arguments()
     config_dir = os.path.join(os.path.expanduser(os.path.normpath(args.config_dir)), "")
     dir_path = os.path.dirname(os.path.realpath(__file__))
-    path_service = os.path.join(dir_path, "tezos-reward.service")
-    # in windows ['C:', 'Users', 'user_name', 'tezos-reward-distributor']
-    # in linux ['', 'home', 'user_name', 'tezos-reward-distributor']
+    path_service = os.path.join(dir_path, "mavryk-reward.service")
+    # in windows ['C:', 'Users', 'user_name', 'mavryk-reward-distributor']
+    # in linux ['', 'home', 'user_name', 'mavryk-reward-distributor']
     path_split = dir_path.split(os.sep)
     username_from_path = (
         path_split[2]

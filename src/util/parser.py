@@ -18,7 +18,7 @@ from Constants import (
 
 # TODO: Properly format the help section, see: https://www.programcreek.com/python/example/51784/argparse.HelpFormatter
 def build_parser():
-    argparser = argparse.ArgumentParser(prog="TRD")
+    argparser = argparse.ArgumentParser(prog="MRD")
     add_argument_cycle(argparser)
     add_argument_mode(argparser)
     add_argument_payment_offset(argparser)
@@ -97,7 +97,7 @@ def add_argument_node_endpoint(argparser):
         "--node_endpoint",
         help=(
             "Node (host:port pair) potentially with protocol prefix especially if TLS encryption is used. Default is {}. "
-            "This is the main Tezos node used by the client for rpc queries and operation injections."
+            "This is the main Mavryk node used by the client for rpc queries and operation injections."
         ).format(PRIVATE_NODE_URL),
         default=PRIVATE_NODE_URL,
     )
@@ -107,9 +107,9 @@ def add_argument_provider(argparser):
     argparser.add_argument(
         "-P",
         "--reward_data_provider",
-        help="Source of reward data. The only choice is 'tzkt' (TzKT API).",
-        choices=["tzkt"],
-        default="tzkt",
+        help="Source of reward data. The only choice is 'mvkt' (MvKT API).",
+        choices=["mvkt"],
+        default="mvkt",
     )
 
 
@@ -133,7 +133,7 @@ def add_argument_base_directory(argparser):
         "-b",
         "--base_directory",
         help=(
-            "The base path for all TRD data. Default: {} "
+            "The base path for all MRD data. Default: {} "
             "The directory contains the following folders: "
             "1. {} "
             "2. {} "
@@ -173,7 +173,7 @@ def add_argument_signer_endpoint(argparser):
     argparser.add_argument(
         "-E",
         "--signer_endpoint",
-        help="URL used by the Tezos-signer to accept HTTP requests.",
+        help="URL used by the Mavryk-signer to accept HTTP requests.",
         default=PRIVATE_SIGNER_URL,
     )
 
@@ -191,8 +191,8 @@ def add_argument_background_service(argparser):
     argparser.add_argument(
         "-s",
         "--background_service",
-        help="Marker to indicate that TRD is running in daemon mode. "
-        "When not given it indicates that TRD is in interactive mode.",
+        help="Marker to indicate that MRD is running in daemon mode. "
+        "When not given it indicates that MRD is in interactive mode.",
         action="store_true",
     )
 

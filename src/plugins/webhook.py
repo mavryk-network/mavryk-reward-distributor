@@ -61,7 +61,7 @@ class WebhookPlugin(plugins.Plugin):
                 self.endpoint,
                 json=payload,
                 timeout=15,
-                headers={"user-agent": "trd/0.0.1"},
+                headers={"user-agent": "mrd/0.0.1"},
             )
         except requests.exceptions.RequestException as e:
             logger.error("[WebhookPlugin] Error POSTing '{:s}'".format(str(e)))

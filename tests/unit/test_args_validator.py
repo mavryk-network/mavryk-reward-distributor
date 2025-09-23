@@ -79,7 +79,7 @@ def test_reward_data_provider_validator_throws(caplog, capsys):
     out, err = capsys.readouterr()
     assert excinfo.value.code == 2
     assert excinfo.type == SystemExit
-    assert "is not functional at the moment. Please use: tzkt, tzpro" in err
+    assert "is not functional at the moment. Please use: mvkt, tzpro" in err
 
 
 def test_payment_offset_validator_throws(caplog, capsys):
@@ -91,8 +91,8 @@ def test_payment_offset_validator_throws(caplog, capsys):
     argparser.add_argument(
         "-N",
         "--network",
-        choices=["MAINNET", "GHOSTNET"],
-        default="GHOSTNET",
+        choices=["MAINNET", "BASENET"],
+        default="BASENET",
     )
     caplog.set_level(logging.INFO)
     mock_validator = ArgsValidator(argparser)
@@ -101,7 +101,7 @@ def test_payment_offset_validator_throws(caplog, capsys):
     out, err = capsys.readouterr()
     assert pytest_wrapped_e.type == SystemExit
     assert pytest_wrapped_e.value.code == 2
-    assert "error: Valid range for payment offset on GHOSTNET is" in err
+    assert "error: Valid range for payment offset on BASENET is" in err
 
 
 def test_initial_cycle_validator_throws(caplog, capsys):
@@ -151,7 +151,7 @@ def test_validate():
         payment_offset=0,
         network="MAINNET",
         node_endpoint="http://127.0.0.1:8732",
-        reward_data_provider="tzkt",
+        reward_data_provider="mvkt",
         node_addr_public=PUBLIC_NODE_URL["MAINNET"],
         base_directory=os.path.normpath("~/pymnt"),
         dry_run=False,

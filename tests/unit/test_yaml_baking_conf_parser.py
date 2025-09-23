@@ -54,5 +54,5 @@ class TestYamlBakingConfigParser(unittest.TestCase):
             self.baking_conf_parser.validate_baking_address(conf_obj)
         self.assertEqual(
             str(exception.exception),
-            "Baking address must be a valid tz address of length 36",
+            "Baking address must be a valid mv address of length 36",
         )

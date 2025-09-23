@@ -1,7 +1,7 @@
 [Unit]
-Description=Tezos Reward Distribution Service
+Description=Mavryk Reward Distribution Service
 After=syslog.target network.target
-Documentation=https://tezos-reward-distributor-organization.github.io/tezos-reward-distributor/
+Documentation=https://mavryk-network.github.io/mavryk-reward-distributor/
 
 [Service]
 Type=simple

@@ -8,7 +8,7 @@ PYTHON_MINOR = 8
 LINER = "--------------------------------------------"
 
 # Disabled or enabled options by developers
-ALLOWED_REWARD_DATA_PROVIDER_CHOICES = ["tzkt", "tzpro"]
+ALLOWED_REWARD_DATA_PROVIDER_CHOICES = ["mvkt"]
 
 # Persistent data directories
 BASE_DIR = "~/pymnt"
@@ -25,23 +25,18 @@ NEW_PROTOCOL_NAME = "Q"
 
 LOCAL_HOST = "127.0.0.1"
 EXIT_PAYMENT_TYPE = "exit"
-# https://forum.tezosagora.org/t/turning-ithacanet-into-a-permanent-testnet-ghostnet/4614
-TESTNET_PREFIX = "ghost"
+TESTNET_PREFIX = "base"
 TESTNET_SUFFIX = "net"
 CURRENT_TESTNET = (TESTNET_PREFIX + TESTNET_SUFFIX).upper()
 
 
 MAX_SEQUENT_CALLS = 256  # to prevent possible endless looping
 
-FIRST_GRANADA_LEVEL = 1589249
+FIRST_BOREAS_LEVEL = 32769
 
-FIRST_MUMBAI_LEVEL = 3268609
+FIRST_C_LEVEL = 9999999
 
-FIRST_PARIS_LEVEL = 5726209
-
-FIRST_QUEBEC_LEVEL = 7692289
-
-TEZOS_RPC_PORT = 8732
+MAVRYK_RPC_PORT = 8732
 
 SIGNER_PORT = 6732
 
@@ -51,34 +46,28 @@ SIGNER_PORT = 6732
 
 # Local URLs
 PRIVATE_SIGNER_URL = "http://{}:{}".format(LOCAL_HOST, SIGNER_PORT)
-PRIVATE_NODE_URL = "http://{}:{}".format(LOCAL_HOST, TEZOS_RPC_PORT)
+PRIVATE_NODE_URL = "http://{}:{}".format(LOCAL_HOST, MAVRYK_RPC_PORT)
 
-# Public RPC https://midl-dev.medium.com/alternatives-to-tezos-giganode-bb67b43945ba
+# Public RPC
 PUBLIC_NODE_URL = {
-    "MAINNET": "https://mainnet.smartpy.io",
-    CURRENT_TESTNET: "https://testnet.smartpy.io",
+    "MAINNET": "https://rpc.mavryk.network",
+    CURRENT_TESTNET: "https://basenet.rpc.mavryk.network",
 }
 
-# TzKT
-TZKT_PUBLIC_API_URL = {
-    "MAINNET": "https://api.tzkt.io/v1",
-    CURRENT_TESTNET: "https://api.{}.tzkt.io/v1".format(CURRENT_TESTNET.lower()),
+# MvKT
+MVKT_PUBLIC_API_URL = {
+    "MAINNET": "https://api.mavryk.network/v1",
+    CURRENT_TESTNET: "https://{}.api.mavryk.network/v1".format(CURRENT_TESTNET.lower()),
 }
 
 # Network Constants
 # ------------------------
 #
-# General:
-# Last change with Ithaca protocol
-# https://research-development.nomadic-labs.com/announcing-tezos-9th-protocol-upgrade-proposal-ithaca.html
-# https://tezos.gitlab.io/ithaca/consensus.html#rewards
-# https://tezos.gitlab.io/ithaca/consensus.html#consensus-related-protocol-parameters
-#
 # Mainnet:
-# https://mainnet.smartpy.io/chains/main/blocks/head/context/constants
+# https://rpc.mavryk.network/chains/main/blocks/head/context/constants
 #
 # Testnet:
-# https://ghostnet.smartpy.io/chains/main/blocks/head/context/constants
+# https://basenet.rpc.mavryk.network/chains/main/blocks/head/context/constants
 DEFAULT_NETWORK_CONFIG_MAP = {
     "MAINNET": {
         # General
@@ -94,9 +83,9 @@ DEFAULT_NETWORK_CONFIG_MAP = {
     },
 }
 
-MUTEZ_PER_TEZ = 1e6
+MUMAV_PER_MAV = 1e6
 
-MAXIMUM_ROUNDING_ERROR = 10  # mutez
+MAXIMUM_ROUNDING_ERROR = 10  # mumav
 ALMOST_ZERO = 1e-6
 DISK_LIMIT_PERCENTAGE = 0.1
 GIGA_BYTE = 1e9
@@ -127,7 +116,7 @@ class PaymentStatus(Enum):
     INJECTED: Transaction is injected into the node but after waiting for some time it is not added to any block.
     AVOIDED: payment item avoided because of lack of support, incompatibility of contract script,
              contract with no default entry point, too high fees, liquidated contract, etc.
-    TRD does not know its fate.
+    MRD does not know its fate.
     """
 
     UNDEFINED = -1

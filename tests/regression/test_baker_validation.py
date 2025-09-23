@@ -5,7 +5,7 @@ from src.cli.client_manager import ClientManager
 from src.config.yaml_baking_conf_parser import BakingYamlConfParser
 from src.exception.configuration import ConfigurationException
 from src.Constants import PUBLIC_NODE_URL, PRIVATE_SIGNER_URL, DryRun
-from src.tzkt.tzkt_block_api import TzKTBlockApiImpl
+from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 from tests.utils import Constants
 
 node_endpoint = PUBLIC_NODE_URL["MAINNET"]
@@ -15,7 +15,7 @@ network = {"NAME": "MAINNET"}
 @pytest.mark.parametrize(
     "block_api",
     [
-        pytest.param(TzKTBlockApiImpl(network), id="TzKTBlockApiImpl"),
+        pytest.param(MvKTBlockApiImpl(network), id="MvKTBlockApiImpl"),
     ],
 )
 def test_address_is_baker_address(block_api):
@@ -49,7 +49,7 @@ def test_address_is_baker_address(block_api):
 @pytest.mark.parametrize(
     "block_api",
     [
-        pytest.param(TzKTBlockApiImpl(network), id="TzKTBlockApiImpl"),
+        pytest.param(MvKTBlockApiImpl(network), id="MvKTBlockApiImpl"),
     ],
 )
 def test_address_is_not_baker_address(block_api):
@@ -85,7 +85,7 @@ def test_address_is_not_baker_address(block_api):
 @pytest.mark.parametrize(
     "block_api",
     [
-        pytest.param(TzKTBlockApiImpl(network), id="TzKTBlockApiImpl"),
+        pytest.param(MvKTBlockApiImpl(network), id="MvKTBlockApiImpl"),
     ],
 )
 def test_invalid_baking_address(block_api):
@@ -107,6 +107,6 @@ def test_invalid_baking_address(block_api):
     cnf_prsr.parse()
     with pytest.raises(
         Exception,
-        match="Baking address must be a valid tz address of length 36",
+        match="Baking address must be a valid mv address of length 36",
     ):
         cnf_prsr.validate_baking_address(cnf_prsr.conf_obj)

@@ -20,7 +20,7 @@ class TestCalculatePhase0(TestCase):
     def test_calculate(self):
         nw = DEFAULT_NETWORK_CONFIG_MAP["MAINNET"]
 
-        api = ProviderFactory(provider="tzkt").newRewardApi(nw, BAKING_ADDRESS, "")
+        api = ProviderFactory(provider="mvkt").newRewardApi(nw, BAKING_ADDRESS, "")
 
         model = api.get_rewards_for_cycle_map(CYCLE, REWARDS_TYPE)
 

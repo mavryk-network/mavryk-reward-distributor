@@ -1,6 +1,6 @@
 # Managing Contribution Payouts
 
-This document serves to instruct how to manage contribution payouts from the TRD multisig address.
+This document serves to instruct how to manage contribution payouts from the MRD multisig address.
 
 ### Metadata
 
@@ -17,7 +17,7 @@ Payouts must be signed by 2 of the 3 multisig members before it can be executed 
 
 A multisig member must sign the same transaction using his/her own private key which is authorized on the multisig contract.
 
-	XXX.XX - The amount, in XTZ to transfer
+	XXX.XX - The amount, in MVRK to transfer
 	YYYYYY - The receiver of the funds (ie: tz1...)
 	ZZZZZZ - The PKH of the multisig member
 
@@ -31,7 +31,7 @@ The output of the above command will be a single signature: `edsigu3WqyPEEYBce5.
 
 With 2, or more, signatures, execute the transaction:
 
-    XXX.XX - The amount, in XTZ to transfer
+    XXX.XX - The amount, in MVRK to transfer
     YYYYYY - The receiver of the funds (ie: tz1...)
     ZZZZZZ - The PKH of the multisig member
     AAAAAA - Signature from above command

@@ -4,7 +4,7 @@ from time import sleep
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
-from src.Constants import RewardsType, MUTEZ_PER_TEZ
+from src.Constants import RewardsType, MUMAV_PER_MAV
 from src.api.provider_factory import ProviderFactory
 from src.calc.phased_payment_calculator import PhasedPaymentCalculator
 from src.calc.calculate_phaseMapping import CalculatePhaseMapping
@@ -90,7 +90,7 @@ class TestCalculatePhases(TestCase):
             owners_map=baking_cfg.get_owners_map(),
             service_fee_calculator=srvc_fee_calc,
             min_delegation_amount=int(
-                baking_cfg.get_min_delegation_amount() * MUTEZ_PER_TEZ
+                baking_cfg.get_min_delegation_amount() * MUMAV_PER_MAV
             ),
             min_payment_amount=0,
             rules_model=rules_model,
@@ -151,7 +151,7 @@ class TestCalculatePhases(TestCase):
         reward_logs = [pi for pi in reward_logs if pi.payable]
         reward_logs.sort(key=lambda rl: (rl.type, -rl.delegating_balance))
 
-        # Verify that TRD calculated matches known values
+        # Verify that MRD calculated matches known values
         total_amount = 0
         for r in reward_logs:
             assert not r.skipped  # no skips needed

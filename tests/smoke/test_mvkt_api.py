@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from datetime import datetime
 from src.main import start_application
 from tests.utils import Args, make_config
-from src.Constants import TZKT_PUBLIC_API_URL
+from src.Constants import MVKT_PUBLIC_API_URL
 
 
 @pytest.fixture
@@ -11,11 +11,11 @@ def args():
     # Test with PRPC node
     args = Args(
         initial_cycle=201,
-        reward_data_provider="tzkt",
-        api_base_url=TZKT_PUBLIC_API_URL["MAINNET"],
+        reward_data_provider="mvkt",
+        api_base_url=MVKT_PUBLIC_API_URL["MAINNET"],
     )
     args.network = "MAINNET"
-    args.node_endpoint = TZKT_PUBLIC_API_URL["MAINNET"]
+    args.node_endpoint = MVKT_PUBLIC_API_URL["MAINNET"]
     args.docker = True
     args.dry_run = True
     args.syslog = False
@@ -77,5 +77,5 @@ def test_base_url(ConfigParser, args):
         )
     )
     args.initial_cycle = 100
-    args.api_base_url = TZKT_PUBLIC_API_URL["MAINNET"]
+    args.api_base_url = MVKT_PUBLIC_API_URL["MAINNET"]
     assert start_application(args) == 0

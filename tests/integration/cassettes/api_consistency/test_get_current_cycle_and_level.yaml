@@ -9,12 +9,12 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/head
+    uri: https://api.mavryk.network/v1/head
   response:
     body:
-      string: '{"chain":"mainnet","chainId":"NetXdQprcVkpaWU","cycle":751,"level":5941222,"hash":"BKwP3aJU4Tr4UQuxdquFYFSRp4qZ3RTriwJzLRW24EffJUzGiab","protocol":"PsParisCZo7KAh1Z1smVd9ZMZ1HHn5gkzbM94V3PLCpknFWhUAi","nextProtocol":"PsParisCZo7KAh1Z1smVd9ZMZ1HHn5gkzbM94V3PLCpknFWhUAi","timestamp":"2024-06-30T14:22:05Z","votingEpoch":61,"votingPeriod":125,"knownLevel":5941222,"lastSync":"2024-06-30T14:22:05Z","synced":true,"quoteLevel":5941222,"quoteBtc":1.2628986165349365E-05,"quoteEur":0.7261468247986486,"quoteUsd":0.7781022695404011,"quoteCny":5.654702623430958,"quoteJpy":125.18498363500731,"quoteKrw":1074.7771028707643,"quoteEth":0.00022934638058584448,"quoteGbp":0.6149793535494119}'
+      string: '{"chain":"mainnet","chainId":"NetXXAAR1wWQhhe","cycle":751,"level":5941222,"hash":"BKwP3aJU4Tr4UQuxdquFYFSRp4qZ3RTriwJzLRW24EffJUzGiab","protocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","nextProtocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","timestamp":"2024-06-30T14:22:05Z","votingEpoch":61,"votingPeriod":125,"knownLevel":5941222,"lastSync":"2024-06-30T14:22:05Z","synced":true,"quoteLevel":5941222,"quoteBtc":1.2628986165349365E-05,"quoteEur":0.7261468247986486,"quoteUsd":0.7781022695404011,"quoteCny":5.654702623430958,"quoteJpy":125.18498363500731,"quoteKrw":1074.7771028707643,"quoteEth":0.00022934638058584448,"quoteGbp":0.6149793535494119}'
     headers:
       Access-Control-Allow-Origin:
       - '*'
@@ -28,13 +28,13 @@ interactions:
       - nginx
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
+      Mvkt-Known-Level:
       - '5941222'
-      Tzkt-Level:
+      Mvkt-Level:
       - '5941222'
-      Tzkt-Synced-At:
+      Mvkt-Synced-At:
       - '2024-06-30T14:22:05Z'
-      Tzkt-Version:
+      Mvkt-Version:
       - 1.14.3.0
       content-length:
       - '678'

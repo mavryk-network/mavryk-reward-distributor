@@ -6,24 +6,24 @@ from src.Constants import DEFAULT_NETWORK_CONFIG_MAP, PUBLIC_NODE_URL, RewardsTy
 from tests.utils import Constants
 
 # Block APIs
-from src.tzkt.tzkt_block_api import TzKTBlockApiImpl
+from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 
 # Reward APIs
-from src.tzkt.tzkt_reward_api import TzKTRewardApiImpl
+from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl
 
 MAINNET_ADDRESS_DELEGATOR = Constants.MAINNET_ADDRESS_DELEGATOR
 MAINNET_ADDRESS_STAKENOW_BAKER = Constants.MAINNET_ADDRESS_STAKENOW_BAKER
 MAINNET_ADDRESS_BAKEXTZ4ME_BAKER = Constants.MAINNET_ADDRESS_BAKEXTZ4ME_BAKER
-GHOSTNET_ADDRESS_STAKENOW_BAKER = Constants.GHOSTNET_ADDRESS_STAKENOW_BAKER
+BASENET_ADDRESS_STAKENOW_BAKER = Constants.BASENET_ADDRESS_STAKENOW_BAKER
 MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT = Constants.MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT
 
 # These tests should not be mocked but test the overall consistency
-# accross all tezos APIs which are available in TRD
+# accross all mavryk APIs which are available in MRD
 
 
 @pytest.fixture
-def address_block_api_tzkt():
-    return TzKTBlockApiImpl(DEFAULT_NETWORK_CONFIG_MAP["MAINNET"])
+def address_block_api_mvkt():
+    return MvKTBlockApiImpl(DEFAULT_NETWORK_CONFIG_MAP["MAINNET"])
 
 
 @vcr.use_cassette(
@@ -31,8 +31,8 @@ def address_block_api_tzkt():
     filter_headers=["X-API-Key", "authorization"],
     decode_compressed_response=True,
 )
-def test_get_revelation(address_block_api_tzkt):
-    assert address_block_api_tzkt.get_revelation(MAINNET_ADDRESS_DELEGATOR)
+def test_get_revelation(address_block_api_mvkt):
+    assert address_block_api_mvkt.get_revelation(MAINNET_ADDRESS_DELEGATOR)
 
 
 @vcr.use_cassette(
@@ -40,10 +40,10 @@ def test_get_revelation(address_block_api_tzkt):
     filter_headers=["X-API-Key", "authorization"],
     decode_compressed_response=True,
 )
-def test_get_current_cycle_and_level(address_block_api_tzkt):
-    cycle_tzkt, level_tzkt = address_block_api_tzkt.get_current_cycle_and_level()
+def test_get_current_cycle_and_level(address_block_api_mvkt):
+    cycle_mvkt, level_mvkt = address_block_api_mvkt.get_current_cycle_and_level()
 
-    assert cycle_tzkt == 751
+    assert cycle_mvkt == 751
 
 
 @vcr.use_cassette(
@@ -51,14 +51,14 @@ def test_get_current_cycle_and_level(address_block_api_tzkt):
     filter_headers=["X-API-Key", "authorization"],
     decode_compressed_response=True,
 )
-def test_get_delegatable(address_block_api_tzkt):
-    assert address_block_api_tzkt.get_delegatable(MAINNET_ADDRESS_STAKENOW_BAKER)
+def test_get_delegatable(address_block_api_mvkt):
+    assert address_block_api_mvkt.get_delegatable(MAINNET_ADDRESS_STAKENOW_BAKER)
 
 
 # NOTE: We are using a testnet baker where we can manage the amount of delegates
 @pytest.fixture
-def address_reward_api_tzkt():
-    return TzKTRewardApiImpl(
+def address_reward_api_mvkt():
+    return MvKTRewardApiImpl(
         DEFAULT_NETWORK_CONFIG_MAP["MAINNET"], MAINNET_ADDRESS_BAKEXTZ4ME_BAKER
     )
 
@@ -69,47 +69,47 @@ def address_reward_api_tzkt():
     decode_compressed_response=True,
 )
 def test_get_rewards_for_cycle_map(
-    address_reward_api_tzkt,
+    address_reward_api_mvkt,
 ):
     # NOTE: There is currently a level limit query with rpc when querying endorsing rewards in the past
     # thus we are disabling the consistency check with other APIs for now but will hopefully reenable it in the future
 
     last_cycle = 750
-    rewards_tzkt = address_reward_api_tzkt.get_rewards_for_cycle_map(
+    rewards_mvkt = address_reward_api_mvkt.get_rewards_for_cycle_map(
         cycle=last_cycle, rewards_type=RewardsType.ACTUAL
     )
 
     # Check delegator_balance_dict
-    assert len(rewards_tzkt.delegator_balance_dict) == 35
+    assert len(rewards_mvkt.delegator_balance_dict) == 35
     total_delegated_balance = 0
     for (
-        tzkt_delegator_adress,
-        tzkt_balance_dict,
-    ) in rewards_tzkt.delegator_balance_dict.items():
-        assert tzkt_balance_dict["current_balance"] == 257  # the same for each delegate
-        total_delegated_balance += tzkt_balance_dict["delegated_balance"]
-    assert total_delegated_balance == rewards_tzkt.external_delegated_balance
+        mvkt_delegator_adress,
+        mvkt_balance_dict,
+    ) in rewards_mvkt.delegator_balance_dict.items():
+        assert mvkt_balance_dict["current_balance"] == 257  # the same for each delegate
+        total_delegated_balance += mvkt_balance_dict["delegated_balance"]
+    assert total_delegated_balance == rewards_mvkt.external_delegated_balance
 
     # Own delegate balance
-    assert rewards_tzkt.own_delegated_balance == 5_099_724_843
+    assert rewards_mvkt.own_delegated_balance == 5_099_724_843
 
     # Check num_baking_rights
-    assert rewards_tzkt.num_baking_rights == 1
+    assert rewards_mvkt.num_baking_rights == 1
 
     # Check denunciation_rewards
-    assert rewards_tzkt.denunciation_rewards == 0
+    assert rewards_mvkt.denunciation_rewards == 0
 
     # Check equivocation_losses
-    assert rewards_tzkt.equivocation_losses == 0
+    assert rewards_mvkt.equivocation_losses == 0
 
     # Check offline_losses
-    assert rewards_tzkt.offline_losses == 0
+    assert rewards_mvkt.offline_losses == 0
     # Check potential_endorsement_rewards
-    # TODO: tzpro total_active_stake does not match rpc and tzkt exactly thus the approximation
-    assert rewards_tzkt.potential_endorsement_rewards == 20_203_344
+    # TODO: tzpro total_active_stake does not match rpc and mvkt exactly thus the approximation
+    assert rewards_mvkt.potential_endorsement_rewards == 20_203_344
 
     # Check rewards_and_fees
-    assert rewards_tzkt.rewards_and_fees == 23_846_700
+    assert rewards_mvkt.rewards_and_fees == 23_846_700
 
     # Check computed_reward_amount
-    assert rewards_tzkt.computed_reward_amount is None
+    assert rewards_mvkt.computed_reward_amount is None
