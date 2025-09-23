@@ -47,8 +47,8 @@ def print_banner(args, script_name):
     with open("./banner.txt", "rt") as file:
         print(file.read())
     print(LINER, flush=True)
-    print("MRD Organization: Copyright 2021-2024, see contributors.csv")
-    print("huseyinabanox@gmail.com")
+    print("Mavryk Dynamics: info@mavryk.io")
+    print("TRD Organization: Copyright 2021-2024, see contributors.csv")
     print("Please leave copyright information")
     print(LINER, flush=True)
 

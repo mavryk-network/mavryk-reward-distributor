@@ -61,7 +61,7 @@ def test_address_is_not_baker_address(block_api):
     ):
         data_fine = """
         version: 1.0
-        baking_address: tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ
+        baking_address: mv1KKuVmgSVAFro1N8zLLrEottE1B6vjoasj
         """
 
         wallet_client_manager = ClientManager(node_endpoint, PRIVATE_SIGNER_URL)
@@ -77,7 +77,7 @@ def test_address_is_not_baker_address(block_api):
         cnf_prsr.parse()
         with pytest.raises(
             Exception,
-            match="Baking address tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ is not enabled for delegation",
+            match="Baking address mv1KKuVmgSVAFro1N8zLLrEottE1B6vjoasj is not enabled for delegation",
         ):
             cnf_prsr.validate_baking_address(cnf_prsr.conf_obj)
 

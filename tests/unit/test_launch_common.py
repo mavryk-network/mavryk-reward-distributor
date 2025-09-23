@@ -11,7 +11,7 @@ def test_print_banner():
     sys.stdout = sys.__stdout__
     assert "Mavryk Dynamics: info@mavryk.io" in capturedOutput.getvalue()
     assert (
-        "MRD Organization: Copyright 2021-2024, see contributors.csv"
+        "TRD Organization: Copyright 2021-2024, see contributors.csv"
         in capturedOutput.getvalue()
     )
     assert (

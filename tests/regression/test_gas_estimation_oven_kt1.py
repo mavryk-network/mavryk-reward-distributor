@@ -39,7 +39,7 @@ baking_config = make_config(
 
 PAYOUT_CYCLE = 500
 PAYMENT_ADDRESS_BALANCE = int(1000 * MUMAV_PER_MAV)
-forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
+forge = "0" * (TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
 
 
 @patch("src.cli.client_manager.ClientManager.sign", MagicMock(return_value=forge))

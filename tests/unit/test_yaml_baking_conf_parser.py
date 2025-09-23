@@ -37,7 +37,7 @@ class TestYamlBakingConfigParser(unittest.TestCase):
         self.baking_conf_parser.address_validator = self.address_validator
 
     def test_valid_address(self):
-        conf_obj = {BAKING_ADDRESS: "tz1qwertyuiopasdfghjklzxcvbnm1234567"}
+        conf_obj = {BAKING_ADDRESS: "mv1qwertyuiopasdfghjklzxcvbnm1234567"}
         self.block_api.get_revelation.return_value = True
         self.block_api.get_delegatable.return_value = True
         self.baking_conf_parser.validate_baking_address(conf_obj)

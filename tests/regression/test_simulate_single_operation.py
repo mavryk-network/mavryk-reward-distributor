@@ -33,7 +33,7 @@ run_ops_parsed = {
     MagicMock(return_value=(HTTPStatus.OK, run_ops_parsed)),
 )
 def test_simulate_single_operation():
-    default_fee = int(TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
+    default_fee = int(TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
     network_config = {"BLOCK_TIME_IN_SEC": 60, "MINIMAL_BLOCK_DELAY": 30}
     batch_payer = BatchPayer(
         node_url="node_addr",

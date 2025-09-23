@@ -79,7 +79,7 @@ def test_reward_data_provider_validator_throws(caplog, capsys):
     out, err = capsys.readouterr()
     assert excinfo.value.code == 2
     assert excinfo.type == SystemExit
-    assert "is not functional at the moment. Please use: mvkt, tzpro" in err
+    assert "is not functional at the moment. Please use: mvkt" in err
 
 
 def test_payment_offset_validator_throws(caplog, capsys):

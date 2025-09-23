@@ -21,7 +21,7 @@ MRD is a software for distributing staking rewards of Mavryk delegators, introdu
 
 The documentation can be found [here](https://mavryk-network.github.io/mavryk-reward-distributor/). 
 
-MRD supports complex payments, pays in batches, and supports three backends for calculations: Mavryk RPC, [TZPRO API](https://docs.tzpro.io/) and [MvKT API](https://api.mavryk.network/). MRD is developed and tested extensively by the community.
+MRD supports complex payments, pays in batches, and supports three backends for calculations: Mavryk RPC and [MvKT API](https://api.mavryk.network/). MRD is developed and tested extensively by the community.
 
 **Provider notes:**
 
@@ -61,11 +61,11 @@ cd mavryk-reward-distributor
 python3 -m pip install -r requirements.txt
 ```
 
-To install the required modules for developers, use pip with `requirements_developer.txt` provided.
+To install the required modules for developers, use pip with `requirements_developers.txt` provided.
 
 ```bash
 cd mavryk-reward-distributor
-python3 -m pip install -r requirements_developer.txt
+python3 -m pip install -r requirements_developers.txt
 ```
 
 Regularly check and upgrade to the latest available version:

@@ -44,11 +44,7 @@ The backend of the Mavryk Reward Distributor is `Powered by MvKT API`__ under th
 
 .. _article : https://medium.com/@huseyinabanox/mavryk-reward-distributor-e6588c4d27e7
 
-.. _tzpro: https://tzpro.io/
-
 .. _MvKT : https://api.mavryk.network/
-
-.. _terms : https://tzpro.io/terms
 
 .. _Github : https://github.com/mavryk-network/mavryk-reward-distributor
 
