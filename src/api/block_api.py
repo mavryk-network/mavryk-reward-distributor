@@ -28,5 +28,5 @@ class BlockApi(ABC):
         #     # Since protocol Boreas
         #     return (level - FIRST_BOREAS_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
         else:
-            # Until protocol Florence
+            # Until protocol Atlas
             return (level % self.nw["BLOCKS_PER_CYCLE"]) - 1

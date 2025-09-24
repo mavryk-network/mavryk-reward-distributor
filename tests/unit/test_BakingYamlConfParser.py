@@ -81,7 +81,7 @@ class TestYamlAppConfParser(TestCase):
         )
         self.assertEqual(
             cnf_prsr.get_conf_obj_attr("__payment_address_type").value,
-            AddrType.TZ.value,
+            AddrType.MV.value,
         )
 
         self.assertEqual(cnf_prsr.get_conf_obj_attr("min_delegation_amt"), 0)
@@ -151,7 +151,7 @@ class TestYamlAppConfParser(TestCase):
         )
         self.assertEqual(
             cnf_prsr.get_conf_obj_attr("__payment_address_type").value,
-            AddrType.TZ.value,
+            AddrType.MV.value,
         )
 
         self.assertEqual(cnf_prsr.get_conf_obj_attr("founders_map"), dict())

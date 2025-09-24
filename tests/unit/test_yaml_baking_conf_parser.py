@@ -12,8 +12,8 @@ from src.model.baking_conf import BAKING_ADDRESS
 
 class TestYamlBakingConfigParser(unittest.TestCase):
     baking_config = make_config(
-        baking_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        payment_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+        baking_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        payment_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
         service_fee=10,
         min_delegation_amt=0,
         min_payment_amt=0,

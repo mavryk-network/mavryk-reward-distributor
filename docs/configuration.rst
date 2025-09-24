@@ -164,9 +164,9 @@ Available configuration parameters are:
   Example::
 
      rules_map:
-       tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ: TOF                                         #(redirects payment from tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ to founders)
-       tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace: TOB                                         #(payment to tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace will remain in the bakers balance)
-       tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7        #(redirects payment from tz1V9S... to tz1fgX...)
+       mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC: TOF                                         #(redirects payment from mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC to founders)
+       mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE: TOB                                         #(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the bakers balance)
+       tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU        #(redirects payment from tz1V9S... to tz1fgX...)
        mindelegation: TOE                                                                #(mindelegation will be shared with everyone)
 
 **plugins**

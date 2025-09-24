@@ -14,7 +14,7 @@ def test_levels_in_cycle():
 
     level_positions = [
         [32769, 0],  # Boreas activation level
-        [38988, 647],
+        [38988, 6219],
     ]
 
     block = DummyApiImpl()
