@@ -29,8 +29,8 @@ node_endpoint = PUBLIC_NODE_URL["MAINNET"]
 network = {"NAME": "MAINNET", "MINIMAL_BLOCK_DELAY": 5}
 
 baking_config = make_config(
-    baking_address="tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN",
-    payment_address="tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN",
+    baking_address="mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D",
+    payment_address="mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D",
     service_fee=14.99,
     min_delegation_amt=0,
     min_payment_amt=0,

@@ -29,7 +29,7 @@ def test_address_is_baker_address(block_api):
         version: 1.0
         baking_address: {0}
         """.format(
-            Constants.MAINNET_ADDRESS_STAKENOW_BAKER
+            Constants.MAINNET_ADDRESS_FOUNDATION_0_BAKER
         )
 
         wallet_client_manager = ClientManager(node_endpoint, PRIVATE_SIGNER_URL)

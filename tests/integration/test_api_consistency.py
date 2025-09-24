@@ -12,10 +12,10 @@ from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl
 
 MAINNET_ADDRESS_DELEGATOR = Constants.MAINNET_ADDRESS_DELEGATOR
-MAINNET_ADDRESS_STAKENOW_BAKER = Constants.MAINNET_ADDRESS_STAKENOW_BAKER
-MAINNET_ADDRESS_BAKEXTZ4ME_BAKER = Constants.MAINNET_ADDRESS_BAKEXTZ4ME_BAKER
-BASENET_ADDRESS_STAKENOW_BAKER = Constants.BASENET_ADDRESS_STAKENOW_BAKER
-MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT = Constants.MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT
+MAINNET_ADDRESS_FOUNDATION_0_BAKER = Constants.MAINNET_ADDRESS_FOUNDATION_0_BAKER
+MAINNET_ADDRESS_FOUNDATION_1_BAKER = Constants.MAINNET_ADDRESS_FOUNDATION_1_BAKER
+BASENET_ADDRESS_FOUNDATION_0_BAKER = Constants.BASENET_ADDRESS_FOUNDATION_0_BAKER
+MAINNET_ADDRESS_FOUNDATION_1_PAYOUT = Constants.MAINNET_ADDRESS_FOUNDATION_1_PAYOUT
 
 # These tests should not be mocked but test the overall consistency
 # accross all mavryk APIs which are available in MRD
@@ -52,14 +52,14 @@ def test_get_current_cycle_and_level(address_block_api_mvkt):
     decode_compressed_response=True,
 )
 def test_get_delegatable(address_block_api_mvkt):
-    assert address_block_api_mvkt.get_delegatable(MAINNET_ADDRESS_STAKENOW_BAKER)
+    assert address_block_api_mvkt.get_delegatable(MAINNET_ADDRESS_FOUNDATION_0_BAKER)
 
 
 # NOTE: We are using a testnet baker where we can manage the amount of delegates
 @pytest.fixture
 def address_reward_api_mvkt():
     return MvKTRewardApiImpl(
-        DEFAULT_NETWORK_CONFIG_MAP["MAINNET"], MAINNET_ADDRESS_BAKEXTZ4ME_BAKER
+        DEFAULT_NETWORK_CONFIG_MAP["MAINNET"], MAINNET_ADDRESS_FOUNDATION_1_BAKER
     )
 
 

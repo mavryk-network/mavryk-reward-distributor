@@ -10,7 +10,7 @@ from src.Constants import (
 from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl, RewardLog
 from tests.utils import Constants
 
-MAINNET_ADDRESS_STAKENOW_BAKER = Constants.MAINNET_ADDRESS_STAKENOW_BAKER
+MAINNET_ADDRESS_FOUNDATION_0_BAKER = Constants.MAINNET_ADDRESS_FOUNDATION_0_BAKER
 CYCLE = 100
 
 """
@@ -54,7 +54,7 @@ def test_update_current_balances():
 def address_api():
     return MvKTRewardApiImpl(
         nw=DEFAULT_NETWORK_CONFIG_MAP["MAINNET"],
-        baking_address=MAINNET_ADDRESS_STAKENOW_BAKER,
+        baking_address=MAINNET_ADDRESS_FOUNDATION_0_BAKER,
     )
 
 

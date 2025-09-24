@@ -227,7 +227,7 @@ class TestRetryProducer(TestCase):
         return PaymentConsumer(
             "name",
             TEST_REPORT_TEMP_DIR,
-            "tz1234567890123456789012345678901234",
+            "mv1234567890123456789012345678901234",
             payment_queue,
             "node_addr",
             ClientManager("", ""),
