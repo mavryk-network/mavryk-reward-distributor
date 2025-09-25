@@ -1,7 +1,7 @@
 Run as Linux Service (WIP)
 ============================
 
-Alternatively, it is possible to add tezos-reward-distributer as a Linux service. It
+Alternatively, it is possible to add mavryk-reward-distributer as a Linux service. It
 can run in the background.
 
 If docker is used, make sure user is in docker group
@@ -33,17 +33,17 @@ Once enabled use following commands to start/stop the service.
 
 ::
 
-    sudo systemctl start tezos-reward.service
-    sudo systemctl stop tezos-reward.service
+    sudo systemctl start mavryk-reward.service
+    sudo systemctl stop mavryk-reward.service
 
 In order to see service status:
 
 ::
 
-    systemctl status tezos-reward.service
+    systemctl status mavryk-reward.service
 
 In order to see logs:
 
 ::
 
-    journalctl --follow --unit=tezos-reward.service
+    journalctl --follow --unit=mavryk-reward.service

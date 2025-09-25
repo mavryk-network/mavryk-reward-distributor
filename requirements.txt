@@ -1,5 +1,6 @@
 # User requirements
 requests>=2.31.0
+urllib3==1.26.18
 base58>=2.1.1
 pyyaml>=6.0.1
 fysom>=2.1.6

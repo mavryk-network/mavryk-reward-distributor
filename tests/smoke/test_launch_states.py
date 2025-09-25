@@ -2,20 +2,20 @@ import logging
 import pytest
 from datetime import datetime
 from unittest.mock import MagicMock, patch
-from src.Constants import CURRENT_TESTNET, TZKT_PUBLIC_API_URL, PUBLIC_NODE_URL
+from src.Constants import CURRENT_TESTNET, MVKT_PUBLIC_API_URL, PUBLIC_NODE_URL
 from src.main import start_application
 from tests.utils import Args, make_config
 
 
 parsed_config = make_config(
-    baking_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
-    payment_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
+    baking_address="mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g",
+    payment_address="mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g",
     service_fee=0,
     min_delegation_amt=0,
     min_payment_amt=0,
 )
 
-# This overrides all logging within TRD to output everything during tests
+# This overrides all logging within MRD to output everything during tests
 sh = logging.StreamHandler()
 sh.setFormatter(
     logging.Formatter("%(asctime)s - %(name)-9s - %(levelname)s - %(message)s")
@@ -30,8 +30,8 @@ def args():
     # Test with PRPC node
     args = Args(
         initial_cycle=10,
-        reward_data_provider="tzkt",
-        api_base_url=TZKT_PUBLIC_API_URL[CURRENT_TESTNET],
+        reward_data_provider="mvkt",
+        api_base_url=MVKT_PUBLIC_API_URL[CURRENT_TESTNET],
     )
     args.network = CURRENT_TESTNET
     args.node_endpoint = PUBLIC_NODE_URL[CURRENT_TESTNET]
@@ -120,7 +120,7 @@ def test_illegal_baking_file(args):
     MagicMock(return_value=""),
 )
 def test_wrong_api_base_url(args):
-    args.api_base_url = "https://api.carthage.tzkt.io_no_such_api/v1/"
+    args.api_base_url = "https://api.boreas.mvkt.io_no_such_api/v1/"
     assert start_application(args) == 0
 
 
@@ -142,7 +142,7 @@ def test_wrong_api_base_url(args):
     MagicMock(return_value=""),
 )
 def test_wrong_node_end_point(args):
-    args.node_endpoint = "https://api.tzkt.io/v1:4433"
+    args.node_endpoint = "https://api.mavryk.network/v1:4433"
     assert start_application(args) == 0
 
 

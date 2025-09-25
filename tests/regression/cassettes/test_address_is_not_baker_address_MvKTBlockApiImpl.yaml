@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mrd-12.0
+    method: GET
+    uri: https://api.mavryk.network/v1/accounts/mv1DYQcWfwVBm4eRp7n3dbZ8YJuE7YfQNcFf
+  response:
+    body:
+      string: '{"id":643,"type":"user","address":"mv1DYQcWfwVBm4eRp7n3dbZ8YJuE7YfQNcFf","publicKey":"edpkutgsDXY2CYrT6bw7QDsEzZim2u1UGpsarjBRxyxojtjESjYbpq","revealed":true,"balance":911263,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":0,"unstakedBalance":0,"counter":1500,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numActivations":0,"numDelegations":0,"numOriginations":0,"numTransactions":4,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"stakingUpdatesCount":0,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":68217,"firstActivityTime":"2025-09-19T08:15:49Z","lastActivity":104071,"lastActivityTime":"2025-09-23T11:51:29Z","lostBalance":0}'
+    headers:
+      CF-RAY:
+      - 98419fa7ef40fcc5-NRT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 24 Sep 2025 10:33:27 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Edfk5dEZ5JErZqC%2FT2f6bgJacqbztN72uFTL5cC%2BNxL1UT1oykynAYWvAckoQRklV%2Fh9cnWxjIhqh9bITKQrnp14uz01N8sw5lgmP7wMSeBwB4SGfGV8BM9DVxs%3D"}]}'
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      content-length:
+      - '1455'
+      mvkt-known-level:
+      - '112222'
+      mvkt-level:
+      - '112222'
+      mvkt-synced-at:
+      - '2025-09-24T10:33:19Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mrd-12.0
+    method: GET
+    uri: https://api.mavryk.network/v1/accounts/mv1DYQcWfwVBm4eRp7n3dbZ8YJuE7YfQNcFf
+  response:
+    body:
+      string: '{"id":643,"type":"user","address":"mv1DYQcWfwVBm4eRp7n3dbZ8YJuE7YfQNcFf","publicKey":"edpkutgsDXY2CYrT6bw7QDsEzZim2u1UGpsarjBRxyxojtjESjYbpq","revealed":true,"balance":911263,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":0,"unstakedBalance":0,"counter":1500,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numActivations":0,"numDelegations":0,"numOriginations":0,"numTransactions":4,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"stakingUpdatesCount":0,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":68217,"firstActivityTime":"2025-09-19T08:15:49Z","lastActivity":104071,"lastActivityTime":"2025-09-23T11:51:29Z","lostBalance":0}'
+    headers:
+      CF-RAY:
+      - 98419fa989dad754-NRT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 24 Sep 2025 10:33:27 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=EvDyga86yUzo05G99QHQ2937hc%2FjiOuqTsyCgp0aHZouoItjh3s%2Fxv3UirhSQ9Y4J19kgDuTQVcSdRp1BPtk4k%2BTY6gnnF4CKxycwAu4trW9BpJ3vvw047GbAUUr%2Bw%3D%3D"}]}'
+      Server:
+      - cloudflare
+      Transfer-Encoding:
+      - chunked
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      content-length:
+      - '1455'
+      mvkt-known-level:
+      - '112222'
+      mvkt-level:
+      - '112222'
+      mvkt-synced-at:
+      - '2025-09-24T10:33:19Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
+    status:
+      code: 200
+      message: OK
+version: 1

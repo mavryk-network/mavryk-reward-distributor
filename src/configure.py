@@ -57,29 +57,29 @@ from util.exit_program import exit_program, ExitCode
 logger = main_logger
 
 messages = {
-    "hello": "This application will help you configure TRD to manage payouts for your bakery. Press enter to continue",
+    "hello": "This application will help you configure MRD to manage payouts for your bakery. Press enter to continue",
     "bakingaddress": "Specify your baking address public key hash (Processing may take a few seconds)",
     "paymentaddress": "Specify your payouts public key hash. It can be the same as your baking address, or a different one.",
     "servicefee": "Specify bakery fee, valid range is between 0 and 100",
     "rewardstype": "Specify if baker pays 'ideal' or 'actual' rewards (Be sure to read the documentation to understand the difference). Press enter for 'actual'",
-    "foundersmap": "Specify FOUNDERS in form 'tz-address':share1,'tz-address':share2,... (Mind quotes, sum must equal 1, e.g: 'tz1a...':0.3, 'tz1b..':0.7) Press enter to leave empty",
-    "ownersmap": "Specify OWNERS in form 'tz-address':share1,'tz-address':share2,... (Mind quotes, sum must equal 1, e.g: 'tz1a...':0.3, 'tz1b..':0.7) Press enter to leave empty",
-    "mindelegation": "Specify minimum delegation amount in tez. Press enter for 0",
+    "foundersmap": "Specify FOUNDERS in form 'mv-address':share1,'mv-address':share2,... (Mind quotes, sum must equal 1, e.g: 'mv1a...':0.3, 'mv1b..':0.7) Press enter to leave empty",
+    "ownersmap": "Specify OWNERS in form 'mv-address':share1,'mv-address':share2,... (Mind quotes, sum must equal 1, e.g: 'mv1a...':0.3, 'mv1b..':0.7) Press enter to leave empty",
+    "mindelegation": "Specify minimum delegation amount in mav. Press enter for 0",
     "mindelegationtarget": "Specify where the reward for delegators failing to satisfy minimum delegation amount go. {}: leave at balance, {}: to founders, {}: to everybody, press enter for {}".format(
         TOB, TOF, TOE, TOB
     ),
-    "exclude": "Add excluded address in form of 'tz-address1':'target', 'tz-address2':'target'. (e.g: 'tz1a..:'TOF','tz1b..:'TOB') Share of the exluded address will go to target. Possbile targets are = {}: leave at balance, {}: to founders, {}: to everybody. Type enter to skip".format(
+    "exclude": "Add excluded address in form of 'mv-address1':'target', 'mv-address2':'target'. (e.g: 'mv1a..:'TOF','mv1b..:'TOB') Share of the exluded address will go to target. Possbile targets are = {}: leave at balance, {}: to founders, {}: to everybody. Type enter to skip".format(
         TOB, TOF, TOE
     ),
-    "redirect": "Add redirected address in form of 'tz-address1':'tz-address2', 'tz-address3':'tz-address4'. (e.g: 'tz1a..:'tz1b..','tz1c..:'tz1d..'). Press enter to skip",
+    "redirect": "Add redirected address in form of 'mv-address1':'mv-address2', 'mv-address3':'mv-address4'. (e.g: 'mv1a..:'mv1b..','mv1c..:'mv1d..'). Press enter to skip",
     "reactivatezeroed": "If a destination address has 0 balance, should burn fee be paid to reactivate? 1 for Yes, 0 for No. Press enter for Yes",
     "delegatorpaysxfrfee": "Who is going to pay for transfer fees: 0 for delegator, 1 for delegate. Press enter for delegator",
     "delegatorpaysrafee": "Who is going to pay for 0 balance reactivation or burn fees for kt accounts in general: 0 for delegator, 1 for delegate. Press enter for delegator",
     "paydenunciationrewards": "If you denounce another baker for baking or endorsing, you will get rewarded. Distribute denunciation rewards to your delegators? 1 for Yes, 0 for No. Press enter for No",
-    "supporters": "Add supporter addresses in form of 'tz-address1', 'tz-address2'. Supporters do not pay bakery fee. Press enter to skip",
-    "specials": "Add any addresses with a special fee in form of 'tz-address1':fee, 'tz-address2':fee. Press enter to skip",
+    "supporters": "Add supporter addresses in form of 'mv-address1', 'mv-address2'. Supporters do not pay bakery fee. Press enter to skip",
+    "specials": "Add any addresses with a special fee in form of 'mv-address1':fee, 'mv-address2':fee. Press enter to skip",
     "noplugins": "No plugins are enabled by default. If you wish to use the email, twitter, or telegram plugins, please read the documentation and edit the configuration file manually.",
-    "minpayment": "Specify minimum payment amount in tez. Press enter for 0",
+    "minpayment": "Specify minimum payment amount in mav. Press enter for 0",
 }
 
 parser = None
@@ -151,7 +151,7 @@ def onrewardstype(input):
         rt = RewardsType(input.lower())
         parser.set(REWARDS_TYPE, str(rt))
         if not input == RewardsType.ACTUAL.value:
-            printe("As of Paris protocol, TRD only supports actual reward payout")
+            printe("As of Boreas protocol, MRD only supports actual reward payout")
             return
     except Exception:
         printe("Invalid option for rewards type. Please type 'actual' or 'ideal'.")

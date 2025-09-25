@@ -1,5 +1,5 @@
-from tzkt.tzkt_block_api import TzKTBlockApiImpl
-from tzkt.tzkt_reward_api import TzKTRewardApiImpl
+from mvkt.mvkt_block_api import MvKTBlockApiImpl
+from mvkt.mvkt_reward_api import MvKTRewardApiImpl
 
 
 class ProviderFactory:
@@ -14,7 +14,7 @@ class ProviderFactory:
         node_url_public="",
         api_base_url=None,
     ):
-        return TzKTRewardApiImpl(network_config, baking_address, base_url=api_base_url)
+        return MvKTRewardApiImpl(network_config, baking_address, base_url=api_base_url)
 
     def newBlockApi(
         self,
@@ -22,4 +22,4 @@ class ProviderFactory:
         node_url,
         api_base_url=None,
     ):
-        return TzKTBlockApiImpl(network_config, base_url=api_base_url)
+        return MvKTBlockApiImpl(network_config, base_url=api_base_url)

@@ -9,35 +9,57 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/rewards/split/tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN/750?offset=0&limit=10000
+    uri: https://api.mavryk.network/v1/rewards/split/mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D/5?offset=0&limit=10000
   response:
     body:
-      string: '{"cycle":750,"bakingPower":82698664595,"totalBakingPower":670376512904615,"ownDelegatedBalance":5099724843,"externalDelegatedBalance":69380007542,"delegatorsCount":36,"ownStakedBalance":8275525821,"externalStakedBalance":0,"stakersCount":0,"expectedBlocks":3,"expectedEndorsements":21222,"futureBlocks":0,"futureBlockRewards":0,"blocks":1,"blockRewardsDelegated":5665073,"blockRewardsStakedOwn":150812,"blockRewardsStakedEdge":47913,"blockRewardsStakedShared":431207,"missedBlocks":0,"missedBlockRewards":0,"futureEndorsements":0,"futureEndorsementRewards":0,"endorsements":20711,"endorsementRewardsDelegated":18181627,"endorsementRewardsStakedOwn":484015,"endorsementRewardsStakedEdge":153771,"endorsementRewardsStakedShared":1383931,"missedEndorsements":476,"missedEndorsementRewards":0,"blockFees":13536,"missedBlockFees":0,"doubleBakingRewards":0,"doubleBakingLostStaked":0,"doubleBakingLostUnstaked":0,"doubleBakingLostExternalStaked":0,"doubleBakingLostExternalUnstaked":0,"doubleEndorsingRewards":0,"doubleEndorsingLostStaked":0,"doubleEndorsingLostUnstaked":0,"doubleEndorsingLostExternalStaked":0,"doubleEndorsingLostExternalUnstaked":0,"doublePreendorsingRewards":0,"doublePreendorsingLostStaked":0,"doublePreendorsingLostUnstaked":0,"doublePreendorsingLostExternalStaked":0,"doublePreendorsingLostExternalUnstaked":0,"vdfRevelationRewardsDelegated":0,"vdfRevelationRewardsStakedOwn":0,"vdfRevelationRewardsStakedEdge":0,"vdfRevelationRewardsStakedShared":0,"nonceRevelationRewardsDelegated":0,"nonceRevelationRewardsStakedOwn":0,"nonceRevelationRewardsStakedEdge":0,"nonceRevelationRewardsStakedShared":0,"nonceRevelationLosses":0,"delegators":[{"address":"KT1UkUKJNwhQPJW99m2ax7MErGKTBTf84jfu","delegatedBalance":60534018112,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":60534018112,"currentBalance":514},{"address":"tz1QKNjpkDm443z9EJ7uo7WVjZhjy3F3drTM","delegatedBalance":7759443482,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":7759443482,"currentBalance":514},{"address":"tz1Y1MhPRqRbLjvJRoguQXCe5bUKp43vvqgN","delegatedBalance":254756327,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":254756327,"currentBalance":514},{"address":"tz1PayTZoKjNyofxFQxkzhcv9RCdyW7Q64Wc","delegatedBalance":234852911,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":234852911,"currentBalance":514},{"address":"tz1Rcp8FFWHTcdNWntJ6tekCwpG2ax135ZLx","delegatedBalance":233061711,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":233061711,"currentBalance":514},{"address":"tz1S91vGGRnvezkDddwwsnHuKezstTgoHWwc","delegatedBalance":127450138,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":127450138,"currentBalance":514},{"address":"KT1XNDUDGp72ZQ5Y1qwVJD3HgYe5bR8aM1mA","delegatedBalance":122613949,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":122613949,"currentBalance":514},{"address":"tz1WEHHVMWxQUtkWAgrJBFGXjJ5YqZVgfPVE","delegatedBalance":29801308,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":29801308,"currentBalance":514},{"address":"tz1cPXa65zzRqvZRhSDMzcg52Nw4Re1UHjNy","delegatedBalance":25624976,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":25624976,"currentBalance":514},{"address":"KT1JegRxRmfDutBcCEsERbTw6hSZMmPA5KXN","delegatedBalance":17708788,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":17708788,"currentBalance":514},{"address":"tz1eEoCKWi5cEdfkE21hPSPGjJjwkwK7cgVo","delegatedBalance":7822885,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":7822885,"currentBalance":514},{"address":"tz1VE9WCAa7K48VPiBXqrdXvBWYHER66z9DX","delegatedBalance":6257544,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":6257544,"currentBalance":514},{"address":"KT1EztEvkwyoKqQnDGUvhtq5U7e4VM6eRopD","delegatedBalance":5348024,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":5348024,"currentBalance":514},{"address":"tz1fb8ZfHEE7Q3ZMNpEh6g1MyJmVUaXrHm1h","delegatedBalance":5000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":5000000,"currentBalance":514},{"address":"tz1hUz8D6VjdXioc3smt1Qpt3gSgctntY8y2","delegatedBalance":4193770,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":4193770,"currentBalance":514},{"address":"tz1ifCZiifCMETZWJ1S6JqWE9NbbTEWXEjv5","delegatedBalance":2664302,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":2664302,"currentBalance":514},{"address":"KT19BhVAF5urBrS4Zynw33LB5dGS9TTFmVYt","delegatedBalance":1957345,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1957345,"currentBalance":514},{"address":"tz1SsKGW8vTvwUKUSWn7NVfDb4AhhvWXpfxC","delegatedBalance":1492926,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1492926,"currentBalance":514},{"address":"KT1DZ7cjwKssJ8UCWo6advw86r88ucVB9m7Z","delegatedBalance":1049866,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1049866,"currentBalance":514},{"address":"KT1QxfPA6obWUF4LooModaQVpmvqjaGJUFX9","delegatedBalance":1000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1000000,"currentBalance":514},{"address":"KT18sQZfkyH7rdTVBCVALagRYD9kd4hAGvgk","delegatedBalance":1000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1000000,"currentBalance":514},{"address":"KT1HTyV6Uw9HdyVDQGv5bfyLRca6oSjQp1vh","delegatedBalance":1000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1000000,"currentBalance":514},{"address":"KT1EwQ8K6hpKxDyrJi87djud8mw1hdBx1KB8","delegatedBalance":466764,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":466764,"currentBalance":514},{"address":"tz1Wz5AwggNQfMV4tguR63JrcHuK4jzNUY6p","delegatedBalance":345077,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":345077,"currentBalance":514},{"address":"tz1XZQtyvTG6XkTfc1UW1VPfDM19vVny81p2","delegatedBalance":288794,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":288794,"currentBalance":514},{"address":"tz1MKit49d7JnzUXxJpK6XN9QWh3WGW6Udsb","delegatedBalance":270538,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":270538,"currentBalance":514},{"address":"tz1Re5b99q26dRvMgrNHhGQEnfmKssi4vD9i","delegatedBalance":210981,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":210981,"currentBalance":514},{"address":"tz1fUbukPpAsdP391cTeogGoTWK2Rtw6uU3y","delegatedBalance":164664,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":164664,"currentBalance":514},{"address":"tz1dDLXJwZxrV5wyEJkpfHq3snELbhr7pyvT","delegatedBalance":84605,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":84605,"currentBalance":514},{"address":"tz1PRsHRMvxsieqfqRxeeKyRwAntbJKzy3qg","delegatedBalance":32014,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":32014,"currentBalance":514},{"address":"tz1LYHaiFmUFWdGBsSmtokz16Boexp5ksreF","delegatedBalance":12500,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":12500,"currentBalance":514},{"address":"tz1MRXXvtWQXnRhmyTozDDfQC3bWA2DsZYhw","delegatedBalance":8481,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":8481,"currentBalance":514},{"address":"KT1WuNJ57hHerGuytCeymbUsbc2EtbxUZkaV","delegatedBalance":3552,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":3552,"currentBalance":514},{"address":"tz2CcKuyWqc6sgjiHmL5BjYRmtnAwsZFBZ17","delegatedBalance":1108,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1108,"currentBalance":514},{"address":"KT1NkRFA5WDbtbDvsut1oNoMMxk9vEEMRgzT","delegatedBalance":100,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":100,"currentBalance":514},{"address":"KT1U4xqiup8GsdEkC4N5Wp83maPiCfJFoWLw","delegatedBalance":0,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":0,"currentBalance":514}],"blockRewardsLiquid":5665073,"endorsementRewardsLiquid":18181627,"nonceRevelationRewardsLiquid":0,"vdfRevelationRewardsLiquid":0,"revelationRewards":0,"revelationLosses":0,"doublePreendorsingLosses":0,"doubleEndorsingLosses":0,"doubleBakingLosses":0,"endorsementRewards":20203344,"blockRewards":6295005,"stakingBalance":82755258206,"activeStake":82698664595,"selectedStake":670376512904615,"delegatedBalance":69380007542,"numDelegators":36,"ownBlocks":1,"extraBlocks":0,"missedOwnBlocks":0,"missedExtraBlocks":0,"uncoveredOwnBlocks":0,"uncoveredExtraBlocks":0,"uncoveredEndorsements":0,"ownBlockRewards":6295005,"extraBlockRewards":0,"missedOwnBlockRewards":0,"missedExtraBlockRewards":0,"uncoveredOwnBlockRewards":0,"uncoveredExtraBlockRewards":0,"uncoveredEndorsementRewards":0,"ownBlockFees":13536,"extraBlockFees":0,"missedOwnBlockFees":0,"missedExtraBlockFees":0,"uncoveredOwnBlockFees":0,"uncoveredExtraBlockFees":0,"doubleBakingLostDeposits":0,"doubleBakingLostRewards":0,"doubleBakingLostFees":0,"doubleEndorsingLostDeposits":0,"doubleEndorsingLostRewards":0,"doubleEndorsingLostFees":0,"revelationLostRewards":0,"revelationLostFees":0,"futureBlockDeposits":0,"blockDeposits":0,"futureEndorsementDeposits":0,"endorsementDeposits":0}'
+      string: '{"cycle":5,"bakingPower":13588383509806,"totalBakingPower":101977583096576,"ownDelegatedBalance":9137159953145,"externalDelegatedBalance":16448599000000,"delegatorsCount":8,"ownStakedBalance":2842862105905,"externalStakedBalance":0,"stakersCount":0,"expectedBlocks":3274,"expectedEndorsements":22923045,"futureBlocks":1487,"futureBlockRewards":9910642359,"blocks":1802,"blockRewardsDelegated":9461009232,"blockRewardsStakedOwn":2503059914,"blockRewardsStakedEdge":0,"blockRewardsStakedShared":0,"missedBlocks":0,"missedBlockRewards":0,"futureEndorsements":10347533,"futureEndorsementRewards":21822738840,"endorsements":12576977,"endorsementRewardsDelegated":0,"endorsementRewardsStakedOwn":0,"endorsementRewardsStakedEdge":0,"endorsementRewardsStakedShared":0,"missedEndorsements":940,"missedEndorsementRewards":0,"blockFees":148706,"missedBlockFees":0,"doubleBakingRewards":0,"doubleBakingLostStaked":0,"doubleBakingLostUnstaked":0,"doubleBakingLostExternalStaked":0,"doubleBakingLostExternalUnstaked":0,"doubleEndorsingRewards":0,"doubleEndorsingLostStaked":0,"doubleEndorsingLostUnstaked":0,"doubleEndorsingLostExternalStaked":0,"doubleEndorsingLostExternalUnstaked":0,"doublePreendorsingRewards":0,"doublePreendorsingLostStaked":0,"doublePreendorsingLostUnstaked":0,"doublePreendorsingLostExternalStaked":0,"doublePreendorsingLostExternalUnstaked":0,"vdfRevelationRewardsDelegated":98847,"vdfRevelationRewardsStakedOwn":26152,"vdfRevelationRewardsStakedEdge":0,"vdfRevelationRewardsStakedShared":0,"nonceRevelationRewardsDelegated":12652416,"nonceRevelationRewardsStakedOwn":3347456,"nonceRevelationRewardsStakedEdge":0,"nonceRevelationRewardsStakedShared":0,"nonceRevelationLosses":0,"delegators":[{"address":"KT1WUjHpHtLdtnw6S3A6kH7cia6HCEzWLGqi","delegatedBalance":8878505000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":8878505000000,"currentBalance":514},{"address":"KT1Lao27WpW7sf4qAopUUKjc5QZFPxn6ZYfj","delegatedBalance":2336449000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":2336449000000,"currentBalance":514},{"address":"KT1XL6VdDrxt9c9LRgAtMsBLFkTfrZmy9g96","delegatedBalance":1401869000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1401869000000,"currentBalance":514},{"address":"KT194AS7JC1hovTVmy38YtwsoQFV97CT7BTw","delegatedBalance":1102804000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1102804000000,"currentBalance":514},{"address":"KT1FzTamJEMovvBzauVpu4REw6tedb5SegPN","delegatedBalance":934579000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":934579000000,"currentBalance":514},{"address":"KT19nd6Z7Ca963q4GBeCu7JraB5n8BbVhPzm","delegatedBalance":672897000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":672897000000,"currentBalance":514},{"address":"KT1UXmR9LtR14RHyNqhShLaDjoG7EiY9MEQ6","delegatedBalance":654206000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":654206000000,"currentBalance":514},{"address":"KT1Fu6UNSa6PdiVokY5NJCagVgWB7anXXYzs","delegatedBalance":467290000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":467290000000,"currentBalance":514}],"blockRewardsLiquid":9461009232,"endorsementRewardsLiquid":0,"nonceRevelationRewardsLiquid":12652416,"vdfRevelationRewardsLiquid":98847,"revelationRewards":16124871,"revelationLosses":0,"doublePreendorsingLosses":0,"doubleEndorsingLosses":0,"doubleBakingLosses":0,"endorsementRewards":0,"blockRewards":11964069146,"stakingBalance":28428621059050,"activeStake":13588383509806,"selectedStake":101977583096576,"delegatedBalance":16448599000000,"numDelegators":8,"ownBlocks":1802,"extraBlocks":0,"missedOwnBlocks":0,"missedExtraBlocks":0,"uncoveredOwnBlocks":0,"uncoveredExtraBlocks":0,"uncoveredEndorsements":0,"ownBlockRewards":11964069146,"extraBlockRewards":0,"missedOwnBlockRewards":0,"missedExtraBlockRewards":0,"uncoveredOwnBlockRewards":0,"uncoveredExtraBlockRewards":0,"uncoveredEndorsementRewards":0,"ownBlockFees":148706,"extraBlockFees":0,"missedOwnBlockFees":0,"missedExtraBlockFees":0,"uncoveredOwnBlockFees":0,"uncoveredExtraBlockFees":0,"doubleBakingLostDeposits":0,"doubleBakingLostRewards":0,"doubleBakingLostFees":0,"doubleEndorsingLostDeposits":0,"doubleEndorsingLostRewards":0,"doubleEndorsingLostFees":0,"revelationLostRewards":0,"revelationLostFees":0,"futureBlockDeposits":0,"blockDeposits":0,"futureEndorsementDeposits":0,"endorsementDeposits":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490c618ce396b0-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 30 Jun 2024 17:51:50 GMT
+      - Thu, 25 Sep 2025 08:11:00 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=GWO3L4oV9uAxXkjeZ%2F7fyd%2FzQlcE10qvpcgq3bLWzEnL1quvrtzKWFtLFZ4weJ82caRlXnb6gxB8TvXYFPM5gAZa7HF1tEk5MTR3IuGlxe%2FSKYiqtrwHRENfcz3gSQ%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
-      - '5942440'
-      Tzkt-Level:
-      - '5942439'
-      Tzkt-Synced-At:
-      - '2024-06-30T17:51:50Z'
-      Tzkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '10363'
+      - '4723'
+      mvkt-known-level:
+      - '119978'
+      mvkt-level:
+      - '119978'
+      mvkt-synced-at:
+      - '2025-09-25T08:10:59Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK
@@ -51,35 +73,57 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/head
+    uri: https://api.mavryk.network/v1/head
   response:
     body:
-      string: '{"chain":"mainnet","chainId":"NetXdQprcVkpaWU","cycle":751,"level":5942439,"hash":"BMECZxveF5R63qsxgRASunKnGHM3e8MuuDFtHGbUojo7BCjFKC9","protocol":"PsParisCZo7KAh1Z1smVd9ZMZ1HHn5gkzbM94V3PLCpknFWhUAi","nextProtocol":"PsParisCZo7KAh1Z1smVd9ZMZ1HHn5gkzbM94V3PLCpknFWhUAi","timestamp":"2024-06-30T17:51:40Z","votingEpoch":61,"votingPeriod":125,"knownLevel":5942440,"lastSync":"2024-06-30T17:51:50Z","synced":false,"quoteLevel":5942439,"quoteBtc":1.2637713175978276E-05,"quoteEur":0.7268074310091994,"quoteUsd":0.7788101417972877,"quoteCny":5.659846943483435,"quoteJpy":125.29886966305666,"quoteKrw":1075.7548726617583,"quoteEth":0.00022882297816012543,"quoteGbp":0.6155388260506206}'
+      string: '{"chain":"mainnet","chainId":"NetXXAAR1wWQhhe","cycle":5,"level":119978,"hash":"BLEEHD3dzBrVT3UXBmz18fZR3y6dFWrSx8bG8qBS7dAK44PYg6G","protocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","nextProtocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","timestamp":"2025-09-25T08:10:59Z","votingEpoch":0,"votingPeriod":0,"knownLevel":119978,"lastSync":"2025-09-25T08:10:59Z","synced":true,"quoteLevel":-1,"quoteBtc":0,"quoteEur":0,"quoteUsd":0,"quoteCny":0,"quoteJpy":0,"quoteKrw":0,"quoteEth":0,"quoteGbp":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490c62db4fbe06-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 30 Jun 2024 17:51:51 GMT
+      - Thu, 25 Sep 2025 08:11:01 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=8Egf5kxracATMcKGscvziYxnqjncCge25IPBA2Fy8%2BHFO9WY%2FtKw03i9icVRizo6RYS2QcNyVjbXJ%2BBvikYkZWhuJZxSlg7VOLQMBozjnEuKi%2BTFl7PecYEzZa8NaQ%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
-      - '5942440'
-      Tzkt-Level:
-      - '5942439'
-      Tzkt-Synced-At:
-      - '2024-06-30T17:51:50Z'
-      Tzkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '679'
+      - '523'
+      mvkt-known-level:
+      - '119978'
+      mvkt-level:
+      - '119978'
+      mvkt-synced-at:
+      - '2025-09-25T08:10:59Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK
@@ -93,37 +137,57 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/accounts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD
+    uri: https://api.mavryk.network/v1/accounts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5
   response:
     body:
-      string: '{"id":4107889,"type":"delegate","address":"tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD","active":true,"alias":"Tezos
-        Foundation Baker 7","publicKey":"p2pk64u1Bmq1xaBPuUDeLXx7v7G382cnaL4Mt7wxBuXPyqmGMm6DZpf","revealed":true,"balance":2387225819799,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":1386370330886,"unstakedBalance":0,"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":1386370330886,"stakersCount":0,"counter":94571627,"activationLevel":3148220,"activationTime":"2023-02-15T14:39:29Z","stakingBalance":13860653696290,"delegatedBalance":11473427876491,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":3,"tokenBalancesCount":3,"tokenTransfersCount":3,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":2,"numBlocks":46081,"numEndorsements":2313080,"numPreendorsements":336,"numBallots":7,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":4,"numNonceRevelations":487,"vdfRevelationsCount":1,"numRevelationPenalties":0,"numEndorsingRewards":137,"numDelegations":4,"numOriginations":0,"numTransactions":9,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":45,"stakingUpdatesCount":46,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":3148212,"firstActivityTime":"2023-02-15T14:35:29Z","lastActivity":5942439,"lastActivityTime":"2024-06-30T17:51:40Z","software":{"date":"2024-06-18T09:10:50Z"},"lostBalance":0,"frozenDeposit":1386370330886,"frozenDeposits":1386370330886,"frozenRewards":0,"frozenFees":0,"metadata":{"kind":"foundation","site":"https://tezos.foundation/","alias":"Tezos
-        Foundation Baker 7","twitter":"TezosFoundation"}}'
+      string: '{"id":9,"type":"delegate","address":"mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5","active":true,"publicKey":"edpktx8RC8sZ3fQ2GRU5tKiQEiYpb33vb2XzZqKPdXKubNktNmASZ9","revealed":true,"balance":11072043999707,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":5660401566015,"unstakedBalance":104276315552,"unstakedBaker":{"address":"mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5"},"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":5660401566015,"stakersCount":0,"counter":2,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":56601609683921,"delegatedBalance":45529565684214,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":23,"numBlocks":14735,"numEndorsements":119965,"numPreendorsements":3,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":197,"vdfRevelationsCount":0,"numRevelationPenalties":0,"numEndorsingRewards":5,"numDelegations":23,"numOriginations":0,"numTransactions":1,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":5,"stakingUpdatesCount":6,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":119978,"lastActivityTime":"2025-09-25T08:10:59Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":5660401566015,"frozenDeposits":5660401566015,"frozenRewards":0,"frozenFees":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490c643c8e7a2c-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Sun, 30 Jun 2024 17:51:51 GMT
+      - Thu, 25 Sep 2025 08:11:01 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=X4%2Fz%2FG8Nbc8D7n2uwubeDXVtrhqbegCqdIrM99fuSm1UyB1CoGv%2Bt%2FFAP5CWEBimqYwUfSKNBxeglsk6JWGTAgvOhe5bH3PEUz9JLrGkl%2FV6A08oKOMb28hAmkODYw%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
-      - '5942440'
-      Tzkt-Level:
-      - '5942440'
-      Tzkt-Synced-At:
-      - '2024-06-30T17:51:50Z'
-      Tzkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '2408'
+      - '2289'
+      mvkt-known-level:
+      - '119978'
+      mvkt-level:
+      - '119978'
+      mvkt-synced-at:
+      - '2025-09-25T08:10:59Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK
@@ -137,37 +201,57 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/accounts/tz3ipHZQpBBFuxv7eKoFgGnTaU3RBhnS93yY
+    uri: https://api.mavryk.network/v1/accounts/mv1Bm6GciQqJiKHvm7BvCZoFsZ4YejxTpVpY
   response:
     body:
-      string: '{"id":4107688,"type":"delegate","address":"tz3ipHZQpBBFuxv7eKoFgGnTaU3RBhnS93yY","active":true,"alias":"Tezos
-        Foundation Baker 2","publicKey":"p2pk65aRfSEqWS1oKrmLCQTaLZULRAEWbmtqouMQhbZC82eirDcUfz4","revealed":true,"balance":2350312749388,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":1361223930643,"unstakedBalance":0,"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":1361223930643,"stakersCount":0,"counter":94561407,"activationLevel":3147736,"activationTime":"2023-02-15T10:35:59Z","stakingBalance":13609453039031,"delegatedBalance":11259140289643,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":4,"tokenBalancesCount":4,"tokenTransfersCount":4,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":1,"numBlocks":44060,"numEndorsements":2313093,"numPreendorsements":363,"numBallots":7,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":4,"numNonceRevelations":582,"vdfRevelationsCount":3,"numRevelationPenalties":0,"numEndorsingRewards":137,"numDelegations":3,"numOriginations":0,"numTransactions":10,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":45,"stakingUpdatesCount":46,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":3147733,"firstActivityTime":"2023-02-15T10:34:29Z","lastActivity":5942440,"lastActivityTime":"2024-06-30T17:51:50Z","software":{"date":"2024-06-18T09:10:50Z"},"lostBalance":0,"frozenDeposit":1361223930643,"frozenDeposits":1361223930643,"frozenRewards":0,"frozenFees":0,"metadata":{"kind":"foundation","site":"https://tezos.foundation/","alias":"Tezos
-        Foundation Baker 2","twitter":"TezosFoundation"}}'
+      string: '{"id":5,"type":"delegate","address":"mv1Bm6GciQqJiKHvm7BvCZoFsZ4YejxTpVpY","active":true,"publicKey":"edpkuCwGTNtevvbv3EsZeDoJrCqiAYzLxuKWJH5Uesa88RWTyYQa4n","revealed":true,"balance":12074531753729,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":5169384081377,"unstakedBalance":45794396067,"unstakedBaker":{"address":"mv1Bm6GciQqJiKHvm7BvCZoFsZ4YejxTpVpY"},"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":5169384081377,"stakersCount":0,"counter":2,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":51678751360641,"delegatedBalance":39604219606912,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":14,"numBlocks":15084,"numEndorsements":119967,"numPreendorsements":3,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":303,"vdfRevelationsCount":0,"numRevelationPenalties":0,"numEndorsingRewards":5,"numDelegations":14,"numOriginations":0,"numTransactions":1,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":5,"stakingUpdatesCount":7,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":119978,"lastActivityTime":"2025-09-25T08:10:59Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":5169384081377,"frozenDeposits":5169384081377,"frozenRewards":0,"frozenFees":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490c689ac71a18-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Sun, 30 Jun 2024 17:51:51 GMT
+      - Thu, 25 Sep 2025 08:11:01 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=br%2Bsj4mAuYmTW3yoWek8UCBKh0cuE8mTgM4vC04Q8SmjQg9IgCIt4te32lt2lxFQH9dqdSa%2BjsSFHG%2BECNx0djDMd5obfuRLmzq%2B%2BTkcZJ%2BNVgXy%2BP0LOkwBuuUNSA%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
-      - '5942440'
-      Tzkt-Level:
-      - '5942440'
-      Tzkt-Synced-At:
-      - '2024-06-30T17:51:50Z'
-      Tzkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '2409'
+      - '2288'
+      mvkt-known-level:
+      - '119978'
+      mvkt-level:
+      - '119978'
+      mvkt-synced-at:
+      - '2025-09-25T08:10:59Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK
@@ -181,37 +265,57 @@ interactions:
       Connection:
       - keep-alive
       User-Agent:
-      - trd-12.0
+      - mrd-12.0
     method: GET
-    uri: https://api.tzkt.io/v1/accounts/tz3dKooaL9Av4UY15AUx9uRGL5H6YyqoGSPV
+    uri: https://api.mavryk.network/v1/accounts/mv1KscSac2FXLeksvSChMMaHB8o1p7eJccg3
   response:
     body:
-      string: '{"id":2997950,"type":"delegate","address":"tz3dKooaL9Av4UY15AUx9uRGL5H6YyqoGSPV","active":true,"alias":"Kiln","publicKey":"p2pk66Q9oGRCcxiLNQK9JWTaaKPn44xZsS3nPMr7tgnemMYtEPW4ZhS","revealed":true,"balance":706375420577,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":699232776407,"unstakedBalance":0,"externalStakedBalance":3725565329,"externalUnstakedBalance":4841778,"roundingError":0,"totalStakedBalance":702958341736,"issuedPseudotokens":"3720901168","stakersCount":2,"frozenDepositLimit":622000000000,"limitOfStakingOverBaking":5000000,"edgeOfBakingOverStaking":200000000,"counter":79293392,"activationLevel":2785843,"activationTime":"2022-10-11T08:58:29Z","stakingBalance":6974725194922,"delegatedBalance":6264624209016,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":3,"tokenBalancesCount":3,"tokenTransfersCount":3,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":26,"numBlocks":16688,"numEndorsements":3021620,"numPreendorsements":668,"numBallots":10,"numProposals":3,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":4,"numNonceRevelations":125,"vdfRevelationsCount":1,"numRevelationPenalties":0,"numEndorsingRewards":211,"numDelegations":135,"numOriginations":0,"numTransactions":1887,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":1,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":9,"autostakingOpsCount":45,"stakingUpdatesCount":73,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":2785795,"firstActivityTime":"2022-10-11T08:34:29Z","lastActivity":5942440,"lastActivityTime":"2024-06-30T17:51:50Z","software":{"date":"2024-06-18T09:10:50Z"},"lostBalance":0,"frozenDeposit":699232776407,"frozenDeposits":699232776407,"frozenRewards":0,"frozenFees":0,"metadata":{"kind":"public_baker","site":"https://www.kiln.fi/","alias":"Kiln","email":"hello@kiln.fi","twitter":"Kiln_finance","description":"Kiln
-        is the leading enterprise-grade staking platform, enabling customers to stake
-        and to whitelabel staking into their offering."}}'
+      string: '{"id":6,"type":"delegate","address":"mv1KscSac2FXLeksvSChMMaHB8o1p7eJccg3","active":true,"publicKey":"edpkvLPUwGuQRrY1U95Xb47aLnP7wqb2KycCwmY1QJyViHzm1jepCw","revealed":true,"balance":12066686825527,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":7489517264742,"unstakedBalance":202695331,"unstakedBaker":{"address":"mv1KscSac2FXLeksvSChMMaHB8o1p7eJccg3"},"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":7489517264742,"stakersCount":0,"counter":2,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":74889545738282,"delegatedBalance":62822858912755,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":21,"numBlocks":14927,"numEndorsements":119969,"numPreendorsements":2,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":94,"vdfRevelationsCount":1,"numRevelationPenalties":0,"numEndorsingRewards":5,"numDelegations":21,"numOriginations":0,"numTransactions":1,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":5,"stakingUpdatesCount":8,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":119978,"lastActivityTime":"2025-09-25T08:10:59Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":7489517264742,"frozenDeposits":7489517264742,"frozenRewards":0,"frozenFees":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490c6d2c3a96bc-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Sun, 30 Jun 2024 17:51:52 GMT
+      - Thu, 25 Sep 2025 08:11:02 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=vucsheAATnDUzexjcAhrvfScqs71QWQT2%2FewCpZB2xioQyqV353DNYNbEDUxuy2yQRW2PBCjmYiU6qw7%2FQhlSbMAdgmHFCQYgbMe32la%2FiZ1PNpojmcBS49XI2PZUQ%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Tzkt-Known-Level:
-      - '5942440'
-      Tzkt-Level:
-      - '5942440'
-      Tzkt-Synced-At:
-      - '2024-06-30T17:51:50Z'
-      Tzkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '2686'
+      - '2285'
+      mvkt-known-level:
+      - '119978'
+      mvkt-level:
+      - '119978'
+      mvkt-synced-at:
+      - '2025-09-25T08:10:59Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK

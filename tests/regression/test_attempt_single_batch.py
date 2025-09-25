@@ -28,7 +28,7 @@ run_ops_parsed = {
     ]
 }
 
-forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
+forge = "0" * (TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
 
 payment_head = {
     "hash": "BLyUNtn24LzUDyAgfPmvoJ3Lmqfcqw7tKdEX9thmXD62P8kgpyt",
@@ -36,7 +36,7 @@ payment_head = {
     "metadata": {"protocol": "PtHangz2aRngywmSRGGvrcTyMbbdpWdpFKuS4uMWxg2RaH9i1qx"},
 }
 
-TEST_TZ_ADDRESS = "tz2JrnsSXPkN3QHKsYm1bGijwVHc1vFaR5kU"
+TEST_MV_ADDRESS = "mv2iuCwG6QFePMzLBh6hAVEWxouSwJheSxD9"
 
 
 @patch(
@@ -63,7 +63,7 @@ def test_attempt_single_batch_tz(sign, request_url, request_url_post):
     network_config = {"BLOCK_TIME_IN_SEC": 60, "MINIMAL_BLOCK_DELAY": 30}
     batch_payer = BatchPayer(
         node_url="node_addr",
-        pymnt_addr=TEST_TZ_ADDRESS,
+        pymnt_addr=TEST_MV_ADDRESS,
         clnt_mngr=ClientManager(
             node_endpoint=PUBLIC_NODE_URL["MAINNET"],
             signer_endpoint=PRIVATE_SIGNER_URL,
@@ -76,7 +76,7 @@ def test_attempt_single_batch_tz(sign, request_url, request_url_post):
     )
     batch_payer.base_counter = 0
     reward_log = RewardLog(
-        address=TEST_TZ_ADDRESS,
+        address=TEST_MV_ADDRESS,
         type="D",
         delegating_balance=80,
         current_balance=100,
@@ -92,7 +92,7 @@ def test_attempt_single_batch_tz(sign, request_url, request_url_post):
     assert status.is_done()
     assert operation_hash is None
     assert reward_log.delegator_transaction_fee == int(
-        TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"]
+        TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"]
     )
     assert opt_counter.counter == 3209358
 
@@ -125,7 +125,7 @@ def test_attempt_single_batch_KT(sign, request_url, request_url_post):
     network_config = {"BLOCK_TIME_IN_SEC": 60, "MINIMAL_BLOCK_DELAY": 30}
     batch_payer = BatchPayer(
         node_url="node_addr",
-        pymnt_addr=TEST_TZ_ADDRESS,
+        pymnt_addr=TEST_MV_ADDRESS,
         clnt_mngr=ClientManager(
             node_endpoint=PUBLIC_NODE_URL[CURRENT_TESTNET],
             signer_endpoint=PRIVATE_SIGNER_URL,

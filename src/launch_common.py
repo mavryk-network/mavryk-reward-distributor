@@ -47,14 +47,14 @@ def print_banner(args, script_name):
     with open("./banner.txt", "rt") as file:
         print(file.read())
     print(LINER, flush=True)
+    print("Mavryk Dynamics: info@mavryk.io")
     print("TRD Organization: Copyright 2021-2024, see contributors.csv")
-    print("huseyinabanox@gmail.com")
     print("Please leave copyright information")
     print(LINER, flush=True)
 
     sleep(0.1)
 
-    print("Tezos Reward Distributor (TRD)" + script_name + " is Starting")
+    print("Mavryk Reward Distributor (MRD)" + script_name + " is Starting")
 
 
 def renamed_fee_ini(args=None):
@@ -150,7 +150,7 @@ def requirements_installed(requirement_path=REQUIREMENTS_FILE_PATH):
 
             if value == "n" or not success:
                 print(
-                    "Please make sure to install all the required packages from 'requirements.txt' before using the TRD:\n"
+                    "Please make sure to install all the required packages from 'requirements.txt' before using the MRD:\n"
                     "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/ \n"
                 )
                 return False
@@ -163,7 +163,7 @@ def requirements_installed(requirement_path=REQUIREMENTS_FILE_PATH):
     except (OSError, IOError) as e:
         print(
             "Error opening requirements.txt: {}\n"
-            "Please make sure to install all the required packages from 'requirements.txt' before using the TRD:\n"
+            "Please make sure to install all the required packages from 'requirements.txt' before using the MRD:\n"
             "https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/ \n".format(
                 e
             )

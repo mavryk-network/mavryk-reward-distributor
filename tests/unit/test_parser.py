@@ -35,7 +35,7 @@ from src.util.parser import (
             add_argument_node_endpoint,
             argparse.Namespace(node_endpoint="http://127.0.0.1:8732"),
         ),
-        (add_argument_provider, argparse.Namespace(reward_data_provider="tzkt")),
+        (add_argument_provider, argparse.Namespace(reward_data_provider="mvkt")),
         (
             add_argument_node_addr_public,
             argparse.Namespace(node_addr_public=PUBLIC_NODE_URL["MAINNET"]),
@@ -62,7 +62,7 @@ from src.util.parser import (
     ],
 )
 def test_add_argument_to_argparser_with_default(argument, expected):
-    argparser = argparse.ArgumentParser(prog="TRD")
+    argparser = argparse.ArgumentParser(prog="MRD")
     argument(argparser)
     args, unknown = argparser.parse_known_args()
     assert args == expected
@@ -76,7 +76,7 @@ def test_build_parser():
         payment_offset=0,
         network="MAINNET",
         node_endpoint="http://127.0.0.1:8732",
-        reward_data_provider="tzkt",
+        reward_data_provider="mvkt",
         node_addr_public=PUBLIC_NODE_URL["MAINNET"],
         base_directory=os.path.normpath("~/pymnt"),
         dry_run=False,

@@ -35,16 +35,16 @@ logger = main_logger
 # TODO: define set of known contract formats and make this fee for unknown contracts configurable
 KT1_FEE_SAFETY_CHECK = True
 FEE_LIMIT_CONTRACTS = 100000
-ZERO_THRESHOLD = 1  # too less to payout in mutez
+ZERO_THRESHOLD = 1  # too less to payout in mumav
 
 # For simulation
-# https://rpc.tzkt.io/mainnet/chains/main/blocks/head/context/constants
+# https://api.mavryk.network/chains/main/blocks/head/context/constants
 HARD_GAS_LIMIT_PER_OPERATION = 1040000
 HARD_STORAGE_LIMIT_PER_OPERATION = 60000
 COST_PER_BYTE = 250
-MINIMUM_FEE_MUTEZ = 100
-MUTEZ_PER_GAS_UNIT = 0.1
-MUTEZ_PER_BYTE = 1
+MINIMUM_FEE_MUMAV = 100
+MUMAV_PER_GAS_UNIT = 0.1
+MUMAV_PER_BYTE = 1
 
 PKH_LENGTH = 36
 SIGNATURE_BYTES_SIZE = 64
@@ -79,18 +79,18 @@ COMM_WAIT = "/chains/main/blocks/%BLOCK_HASH%/operation_hashes"
 #
 # These values may change with protocol upgrades
 TX_FEES = {
-    "TZ1_TO_ALLOCATED_TZ1": {
+    "MV1_TO_ALLOCATED_MV1": {
         "FEE": 298,
         "GAS_LIMIT": 1400,
-        "STORAGE_LIMIT": 0,  # 65 mutez before
+        "STORAGE_LIMIT": 0,  # 65 mumav before
     },
-    "TZ1_TO_NON_ALLOCATED_TZ1": {
+    "MV1_TO_NON_ALLOCATED_MV1": {
         "FEE": 397,
         "GAS_LIMIT": 1421,
         "STORAGE_LIMIT": 277,
-        "BURN_FEE": None,  # 0.257 tez before
+        "BURN_FEE": None,  # 0.257 mav before
     },
-    "TZ1_REVEAL": {
+    "MV1_REVEAL": {
         "FEE": 357,
         "GAS_LIMIT": 1400,
         "STORAGE_LIMIT": 0,
@@ -126,40 +126,40 @@ class BatchPayer:
         self.plugins_manager = plugins_manager
         self.dry_run = dry_run
 
-        # Default tz1 to tz1 transaction fees
-        self.default_gas_limit = int(TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["GAS_LIMIT"])
+        # Default mv1 to mv1 transaction fees
+        self.default_gas_limit = int(TX_FEES["MV1_TO_ALLOCATED_MV1"]["GAS_LIMIT"])
         self.default_storage_limit = int(
-            TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["STORAGE_LIMIT"]
+            TX_FEES["MV1_TO_ALLOCATED_MV1"]["STORAGE_LIMIT"]
         )
-        self.default_fee = int(TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
-        TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["BURN_FEE"] = int(
-            TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["STORAGE_LIMIT"] * COST_PER_BYTE
+        self.default_fee = int(TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
+        TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["BURN_FEE"] = int(
+            TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["STORAGE_LIMIT"] * COST_PER_BYTE
         )
 
         self.delegator_pays_ra_fee = delegator_pays_ra_fee
         self.delegator_pays_xfer_fee = delegator_pays_xfer_fee
 
         # If delegator pays the fee, then the cutoff should be transaction-fee + 1
-        # Fixed value can only be used to determine threshold for tz addresses
-        # Ex: Delegator reward is 1800 mutez, txn fee is 1792 mutez, reward - txn fee = 8 mutez payable reward
-        #     If delegate pays fee, then cutoff is 1 mutez payable reward
+        # Fixed value can only be used to determine threshold for mv addresses
+        # Ex: Delegator reward is 1800 mumav, txn fee is 1792 mumav, reward - txn fee = 8 mumav payable reward
+        #     If delegate pays fee, then cutoff is 1 mumav payable reward
         if self.delegator_pays_xfer_fee:
             self.default_zero_threshold += self.default_fee
 
         logger.info(
-            "Default transfer fee is {:<,d} mutez for tz addresses and is paid by {}.".format(
+            "Default transfer fee is {:<,d} mumav for mv addresses and is paid by {}.".format(
                 self.default_fee,
                 "Delegator" if self.delegator_pays_xfer_fee else "Delegate",
             )
         )
         logger.info(
-            "Reactivation fee (burn fee) for tz addresses is {:<,d} mutez and is paid by {}.".format(
-                int(TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["BURN_FEE"]),
+            "Reactivation fee (burn fee) for mv addresses is {:<,d} mumav and is paid by {}.".format(
+                int(TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["BURN_FEE"]),
                 "Delegator" if self.delegator_pays_ra_fee else "Delegate",
             )
         )
         logger.info(
-            "Minimum payment amount is {:<,d} mutez for tz addresses.".format(
+            "Minimum payment amount is {:<,d} mumav for mv addresses.".format(
                 self.default_zero_threshold
             )
         )
@@ -167,8 +167,8 @@ class BatchPayer:
             "Transfer fees and storage burn fees for kt accounts are determined by simulation."
         )
 
-        # If pymnt_addr has a length of 36 and starts with tz then it is a public key, else it is an alias or kt
-        AddressValidator().tz_validate(self.pymnt_addr)
+        # If pymnt_addr has a length of 36 and starts with mv then it is a public key, else it is an alias or kt
+        AddressValidator().mv_validate(self.pymnt_addr)
         self.source = self.pymnt_addr
         logger.debug("Payment address is {}".format(self.source))
 
@@ -192,7 +192,7 @@ class BatchPayer:
 
         # all unprocessed_payment_items are important (non-trivial)
         # gather up all unprocessed_payment_items that are greater than, or equal to the zero_threshold
-        # zero_threshold is either 1 mutez or the txn fee if delegator is not paying it, and burn fee
+        # zero_threshold is either 1 mumav or the txn fee if delegator is not paying it, and burn fee
         payment_items = []
         estimated_sum_burn_fees = 0
         estimated_sum_xfer_fees = 0
@@ -204,7 +204,7 @@ class BatchPayer:
             # Add any items which are marked as skipped to the returning array so that they are logged to reports.
             if not payment_item.payable:
                 logger.info(
-                    "Skipping payout to {:s} of {:<,d} mutez, reason: {:s}".format(
+                    "Skipping payout to {:s} of {:<,d} mumav, reason: {:s}".format(
                         payment_item.address,
                         payment_item.adjusted_amount,
                         payment_item.desc,
@@ -216,28 +216,28 @@ class BatchPayer:
             tmp_zt = self.default_zero_threshold
             tmp_xfer = self.default_fee
             tmp_burn = 0
-            # Treat kt accounts like normal tz1 addresses and sort them out later on
+            # Treat kt accounts like normal mv1 addresses and sort them out later on
             if payment_item.needs_activation:
                 # Need to apply this fee to only those which need reactivation
                 tmp_xfer += max(
                     int(
-                        TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["FEE"]
-                        - TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"]
+                        TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["FEE"]
+                        - TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"]
                     ),
                     0,
                 )
-                tmp_burn += TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["BURN_FEE"]
+                tmp_burn += TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["BURN_FEE"]
                 if self.delegator_pays_xfer_fee:
                     tmp_zt += max(
                         int(
-                            TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["FEE"]
-                            - TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"]
+                            TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["FEE"]
+                            - TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"]
                         ),
                         0,
                     )
 
                 if self.delegator_pays_ra_fee:
-                    tmp_zt += int(TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["BURN_FEE"])
+                    tmp_zt += int(TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["BURN_FEE"])
 
             # If payout total greater than, or equal to zero threshold, append payout record to master array
             if payment_item.adjusted_amount >= tmp_zt:
@@ -251,7 +251,7 @@ class BatchPayer:
                 payment_item.desc += "Payment amount < ZERO_THRESHOLD. "
                 payment_logs.append(payment_item)
                 logger.debug(
-                    "Skipping payout to {:s} of {:<,d} mutez, reason: payout below minimum of {:<,d} mutez".format(
+                    "Skipping payout to {:s} of {:<,d} mumav, reason: payout below minimum of {:<,d} mumav".format(
                         payment_item.address, payment_item.adjusted_amount, tmp_zt
                     )
                 )
@@ -277,7 +277,7 @@ class BatchPayer:
         payment_address_balance = int(self.get_payment_address_balance())
 
         logger.info(
-            "Total estimated amount to pay out is {:<,d} mutez.".format(
+            "Total estimated amount to pay out is {:<,d} mumav.".format(
                 estimated_amount_to_pay
             )
         )
@@ -289,7 +289,7 @@ class BatchPayer:
 
         if payment_address_balance is not None:
             logger.info(
-                "Current balance in payout address is {:<,d} mutez.".format(
+                "Current balance in payout address is {:<,d} mumav.".format(
                     payment_address_balance
                 )
             )
@@ -306,7 +306,7 @@ class BatchPayer:
                 subject = "FAILED Payouts - Insufficient Funds"
                 message = (
                     "Payment attempt failed because of insufficient funds in the payout address. "
-                    "The current balance of {:<,d} mutez is insufficient to pay for cycle rewards of {:<,d} mutez.".format(
+                    "The current balance of {:<,d} mumav is insufficient to pay for cycle rewards of {:<,d} mumav.".format(
                         payment_address_balance,
                         estimated_amount_to_pay,
                     )
@@ -323,7 +323,7 @@ class BatchPayer:
             elif number_future_payable_cycles < 1:
                 subject = "WARNING Payouts - Low Payment Address Funds"
                 message = (
-                    "The payout address will soon run out of funds. The current balance, {:<,d} mutez, "
+                    "The payout address will soon run out of funds. The current balance, {:<,d} mumav, "
                     "might not be sufficient for the next cycle".format(
                         payment_address_balance
                     )
@@ -376,7 +376,7 @@ class BatchPayer:
         )
 
         logger.info(
-            "Total amount payed out is {:<,d} mutez in {} attempts and {} batches.".format(
+            "Total amount payed out is {:<,d} mumav in {} attempts and {} batches.".format(
                 amount_to_pay, total_attempts, len(payment_items_chunks)
             )
         )
@@ -482,7 +482,7 @@ class BatchPayer:
             return log_and_fail(op["metadata"]["operation_result"])
 
         # Calculate needed fee for the transaction, for that we need the size of the forged transaction in bytes
-        tx_fee += math.ceil(consumed_gas * MUTEZ_PER_GAS_UNIT)
+        tx_fee += math.ceil(consumed_gas * MUMAV_PER_GAS_UNIT)
         content = (
             CONTENT.replace("%SOURCE%", str(self.source))
             .replace("%DESTINATION%", str(payment_item.paymentaddress))
@@ -552,10 +552,10 @@ class BatchPayer:
         total_gas = total_tx_fees = total_burn_fees = 0
 
         for payment_item in payment_items:
-            pymnt_amnt = payment_item.adjusted_amount  # expected in micro tez
+            pymnt_amnt = payment_item.adjusted_amount  # expected in micro mav
 
             # Get initial default values for storage, gas and fees
-            # These default values are used for non-empty tz1 accounts transactions
+            # These default values are used for non-empty mv1 accounts transactions
             storage_limit, gas_limit, tx_fee, burn_fee = (
                 self.default_storage_limit,
                 self.default_gas_limit,
@@ -563,7 +563,7 @@ class BatchPayer:
                 0,
             )
 
-            # TRD extension for non scriptless contract accounts
+            # MRD extension for non scriptless contract accounts
             if payment_item.paymentaddress.startswith("KT"):
                 try:
                     (
@@ -585,12 +585,12 @@ class BatchPayer:
 
                 if simulation_status.is_fail():
                     logger.info(
-                        "Payment to {} script could not be processed. Possible reason: liquidated contract. Avoiding. Think about redirecting the payout to the owner address using the maps rules. Please refer to the TRD documentation or to one of the TRD maintainers.".format(
+                        "Payment to {} script could not be processed. Possible reason: liquidated contract. Avoiding. Think about redirecting the payout to the owner address using the maps rules. Please refer to the MRD documentation or to one of the MRD maintainers.".format(
                             payment_item.paymentaddress
                         )
                     )
                     payment_item.paid = PaymentStatus.AVOIDED
-                    payment_item.desc += "Investigate on https://tzkt.io - Liquidated oven or no default entry point. Use rules map for payment redirect. "
+                    payment_item.desc += "Investigate on https://nexus.mavryk.org/explorer - Liquidated oven or no default entry point. Use rules map for payment redirect. "
                     continue
 
                 gas_limit, tx_fee, storage_limit = simulation_results
@@ -600,21 +600,21 @@ class BatchPayer:
                     total_fee = tx_fee + burn_fee
                     if total_fee > FEE_LIMIT_CONTRACTS:
                         logger.info(
-                            "Payment to {:s} script requires higher fees than allowed maximum. Skipping. Needed fee: {:<,d} mutez, max fee: {:<,d} mutez. Either configure a higher fee or redirect to the owner address using the maps rules. Refer to the TRD documentation.".format(
+                            "Payment to {:s} script requires higher fees than allowed maximum. Skipping. Needed fee: {:<,d} mumav, max fee: {:<,d} mumav. Either configure a higher fee or redirect to the owner address using the maps rules. Refer to the MRD documentation.".format(
                                 payment_item.paymentaddress,
                                 total_fee,
                                 FEE_LIMIT_CONTRACTS,
                             )
                         )
                         payment_item.paid = PaymentStatus.AVOIDED
-                        payment_item.desc += "Kt safety check: Transaction fees higher then allowed maximum: {:<,d} mutez. ".format(
+                        payment_item.desc += "Kt safety check: Transaction fees higher then allowed maximum: {:<,d} mumav. ".format(
                             FEE_LIMIT_CONTRACTS,
                         )
                         continue
 
                     if (pymnt_amnt - total_fee) < ZERO_THRESHOLD:
                         logger.info(
-                            "Payment to {:s} requires fees of {:<,d} mutez higher than payment amount of {:<,d} mutez. "
+                            "Payment to {:s} requires fees of {:<,d} mumav higher than payment amount of {:<,d} mumav. "
                             "Payment avoided due KT1_FEE_SAFETY_CHECK set to True.".format(
                                 payment_item.paymentaddress,
                                 total_fee,
@@ -626,36 +626,36 @@ class BatchPayer:
                         continue
 
             else:
-                # An implicit tz1 account
+                # An implicit mv1 account
                 if payment_item.needs_activation:
                     tx_fee += max(
                         int(
-                            TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["FEE"]
-                            - TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"]
+                            TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["FEE"]
+                            - TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"]
                         ),
                         0,
                     )
                     # same in Ithaca for allocated and non-allocated
                     gas_limit += max(
                         int(
-                            TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["GAS_LIMIT"]
-                            - TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["GAS_LIMIT"]
+                            TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["GAS_LIMIT"]
+                            - TX_FEES["MV1_TO_ALLOCATED_MV1"]["GAS_LIMIT"]
                         ),
                         0,
                     )
 
                     storage_limit += int(
-                        TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["STORAGE_LIMIT"]
+                        TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["STORAGE_LIMIT"]
                     )
                     # burn_fee = COST_PER_BYTE * RA_STORAGE
-                    burn_fee = int(TX_FEES["TZ1_TO_NON_ALLOCATED_TZ1"]["BURN_FEE"])
+                    burn_fee = int(TX_FEES["MV1_TO_NON_ALLOCATED_MV1"]["BURN_FEE"])
 
                     payment_item.desc += "Empty account needed reactivation. "
 
-            message = "Payment to {} requires {:<,d} gas * {:.2f} mutez-per-gas + {:<,d} mutez burn fee\n ".format(
+            message = "Payment to {} requires {:<,d} gas * {:.2f} mumav-per-gas + {:<,d} mumav burn fee\n ".format(
                 payment_item.paymentaddress,
                 gas_limit,
-                MUTEZ_PER_GAS_UNIT,
+                MUMAV_PER_GAS_UNIT,
                 burn_fee,
             )
             if burn_fee > 0:
@@ -665,7 +665,7 @@ class BatchPayer:
                     pymnt_amnt = max(pymnt_amnt - burn_fee, 0)
                     payment_item.delegator_transaction_fee += burn_fee
 
-                    message += "Payment reduced from {:<,d} mutez to {:<,d} mutez because Delegator pays burn fees. ".format(
+                    message += "Payment reduced from {:<,d} mumav to {:<,d} mumav because Delegator pays burn fees. ".format(
                         orig_pymnt_amnt,
                         pymnt_amnt,
                     )
@@ -679,7 +679,7 @@ class BatchPayer:
                 pymnt_amnt = max(pymnt_amnt - tx_fee, 0)
                 payment_item.delegator_transaction_fee += tx_fee
 
-                message += "Payment reduced from {:<,d} mutez to {:<,d} mutez because Delegator pays transaction fees. ".format(
+                message += "Payment reduced from {:<,d} mumav to {:<,d} mumav because Delegator pays transaction fees. ".format(
                     orig_pymnt_amnt,
                     pymnt_amnt,
                 )
@@ -698,7 +698,7 @@ class BatchPayer:
                     "Payment amount < ZERO_THRESHOLD after substracting fees. "
                 )
 
-                message += "Payment to {:s} became < {:<,d} mutez after deducting fees. Skipping.".format(
+                message += "Payment to {:s} became < {:<,d} mumav after deducting fees. Skipping.".format(
                     payment_item.paymentaddress, ZERO_THRESHOLD
                 )
 
@@ -778,7 +778,7 @@ class BatchPayer:
         # Re-compute minimal required fee by the batch transaction and re-adjust the fee if necessary
         size = SIGNATURE_BYTES_SIZE + len(bytes) / 2
         required_fee = math.ceil(
-            MINIMUM_FEE_MUTEZ + MUTEZ_PER_GAS_UNIT * total_gas + MUTEZ_PER_BYTE * size
+            MINIMUM_FEE_MUMAV + MUMAV_PER_GAS_UNIT * total_gas + MUMAV_PER_BYTE * size
         )
         logger.info(
             f"minimal required fee is {required_fee}, current used fee is {total_tx_fees}"
@@ -789,7 +789,7 @@ class BatchPayer:
         # were verified and that in the worst case any tiny differences in fee computations are adjusted
         while total_tx_fees < required_fee:
             # The difference in fees will be added to the fee of the first transaction
-            # This works because the Tezos blockchain is interested in the sum of all fees in a batch transaction
+            # This works because the Mavryk blockchain is interested in the sum of all fees in a batch transaction
             # and not in the individual fees of each transaction
             difference_fees = math.ceil(required_fee - total_tx_fees)
             first_tx = json.loads(content_list[0])
@@ -815,9 +815,9 @@ class BatchPayer:
             # because of the increase in the fee of the first transaction
             size = SIGNATURE_BYTES_SIZE + len(bytes) / 2
             required_fee = math.ceil(
-                MINIMUM_FEE_MUTEZ
-                + MUTEZ_PER_GAS_UNIT * total_gas
-                + MUTEZ_PER_BYTE * size
+                MINIMUM_FEE_MUMAV
+                + MUMAV_PER_GAS_UNIT * total_gas
+                + MUMAV_PER_BYTE * size
             )
             logger.info(
                 f"minimal required fee is {required_fee}, current used fee is {total_tx_fees}"
@@ -931,7 +931,7 @@ class BatchPayer:
                 "Operation {} is not included at level {}".format(operation_hash, i)
             )
         error_message = (
-            "Investigate on https://tzkt.io - Operation {} wait is timed out.".format(
+            "Investigate on https://nexus.mavryk.org/explorer - Operation {} wait is timed out.".format(
                 operation_hash
             )
         )

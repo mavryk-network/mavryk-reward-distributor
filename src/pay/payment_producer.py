@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 from _decimal import ROUND_HALF_DOWN, Decimal
 from time import sleep
 from requests import ReadTimeout, ConnectTimeout
-from Constants import MUTEZ_PER_TEZ, RunMode, RewardsType
+from Constants import MUMAV_PER_MAV, RunMode, RewardsType
 from api.provider_factory import ProviderFactory
 from calc.phased_payment_calculator import PhasedPaymentCalculator
 from exception.api_provider import ApiProviderException
@@ -79,14 +79,14 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
         self.baking_address = baking_cfg.get_baking_address()
         self.owners_map = baking_cfg.get_owners_map()
         self.founders_map = baking_cfg.get_founders_map()
-        self.min_delegation_amt_in_mutez = int(
-            baking_cfg.get_min_delegation_amount() * MUTEZ_PER_TEZ
+        self.min_delegation_amt_in_mumav = int(
+            baking_cfg.get_min_delegation_amount() * MUMAV_PER_MAV
         )
         self.delegator_pays_xfer_fee = baking_cfg.get_delegator_pays_xfer_fee()
         self.provider_factory = ProviderFactory(reward_data_provider)
         self.name = name
-        self.min_payment_amt_in_mutez = int(
-            baking_cfg.get_min_payment_amount() * MUTEZ_PER_TEZ
+        self.min_payment_amt_in_mumav = int(
+            baking_cfg.get_min_payment_amount() * MUMAV_PER_MAV
         )
 
         self.node_url = node_url
@@ -116,7 +116,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
         self.rewards_type = baking_cfg.get_rewards_type()
         if self.rewards_type != RewardsType.ACTUAL:
             logger.error(
-                "Only 'ACTUAL' rewards type is supported as of Paris protocol. Please fix your configuration."
+                "Only 'ACTUAL' rewards type is supported as of Boreas protocol. Please fix your configuration."
             )
             self.exit(ExitCode.GENERAL_ERROR)
         self.pay_denunciation_rewards = baking_cfg.get_pay_denunciation_rewards()
@@ -129,8 +129,8 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
             self.founders_map,
             self.owners_map,
             self.fee_calc,
-            self.min_delegation_amt_in_mutez,
-            self.min_payment_amt_in_mutez,
+            self.min_delegation_amt_in_mumav,
+            self.min_payment_amt_in_mumav,
             self.rules_model,
             self.reward_api,
         )
@@ -180,7 +180,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
                     logger.debug("Sending normal kill signal.")
                 exit_program(
                     exit_code,
-                    "TRD Exit triggered by producer",
+                    "MRD Exit triggered by producer",
                 )
             if self.retry_fail_event:
                 self.retry_fail_event.set()
@@ -257,7 +257,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
 
             try:
                 # Exit if disk is full
-                # https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/issues/504
+                # https://github.com/mavryk-network/mavryk-reward-distributor/issues/504
                 if disk_is_full():
                     self.exit(ExitCode.NO_SPACE)
                     break
@@ -265,7 +265,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
                 # Check if local node is bootstrapped; sleep if needed; restart loop
                 if not self.node_is_bootstrapped():
                     logger.info(
-                        "Local node {} is not in sync with the Tezos network. Will sleep for {} blocks and check again.".format(
+                        "Local node {} is not in sync with the Mavryk network. Will sleep for {} blocks and check again.".format(
                             self.node_url, BOOTSTRAP_SLEEP
                         )
                     )
@@ -416,7 +416,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
 
         :param pymnt_cycle: the cycle for which rewards are being calculated
         :param computation_type: not in use
-        :param network_config: configuration of the current tezos network, needed to calc rewards.
+        :param network_config: configuration of the current mavryk network, needed to calc rewards.
         :param adjustments: a map of adjustments per address. We add to amount to compute adjusted_amount
         :return: rewards per delegator (reward logs) and total amount
         """
@@ -519,7 +519,7 @@ class PaymentProducer(threading.Thread, PaymentProducerABC):
         # before local time, node is not bootstrapped.
         #
         # clnt_mngr is a super class of SimpleClientManager which interfaces
-        # with the tezos-node used for txn forging/signing/injection. This is the
+        # with the mavryk-node used for txn forging/signing/injection. This is the
         # node which we need to determine bootstrapped state
         try:
             boot_time = self.client_manager.get_bootstrapped()

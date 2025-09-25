@@ -1,6 +1,6 @@
 import logging
 
-from Constants import MUTEZ_PER_TEZ
+from Constants import MUMAV_PER_MAV
 from plugins import plugins
 
 # Plugin specific libs
@@ -29,7 +29,7 @@ class DiscordPlugin(plugins.Plugin):
         # Do template replacements
         payout_message = (
             self.discord_text.replace("%CYCLE%", str(cycle))
-            .replace("%TREWARDS%", str(round(payout_amount / MUTEZ_PER_TEZ, 2)))
+            .replace("%TREWARDS%", str(round(payout_amount / MUMAV_PER_MAV, 2)))
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
         self.post_to_discord(payout_message, "PAYOUT")
@@ -40,7 +40,7 @@ class DiscordPlugin(plugins.Plugin):
                 self.endpoint,
                 json={"content": message},
                 timeout=15,
-                headers={"user-agent": "trd/8.0"},
+                headers={"user-agent": "mrd/8.0"},
             )
         except requests.exceptions.RequestException as e:
             logger.error("[DiscordPlugin] {:s} Error '{:s}'".format(type, str(e)))

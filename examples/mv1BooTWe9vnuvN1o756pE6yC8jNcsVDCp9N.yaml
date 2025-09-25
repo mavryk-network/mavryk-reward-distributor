@@ -1,13 +1,13 @@
 version: 1.0
-baking_address: tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889
+baking_address: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N
 payment_address: KT1KLQbYFtFZ5mAEnfEMZaWYuNtCsGuP5cLS
 rewards_type: actual
 service_fee: 4.5
 founders_map:
-  {'tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889' : 0.3,
+  {'mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N' : 0.3,
    'KT1KLQbYFtFZ5mAEnfEMZaWYuNtCsGuP5cLS' : 0.7}
 owners_map:
-  {'tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889' : 0.3,
+  {'mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N' : 0.3,
    'KT1KLQbYFtFZ5mAEnfEMZaWYuNtCsGuP5cLS' : 0.7}
 specials_map: 
   {'KT19g4JHTd3QYuYcpKFFiwViEzQ5n6ovYx1V' : 7.5,
@@ -50,7 +50,7 @@ plugins:
     bot_api_key: 988877766:SKDJFLSJDFJLJSKDFJLKSDJFLKJDF
     telegram_text: >
       Rewards for cycle %CYCLE% are completed.
-      We paid out %TREWARDS% tez in rewards to %NDELEGATORS% delegators.
+      We paid out %TREWARDS% mav in rewards to %NDELEGATORS% delegators.
   twitter:
     api_key: XXXXXXXX
     api_secret: ZZZZZZZZ
@@ -58,7 +58,7 @@ plugins:
     access_secret: WWWWWWWW
     extra_tags:
       - "#our_baker"
-      - "#tezos"
+      - "#mavryk"
       - "#rewards"
   webhook:
     endpoint: https://myexample.com/webhook.php
@@ -68,4 +68,4 @@ plugins:
     send_admin: False
     discord_text: >
       Rewards for cycle %CYCLE% are completed.
-      We paid out %TREWARDS% tez in rewards to %NDELEGATORS% delegators.
+      We paid out %TREWARDS% mav in rewards to %NDELEGATORS% delegators.

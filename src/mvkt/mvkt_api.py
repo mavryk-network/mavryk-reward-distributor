@@ -4,25 +4,25 @@ from time import sleep
 from pprint import pformat
 from json import JSONDecodeError
 
-from Constants import VERSION, TZKT_PUBLIC_API_URL, MAX_SEQUENT_CALLS
+from Constants import VERSION, MVKT_PUBLIC_API_URL, MAX_SEQUENT_CALLS
 from exception.api_provider import ApiProviderException
 from log_config import main_logger, verbose_logger
 
 logger = main_logger
 
 
-class TzKTApiError(ApiProviderException):
+class MvKTApiError(ApiProviderException):
     pass
 
 
 MAX_PAGE_SIZE = 10000
-TZKT_REQUEST_BUFFER_SECONDS = 0.5
-TZKT_RETRY_TIMEOUT_SECONDS = 2.0
+MVKT_REQUEST_BUFFER_SECONDS = 0.5
+MVKT_RETRY_TIMEOUT_SECONDS = 2.0
 
 
-class TzKTApi:
+class MvKTApi:
     max_page_size = MAX_PAGE_SIZE
-    delay_between_calls = TZKT_REQUEST_BUFFER_SECONDS  # in seconds
+    delay_between_calls = MVKT_REQUEST_BUFFER_SECONDS  # in seconds
 
     def __init__(self, base_url, timeout):
         self.base_url = base_url
@@ -35,9 +35,9 @@ class TzKTApi:
         :param network: one of `mainnet`, current testnet
         :param timeout: request timeout in seconds (default = 30)
         """
-        base_urls = TZKT_PUBLIC_API_URL
+        base_urls = MVKT_PUBLIC_API_URL
         assert network in base_urls, f"Unsupported network {network}"
-        return TzKTApi(base_url=base_urls[network], timeout=timeout)
+        return MvKTApi(base_url=base_urls[network], timeout=timeout)
 
     @staticmethod
     def from_url(base_url, timeout=30):
@@ -46,7 +46,7 @@ class TzKTApi:
         :param base_url: base API url, i.e. http://localhost:5000/v1
         :param timeout: request timeout in seconds (default = 30)
         """
-        return TzKTApi(base_url=base_url, timeout=timeout)
+        return MvKTApi(base_url=base_url, timeout=timeout)
 
     def _request(self, path, **params):
         data = {key: value for key, value in params.items() if value is not None}
@@ -63,16 +63,16 @@ class TzKTApi:
                 url=url,
                 params=data,
                 timeout=self.timeout,
-                headers={"User-Agent": f"trd-{VERSION}"},
+                headers={"User-Agent": f"mrd-{VERSION}"},
             )
         except requests.Timeout:
-            raise TzKTApiError("Request timeout")
+            raise MvKTApiError("Request timeout")
         except requests.ConnectionError:
-            raise TzKTApiError("DNS lookup failed")
+            raise MvKTApiError("DNS lookup failed")
         except requests.HTTPError as e:
-            raise TzKTApiError("HTTP Error occurred: {}".format(e))
+            raise MvKTApiError("HTTP Error occurred: {}".format(e))
         except requests.RequestException as e:
-            raise TzKTApiError(e)
+            raise MvKTApiError(e)
 
         # Raise exception for client side errors (4xx)
         if (
@@ -80,8 +80,8 @@ class TzKTApi:
             <= response.status_code
             < HTTPStatus.INTERNAL_SERVER_ERROR
         ):
-            raise TzKTApiError(
-                f"TzKT returned {response.status_code} error:\n{response.text}"
+            raise MvKTApiError(
+                f"MvKT returned {response.status_code} error:\n{response.text}"
             )
 
         # Return None if empty content
@@ -94,9 +94,9 @@ class TzKTApi:
         try:
             res = response.json()
         except JSONDecodeError:
-            raise TzKTApiError(f"Failed to decode JSON:\n{response.text}")
+            raise MvKTApiError(f"Failed to decode JSON:\n{response.text}")
 
-        verbose_logger.debug(f"Response from TzKT is:\n{pformat(res)}")
+        verbose_logger.debug(f"Response from MvKT is:\n{pformat(res)}")
 
         return res
 
@@ -201,7 +201,7 @@ class TzKTApi:
                 verbose_logger.warning(
                     f"Retry getting rewards/split/{address}/{cycle} ({call_count}) ..."
                 )
-                sleep(TZKT_RETRY_TIMEOUT_SECONDS)
+                sleep(MVKT_RETRY_TIMEOUT_SECONDS)
                 continue
 
             assert isinstance(page, dict) and "delegators" in page
@@ -218,12 +218,12 @@ class TzKTApi:
                 offset += limit
                 sleep(self.delay_between_calls)
 
-        raise TzKTApiError(f"Max sequent calls number exceeded ({MAX_SEQUENT_CALLS})")
+        raise MvKTApiError(f"Max sequent calls number exceeded ({MAX_SEQUENT_CALLS})")
 
     def get_account_by_address(self, address) -> dict:
         """
         Returns an account with the specified address.
-        :param address: Account address (starting with tz or KT)
+        :param address: Account address (starting with mv or KT)
         :return: {
             "type": "user",
             "alias": "string",
@@ -316,7 +316,7 @@ class TzKTApi:
             },
             "metadata": {
                 "alias": "Carthage",
-                "docs": "https://tezos.gitlab.io/protocols/006_carthage.html"
+                "docs": "https://protocol.mavryk.org/protocols/006_carthage.html"
             }
         }
         """

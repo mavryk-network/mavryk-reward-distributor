@@ -4,7 +4,7 @@ from time import sleep
 from unittest import TestCase
 from unittest.mock import patch, MagicMock
 
-from src.Constants import RewardsType, MUTEZ_PER_TEZ
+from src.Constants import RewardsType, MUMAV_PER_MAV
 from src.api.provider_factory import ProviderFactory
 from src.calc.phased_payment_calculator import PhasedPaymentCalculator
 from src.calc.calculate_phaseMapping import CalculatePhaseMapping
@@ -18,7 +18,7 @@ from src.model.baking_conf import BakingConf
 from src.NetworkConfiguration import default_network_config_map
 from tests.utils import mock_request_get, make_config, Constants
 
-PAYOUT_CYCLE = 750
+PAYOUT_CYCLE = 5
 
 logger = logging.getLogger("unittesting")
 logger.setLevel(logging.DEBUG)
@@ -27,8 +27,8 @@ logger.addHandler(logging.StreamHandler())
 
 class TestCalculatePhases(TestCase):
     baking_config = make_config(
-        baking_address=Constants.MAINNET_ADDRESS_BAKEXTZ4ME_BAKER,
-        payment_address=Constants.MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT,
+        baking_address=Constants.MAINNET_ADDRESS_FOUNDATION_1_BAKER,
+        payment_address=Constants.MAINNET_ADDRESS_FOUNDATION_1_PAYOUT,
         service_fee=10.0,
         min_delegation_amt=0,
         min_payment_amt=0,
@@ -90,7 +90,7 @@ class TestCalculatePhases(TestCase):
             owners_map=baking_cfg.get_owners_map(),
             service_fee_calculator=srvc_fee_calc,
             min_delegation_amount=int(
-                baking_cfg.get_min_delegation_amount() * MUTEZ_PER_TEZ
+                baking_cfg.get_min_delegation_amount() * MUMAV_PER_MAV
             ),
             min_payment_amount=0,
             rules_model=rules_model,
@@ -105,7 +105,7 @@ class TestCalculatePhases(TestCase):
             attempts += 1
             try:
                 # Reward data
-                # Fetch cycle 90 of delphinet for tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V
+                # Fetch cycle 90 of delphinet for mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ
                 reward_model = rewardApi.get_rewards_for_cycle_map(
                     PAYOUT_CYCLE, RewardsType.ACTUAL
                 )
@@ -151,15 +151,15 @@ class TestCalculatePhases(TestCase):
         reward_logs = [pi for pi in reward_logs if pi.payable]
         reward_logs.sort(key=lambda rl: (rl.type, -rl.delegating_balance))
 
-        # Verify that TRD calculated matches known values
+        # Verify that MRD calculated matches known values
         total_amount = 0
         for r in reward_logs:
             assert not r.skipped  # no skips needed
-            if r.address == "tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD":
-                assert r.amount == 1_632_815
+            if r.address == "mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5":
+                assert r.amount == 3_383_259_616
                 continue
 
             assert r.type in "FD"
             assert isinstance(r.paymentaddress, str)
             total_amount += r.amount
-        assert total_amount == 22_213_885
+        assert total_amount == 6_090_500_879

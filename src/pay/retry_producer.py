@@ -126,7 +126,7 @@ class RetryProducer:
                 pl.paid = PaymentStatus.FAIL
                 nb_converted += 1
                 logger.debug(
-                    "Reward converted from %s to fail for cycle %s, address %s, amount %f, tz type %s",
+                    "Reward converted from %s to fail for cycle %s, address %s, amount %f, mv type %s",
                     pl.paid,
                     pl.cycle,
                     pl.address,

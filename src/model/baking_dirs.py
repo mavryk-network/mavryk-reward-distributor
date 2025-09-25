@@ -12,14 +12,14 @@ from Constants import REPORTS_DIR, SIMULATIONS_DIR
 #
 # ~/pymnt/
 # └──cfg
-#    └── tz1xx.yaml
+#    └── mv1xx.yaml
 # └──logs
 #    └── verbose_backup
 #    │   └── app_verbose.gz
 #    └── app.log
 #    └── app_verbose.log
 # └──simulations
-#    └── tz1xxx
+#    └── mv1xxx
 #       ├── calculations
 #       │   └── 449.csv
 #       └── payments
@@ -28,7 +28,7 @@ from Constants import REPORTS_DIR, SIMULATIONS_DIR
 #           └── failed
 #               └── 449.csv
 # └──reports
-#    └── tz1xxx
+#    └── mv1xxx
 #       ├── calculations
 #       │   └── 449.csv
 #       └── payments

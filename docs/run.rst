@@ -1,4 +1,4 @@
-How to run TRD
+How to run MRD
 ==============
 
 Command Line Usage
@@ -32,17 +32,17 @@ Options
 ``-O --payment_offset <int>``
     Number of blocks to wait after a cycle starts before starting payments. This can be useful because cycle beginnings may be busy.
 
-``-N --network <MAINNET|GHOSTNET>``
-    Network name. Default value: ``MAINNET``. The current test network of Tezos is ``GHOSTNET``.
+``-N --network <MAINNET|BASENET>``
+    Network name. Default value: ``MAINNET``. The current test network of Mavryk is ``BASENET``.
 
 ``-A --node_endpoint <node_url:port>``
-    Node potentially with protocol prefix especially if TLS encryption is used. Default value: ``http://127.0.0.1:8732``. This is the main Tezos node used by the client for RPC queries and operation injections.
+    Node potentially with protocol prefix especially if TLS encryption is used. Default value: ``http://127.0.0.1:8732``. This is the main Mavryk node used by the client for RPC queries and operation injections.
 
-``-P --reward_data_provider <tzkt>``
-    Source that provides all needed data for reward calculations. Default and only value: ``tzkt`` (TzKT API).
+``-P --reward_data_provider <mvkt>``
+    Source that provides all needed data for reward calculations. Default and only value: ``mvkt`` (MvKT API).
 
 ``-Ap --node_addr_public <url>``
-    Public node base URL. Default is ``https://mainnet.smartpy.io``. This argument will only be used in case the reward provider is set to ``prpc``. This node will only be used to query reward data and delegator list. It must be an ARCHIVE node.
+    Public node base URL. Default is ``https://rpc.mavryk.network``. This argument will only be used in case the reward provider is set to ``prpc``. This node will only be used to query reward data and delegator list. It must be an ARCHIVE node.
 
 ``-b --base_directory <path>``
     Directory for reports, configuration and logs. Default value: ``~/pymnt``.
@@ -57,13 +57,13 @@ Options
     Run without injecting payments. Suitable for testing. Does not require locking.
 
 ``-E --signer_endpoint <url>``
-    URL used by the Tezos signer to accept HTTP(S) requests. Default value: ``http://127.0.0.1:6732``.
+    URL used by the Mavryk signer to accept HTTP(S) requests. Default value: ``http://127.0.0.1:6732``.
 
 ``-d --docker``
     Docker installation flag. When set, docker script location should be set in ``-E``.
 
 ``-s --background_service``
-    Marker to indicate that TRD is running in daemon mode. When not given it indicates that TRD is in interactive mode.
+    Marker to indicate that MRD is running in daemon mode. When not given it indicates that MRD is in interactive mode.
 
 ``-Dp --do_not_publish_stats``
     Do not publish anonymous usage statistics.
@@ -112,11 +112,11 @@ Make pending payouts beginning from a cycle and exit:
 
     python3 src/main.py -C 300 -M 2 -V
 
-Run in dry-run mode on GHOSTNET, make payouts for cycle 300 and exit:
+Run in dry-run mode on BASENET, make payouts for cycle 300 and exit:
 
 ::
 
-    python3 src/main.py -D -N GHOSTNET -C 300 -M 3 -V
+    python3 src/main.py -D -N BASENET -C 300 -M 3 -V
 
 For help, run:
 

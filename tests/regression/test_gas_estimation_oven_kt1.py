@@ -8,7 +8,7 @@ from src.Constants import (
     PUBLIC_NODE_URL,
     RewardsType,
     PRIVATE_SIGNER_URL,
-    MUTEZ_PER_TEZ,
+    MUMAV_PER_MAV,
 )
 from src.api.provider_factory import ProviderFactory
 from src.config.yaml_baking_conf_parser import BakingYamlConfParser
@@ -29,17 +29,17 @@ node_endpoint = PUBLIC_NODE_URL["MAINNET"]
 network = {"NAME": "MAINNET", "MINIMAL_BLOCK_DELAY": 5}
 
 baking_config = make_config(
-    baking_address="tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN",
-    payment_address="tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN",
+    baking_address="mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D",
+    payment_address="mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D",
     service_fee=14.99,
     min_delegation_amt=0,
     min_payment_amt=0,
 )
 
 
-PAYOUT_CYCLE = 500
-PAYMENT_ADDRESS_BALANCE = int(1000 * MUTEZ_PER_TEZ)
-forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
+PAYOUT_CYCLE = 5
+PAYMENT_ADDRESS_BALANCE = int(10000 * MUMAV_PER_MAV)
+forge = "0" * (TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
 
 
 @patch("src.cli.client_manager.ClientManager.sign", MagicMock(return_value=forge))
@@ -66,7 +66,7 @@ forge = "0" * (TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
 )
 def test_batch_payer_total_payout_amount():
     # NOTE: For better payment tests we are doing actual tzkz api calls for reward calculation
-    factory = ProviderFactory(provider="tzkt")
+    factory = ProviderFactory(provider="mvkt")
     parser = BakingYamlConfParser(
         baking_config, None, None, None, None, block_api=factory, api_base_url=None
     )
@@ -92,7 +92,7 @@ def test_batch_payer_total_payout_amount():
         owners_map=baking_cfg.get_owners_map(),
         service_fee_calculator=srvc_fee_calc,
         min_delegation_amount=int(
-            baking_cfg.get_min_delegation_amount() * MUTEZ_PER_TEZ
+            baking_cfg.get_min_delegation_amount() * MUMAV_PER_MAV
         ),
         min_payment_amount=0,
         rules_model=rules_model,
@@ -111,7 +111,7 @@ def test_batch_payer_total_payout_amount():
         attempts += 1
 
         # Reward data
-        # Fetch cycle 51 of granadanet for tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V
+        # Fetch cycle 51 of granadanet for mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ
         reward_model = rewardApi.get_rewards_for_cycle_map(
             PAYOUT_CYCLE, RewardsType.ACTUAL
         )
@@ -148,7 +148,7 @@ def test_batch_payer_total_payout_amount():
 
     batch_payer = BatchPayer(
         node_url=node_endpoint,
-        pymnt_addr="tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ",
+        pymnt_addr="mv1DYQcWfwVBm4eRp7n3dbZ8YJuE7YfQNcFf",
         clnt_mngr=ClientManager(node_endpoint, PRIVATE_SIGNER_URL),
         delegator_pays_ra_fee=True,
         delegator_pays_xfer_fee=True,
@@ -171,45 +171,19 @@ def test_batch_payer_total_payout_amount():
     # Payment does not have status done, paid or injected thus the total payout amount is zero
     assert total_payout_amount == 0, f"total_payout_amount is {total_payout_amount}"
     assert (
-        number_future_payable_cycles == 51
+        number_future_payable_cycles == 1
     ), f"number_future_payable_cycles is {number_future_payable_cycles}"
 
     # Check the adjusted amount which is sorted by type and from highest to lowest amount
     expected_amounts_delegates = [
-        11452867,
-        1291622,
-        739251,
-        330375,
-        81254,
-        42527,
-        42087,
-        40583,
-        22541,
-        7220,
-        4695,
-        3384,
-        1443,
-        1079,
-        1015,
-        780,
-        501,
-        398,
-        286,
-        213,
-        203,
-        203,
-        203,
-        95,
-        70,
-        59,
-        43,
-        17,
-        7,
-        3,
-        2,
-        1,
-        0,
-        0,
+        1231211612,
+        324003100,
+        194401804,
+        152929473,
+        129601157,
+        93312849,
+        90720907,
+        64800648
     ]
 
     for idx, expected_amount in enumerate(expected_amounts_delegates):

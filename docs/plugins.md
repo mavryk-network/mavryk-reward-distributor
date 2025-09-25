@@ -1,10 +1,10 @@
 # Plugins
 
-The Tezos Reward Distributor uses a plugin style subsystem for sending out payment notifications. If a message is labeled 'administrative style' it will contain information which are in general not meant for the end user of e.g. a staking service but for the adminstrators who monitor the quality of the service.
+The Mavryk Reward Distributor uses a plugin style subsystem for sending out payment notifications. If a message is labeled 'administrative style' it will contain information which are in general not meant for the end user of e.g. a staking service but for the adminstrators who monitor the quality of the service.
 
-Each plugin and its configuration are detailed out below. Some plugins may require additional libraries that are not installed with TRD.
+Each plugin and its configuration are detailed out below. Some plugins may require additional libraries that are not installed with MRD.
 
-The configuration parameters for all plugins are located in the bakers .yaml config file. Please take a look at [the example config](https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/blob/master/examples/tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889.yaml).
+The configuration parameters for all plugins are located in the bakers .yaml config file. Please take a look at [the example config](https://github.com/mavryk-network/mavryk-reward-distributor/blob/master/examples/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml).
 
 Individual plugins will not load if not properly configured.
 
@@ -78,7 +78,7 @@ plugins:
     smtp_port: 587
     smtp_tls: true
     smtp_sender: trdnotice@domain.com
-    smtp_sender_name: "TRD Notification Source X"
+    smtp_sender_name: "MRD Notification Source X"
     # when using nologin, you cannot relay externally, all recipients must be 
     # from a domain local to the server you connect with smtp_host.
     # in this case dmain.com is the server that is reponsible for domain.com email.
@@ -125,7 +125,7 @@ plugins:
       - 827384777
     bot_api_key: 988877766:SKDJFLSJDFJLJSKDFJLKSDJFLKJDF
     telegram_text: >
-      &#x2728; Reward for cycle %CYCLE% <b>complete</b>! We had %NDELEGATORS% <i>delegators</i> in the cycle and paid out %TREWARDS% tez in rewards!
+      &#x2728; Reward for cycle %CYCLE% <b>complete</b>! We had %NDELEGATORS% <i>delegators</i> in the cycle and paid out %TREWARDS% mav in rewards!
 ```
 
 ### Example Result
@@ -166,15 +166,15 @@ plugins:
     access_token: YYYYYYYY
     access_secret: WWWWWWWW
     tweet_text: >
-      Reward for cycle %CYCLE% complete! We had %NDELEGATORS% delegators in the cycle and paid out %TREWARDS% tez in rewards. #ourbakery #rewards #tezos
+      Reward for cycle %CYCLE% complete! We had %NDELEGATORS% delegators in the cycle and paid out %TREWARDS% mav in rewards. #ourbakery #rewards #mavryk
 ```
 
 The above example configuration will produce a tweet that looks like this:
 
 ```
 Reward for cycle 290 complete! We had 133 delegators
-in the cycle and paid out 1234.98 tez in rewards.
-#ourbakery #rewards #tezos
+in the cycle and paid out 1234.98 mav in rewards.
+#ourbakery #rewards #mavryk
 ```
 
 ## Discord Plugin
@@ -200,7 +200,7 @@ plugins:
     send_admin: False
     discord_text: >
       Rewards for cycle %CYCLE% are completed.
-      We paid out %TREWARDS% tez in rewards to %NDELEGATORS% delegators.        
+      We paid out %TREWARDS% mav in rewards to %NDELEGATORS% delegators.        
 ```
 
 ### Example Result
@@ -213,13 +213,13 @@ This plugin makes an HTTP POST request to an endpoint. This endpoint will receiv
 
 For simple security, configure a random token (alphanumeric string) to be included in the root JSON object. Your receiver script should verify this token before accepting data.
 
-Your script can return a short message in the response body. This will be displayed on the TRD console and written to the TRD logs.
+Your script can return a short message in the response body. This will be displayed on the MRD console and written to the MRD logs.
 
 **NOTE**: The webhook plugin supports administrative notifications which includes 'subject', 'message', and payouts records.
 
 ### Example JSON Object
 
-"payouts" is a JSON array of objects, each object representing the status of a payout. All Tez amounts are in mutez.
+"payouts" is a JSON array of objects, each object representing the status of a payout. All Mav amounts are in mumav.
 
 ```
 {

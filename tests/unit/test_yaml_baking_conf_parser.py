@@ -12,8 +12,8 @@ from src.model.baking_conf import BAKING_ADDRESS
 
 class TestYamlBakingConfigParser(unittest.TestCase):
     baking_config = make_config(
-        baking_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        payment_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+        baking_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        payment_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
         service_fee=10,
         min_delegation_amt=0,
         min_payment_amt=0,
@@ -37,7 +37,7 @@ class TestYamlBakingConfigParser(unittest.TestCase):
         self.baking_conf_parser.address_validator = self.address_validator
 
     def test_valid_address(self):
-        conf_obj = {BAKING_ADDRESS: "tz1qwertyuiopasdfghjklzxcvbnm1234567"}
+        conf_obj = {BAKING_ADDRESS: "mv1qwertyuiopasdfghjklzxcvbnm1234567"}
         self.block_api.get_revelation.return_value = True
         self.block_api.get_delegatable.return_value = True
         self.baking_conf_parser.validate_baking_address(conf_obj)
@@ -54,5 +54,5 @@ class TestYamlBakingConfigParser(unittest.TestCase):
             self.baking_conf_parser.validate_baking_address(conf_obj)
         self.assertEqual(
             str(exception.exception),
-            "Baking address must be a valid tz address of length 36",
+            "Baking address must be a valid mv address of length 36",
         )

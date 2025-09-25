@@ -1,4 +1,4 @@
-How to configure TRD?
+How to configure MRD?
 ======================
 
 Fee Setup
@@ -13,13 +13,13 @@ Each baker has its own configuration and policy. Therefore, a payment system sho
 There are two options to create a custom yaml file:
 
     a. You can use the interactive configuration tool (configure.py)
-    b. You can copy&paste the example config from ~/tezos-reward-distributor/examples into ~/pymnt/cfg, rename and change it according to your baker policy.
+    b. You can copy&paste the example config from ~/mavryk-reward-distributor/examples into ~/pymnt/cfg, rename and change it according to your baker policy.
 
 If you want to use Option a, you can use
 ::
 
-    # Move into tezos-reward-distributor directory
-    cd tezos-reward-distributor
+    # Move into mavryk-reward-distributor directory
+    cd mavryk-reward-distributor
     # Run the interactive configuration tool
     python3 src/configure.py
 
@@ -29,11 +29,11 @@ If you want to use Option b, you can use
     # create directory
     mkdir -p ~/pymnt/cfg/
     # Copy & Paste
-    cp tezos-reward-distributor/examples/tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889.yaml ~/pymnt/cfg/
+    cp mavryk-reward-distributor/examples/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml ~/pymnt/cfg/
     # Edit the file with nano
-    nano ~/pymnt/cfg/tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889.yaml
+    nano ~/pymnt/cfg/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml
 
-By default, configuration files are kept under ~/pymnt/cfg directory. The configuration directory can be changed with "-f" configuration option. The name of a configuration file should be the baker's address (e.g. tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889.yaml).
+By default, configuration files are kept under ~/pymnt/cfg directory. The configuration directory can be changed with "-f" configuration option. The name of a configuration file should be the baker's address (e.g. mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml).
 If you want to use with a decimal operator within your config, please use a decimal point. 
 
 Available configuration parameters are:
@@ -43,14 +43,14 @@ Available configuration parameters are:
 
   Example::
 
-    baking_address: tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889
+    baking_address: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N
   
 **payment_address**
   This is the address where payments will be done from. A PKH of implicit or originated account is accepted. For more information on the payment address configuration please refer to the next section. No alias is allowed.
 
   Example::
 
-    payment_address: tz1boot1pK9h2BVGXdyvfQSv8kd1LQM6H889
+    payment_address: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N
 
 **rewards_type**
   There are two options for calculating the total rewards earned by a baker at the end of each cycle. If this parameter is missing, 'actual' rewards take affect.
@@ -85,9 +85,9 @@ Available configuration parameters are:
   
   Example::
 
-    Current Baker Balance: 17,400 tez
-    Total Delegations: 69,520 tez
-    Total Staked: 86,920 tez
+    Current Baker Balance: 17,400 mav
+    Total Delegations: 69,520 mav
+    Total Staked: 86,920 mav
 
     service_fee: 9
     owners_map:
@@ -95,7 +95,7 @@ Available configuration parameters are:
        'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 0.4,
        'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 0.2}
   
-  Charlie, and Dave, have each transfered 6,960 tez to the baker address. Edwin has transfered 3,480 tez. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the bakery fee (ie: *service_fee*). That 9% is dispersed to any *founders*. If there are no founders, that 9% remains in the baker's balance.
+  Charlie, and Dave, have each transfered 6,960 mav to the baker address. Edwin has transfered 3,480 mav. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the bakery fee (ie: *service_fee*). That 9% is dispersed to any *founders*. If there are no founders, that 9% remains in the baker's balance.
   The baker address is technically a delegator to itself. Its share of rewards are part of the overall cycle rewards. Charlie, Dave, and Edwin divide the "baker address rewards" as per the ratios in *owners_map*. Additionally, owners are *not* subject to the *service_fee*.
 
 **specials_map**
@@ -115,14 +115,14 @@ Available configuration parameters are:
                     'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17'}
 
 **min_delegation_amt**
-  A minimum delegation amount can be set here. If this value is set to 10, 10 tez are required as minimum. It is important to define what happens to the rewards of excluded delegates that are below the minimum delegation balance in rules_map.
+  A minimum delegation amount can be set here. If this value is set to 10, 10 mav are required as minimum. It is important to define what happens to the rewards of excluded delegates that are below the minimum delegation balance in rules_map.
 
   Example::
 
     min_delegation_amt : 10
   
 **min_payment_amt**
-  A minimum payment amount can be set here. If this value is set to 10, 10 tez are required as minimum. Inherits behavior of excluded delegates set for *min_delegation_amt*.
+  A minimum payment amount can be set here. If this value is set to 10, 10 mav are required as minimum. Inherits behavior of excluded delegates set for *min_delegation_amt*.
 
   Example::
 
@@ -164,9 +164,9 @@ Available configuration parameters are:
   Example::
 
      rules_map:
-       tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ: TOF                                         #(redirects payment from tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ to founders)
-       tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace: TOB                                         #(payment to tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace will remain in the bakers balance)
-       tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7        #(redirects payment from tz1V9S... to tz1fgX...)
+       mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC: TOF                                         #(redirects payment from mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC to founders)
+       mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE: TOB                                         #(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the bakers balance)
+       tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU        #(redirects payment from tz1V9S... to tz1fgX...)
        mindelegation: TOE                                                                #(mindelegation will be shared with everyone)
 
 **plugins**

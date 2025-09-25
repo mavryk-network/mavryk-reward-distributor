@@ -24,7 +24,7 @@ If you are interested in improving our project, this is just great! Our communit
     black .
 
 8. Push your changes to your fork/branch in GitHub. Rebase from the origin master before you create the PR. Don't push it to your master! If you do it will make it harder to submit new changes later.
-9.  Submit a pull request to the TRD repository from your commit page on GitHub.
+9.  Submit a pull request to the MRD repository from your commit page on GitHub.
     a. Give a descriptive title to your PR and mark it e.g. as `[WIP]` if you want it to be visible but you are not finished yet or need help.
     b. Provide a description of your changes according to the PR template.
     c. Put `closes #XXXX` in your comment to auto-close the issue that your PR fixes (if such).
@@ -65,7 +65,7 @@ Disclaimer: This project started in the spirit of free and open source software 
 You can always donate your contribution free of charge!
 
 
-Guidelines for rewarding PRs in the context of the TRD grant:
+Guidelines for rewarding PRs in the context of the MRD grant:
 -------------------------------------------------------------
 
 1. Payments are not granted for contributions being paid in the context of another grant or company income.
@@ -73,5 +73,5 @@ Guidelines for rewarding PRs in the context of the TRD grant:
 3. The PR can only be merged if approved by at least one maintainer. Before approving a PR, the issue should be fully solved and the changes should be tested and documented.
 4. The PR can only be approved if an agreement about the work effort (in hrs) is made.
 5. The PR is merged using a squash merge by the maintainer, the work effort of the contributor and reviewer is documented in the squash merge commit message.
-6. The work efforts are paid out for each release of TRD. The payments are documented in a dedicated file named `contributor_payments.csv`.
-7. For each payment, the reason for payment should be documented (commit hash, review efforts, etc.). Additionally, the paid amount in USD, the VWAP XTZ-USD on the payment day, the payed amount in XTZ and the transaction hash are documented.
+6. The work efforts are paid out for each release of MRD. The payments are documented in a dedicated file named `contributor_payments.csv`.
+7. For each payment, the reason for payment should be documented (commit hash, review efforts, etc.). Additionally, the paid amount in USD, the VWAP MVRK-USD on the payment day, the payed amount in MVRK and the transaction hash are documented.

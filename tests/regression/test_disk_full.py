@@ -7,7 +7,7 @@ from src.pay.payment_producer import PaymentProducer
 from src.pay.payment_consumer import PaymentConsumer
 from tests.utils import Args, make_config
 from src.plugins import plugins
-from src.Constants import RunMode, TZKT_PUBLIC_API_URL, PUBLIC_NODE_URL
+from src.Constants import RunMode, MVKT_PUBLIC_API_URL, PUBLIC_NODE_URL
 from src.cli.client_manager import ClientManager
 from src.NetworkConfiguration import init_network_config
 from src.model.baking_dirs import BakingDirs
@@ -23,8 +23,8 @@ logger.setLevel(logging.DEBUG)
 logger.addHandler(logging.StreamHandler())
 
 baking_config = make_config(
-    baking_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-    payment_address="tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+    baking_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+    payment_address="mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
     service_fee=10,
     min_delegation_amt=0,
     min_payment_amt=0,
@@ -36,8 +36,8 @@ def args():
     # Test with PRPC node
     args = Args(
         initial_cycle=10,
-        reward_data_provider="tzkt",
-        api_base_url=TZKT_PUBLIC_API_URL["MAINNET"],
+        reward_data_provider="mvkt",
+        api_base_url=MVKT_PUBLIC_API_URL["MAINNET"],
     )
     args.network = "MAINNET"
     args.node_endpoint = PUBLIC_NODE_URL["MAINNET"]
@@ -60,7 +60,7 @@ def args():
     decode_compressed_response=True,
 )
 def test_disk_full_payment_producer(args, caplog):
-    # Issue: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/issues/504
+    # Issue: https://github.com/mavryk-network/mavryk-reward-distributor/issues/504
     client_manager = ClientManager(args.node_endpoint, args.signer_endpoint)
     network_config_map = init_network_config(args.network, client_manager)
     factory = ProviderFactory(provider="prpc")
@@ -125,7 +125,7 @@ def test_disk_full_payment_producer(args, caplog):
     decode_compressed_response=True,
 )
 def test_disk_full_payment_consumer(args, caplog):
-    # Issue: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/issues/504
+    # Issue: https://github.com/mavryk-network/mavryk-reward-distributor/issues/504
     client_manager = ClientManager(args.node_endpoint, args.signer_endpoint)
     network_config_map = init_network_config(args.network, client_manager)
     factory = ProviderFactory(provider="prpc")

@@ -1,6 +1,6 @@
 import logging
 from plugins import plugins
-from Constants import MUTEZ_PER_TEZ
+from Constants import MUMAV_PER_MAV
 
 # Plugin specific libs
 import tweepy
@@ -40,7 +40,7 @@ class TwitterPlugin(plugins.Plugin):
         # warn on older version than v4
         if majorversion < 4:
             logger.info(
-                "[TwitterPlugin]  Version of tweepy is too old, update before running TRD, running version '{:s}.{:s}']".format(
+                "[TwitterPlugin]  Version of tweepy is too old, update before running MRD, running version '{:s}.{:s}']".format(
                     majorversion, minorversion
                 )
             )
@@ -61,7 +61,7 @@ class TwitterPlugin(plugins.Plugin):
         # Replace template variables
         tweet = (
             self.tweet_text.replace("%CYCLE%", str(cycle))
-            .replace("%TREWARDS%", str(round(payout_amount / MUTEZ_PER_TEZ, 2)))
+            .replace("%TREWARDS%", str(round(payout_amount / MUMAV_PER_MAV, 2)))
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
 

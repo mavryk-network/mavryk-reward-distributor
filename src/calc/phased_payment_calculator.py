@@ -65,7 +65,7 @@ class PhasedPaymentCalculator:
         total_rwrd_amnt = int(reward_provider_model.computed_reward_amount)
         if not rerun:
             logger.info(
-                "Total rewards before processing is {:<,d} mutez.".format(
+                "Total rewards before processing is {:<,d} mumav.".format(
                     total_rwrd_amnt
                 )
             )
@@ -165,7 +165,7 @@ class PhasedPaymentCalculator:
                 )
             )
             logger.info(
-                "Setting min_delegation_amt to {:<,d} mutez due to min_payment_amt set to {:<,d}. Running calculations again.".format(
+                "Setting min_delegation_amt to {:<,d} mumav due to min_payment_amt set to {:<,d}. Running calculations again.".format(
                     self.min_delegation_amnt, self.min_payment_amnt
                 )
             )
@@ -190,28 +190,28 @@ class PhasedPaymentCalculator:
         )
 
         logger.info(
-            "Total rewards after processing is {:<,d} mutez.".format(total_rwrd_amnt)
+            "Total rewards after processing is {:<,d} mumav.".format(total_rwrd_amnt)
         )
 
         if total_adjustments < 0:
             logger.info(
-                "Total adjustment for past early payout is {:<,d} mutez.".format(
+                "Total adjustment for past early payout is {:<,d} mumav.".format(
                     total_adjustments
                 )
             )
             logger.info(
-                "Adjusted total rewards is {:<,d} mutez.".format(
+                "Adjusted total rewards is {:<,d} mumav.".format(
                     total_rwrd_amnt + total_adjustments
                 )
             )
         logger.info(
-            "Sum of amounts allocated to delegators is {:<,d} mutez".format(
+            "Sum of amounts allocated to delegators is {:<,d} mumav".format(
                 total_delegator_amounts
             )
         )
         logger.info(
-            "Difference between total rewards and sum of amounts allocated to delegators is {:<,d} mutez. "
-            "This is due to floating point arithmetic. (max allowed diff is {:<,d} mutez)".format(
+            "Difference between total rewards and sum of amounts allocated to delegators is {:<,d} mumav. "
+            "This is due to floating point arithmetic. (max allowed diff is {:<,d} mumav)".format(
                 amnt_pay_diff, int(MAXIMUM_ROUNDING_ERROR)
             )
         )

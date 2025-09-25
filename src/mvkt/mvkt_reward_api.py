@@ -4,18 +4,18 @@ from time import sleep
 from api.reward_api import RewardApi
 from model.reward_provider_model import RewardProviderModel
 from model.reward_log import RewardLog
-from tzkt.tzkt_api import TzKTApi
+from mvkt.mvkt_api import MvKTApi
 
 
-class TzKTRewardApiImpl(RewardApi):
+class MvKTRewardApiImpl(RewardApi):
     def __init__(self, nw, baking_address, base_url=None):
-        super(TzKTRewardApiImpl, self).__init__()
+        super(MvKTRewardApiImpl, self).__init__()
         if base_url is None:
-            self.api = TzKTApi.from_network(nw["NAME"])
+            self.api = MvKTApi.from_network(nw["NAME"])
         else:
-            self.api = TzKTApi.from_url(base_url)
+            self.api = MvKTApi.from_url(base_url)
         self.baking_address = baking_address
-        self.name = "tzkt"
+        self.name = "mvkt"
 
     def get_rewards_for_cycle_map(self, cycle, rewards_type) -> RewardProviderModel:
         """
@@ -74,7 +74,7 @@ class TzKTRewardApiImpl(RewardApi):
             item["address"]: {
                 "delegated_balance": item["delegatedBalance"],
                 # FIXME: current_balance is deprecated and no longer accurate
-                # Instead, tzkt provides a boolean "empty" that can be used.
+                # Instead, mvkt provides a boolean "empty" that can be used.
                 "current_balance": item["currentDelegatedBalance"],
             }
             for item in split["delegators"]

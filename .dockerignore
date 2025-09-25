@@ -9,7 +9,7 @@
 
 
 # files
-tezos-reward.service_template
+mavryk-reward.service_template
 service_add.py
 *.md
 *.csv

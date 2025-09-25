@@ -1,9 +1,7 @@
 from abc import ABC, abstractmethod
 from Constants import (
-    FIRST_GRANADA_LEVEL,
-    FIRST_MUMBAI_LEVEL,
-    FIRST_PARIS_LEVEL,
-    FIRST_QUEBEC_LEVEL,
+    FIRST_BOREAS_LEVEL,
+    FIRST_C_LEVEL,
 )
 
 # TODO: we should check if we are on mainnet, or a testnet
@@ -20,18 +18,15 @@ class BlockApi(ABC):
         pass
 
     def level_in_cycle(self, level):
-        if level >= FIRST_QUEBEC_LEVEL:
-            # Since protocol Quebec
-            return (level - FIRST_QUEBEC_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
-        elif level >= FIRST_PARIS_LEVEL:
-            # Since protocol Paris
-            return (level - FIRST_PARIS_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
-        elif level >= FIRST_MUMBAI_LEVEL:
-            # Since protocol Mumbai
-            return (level - FIRST_MUMBAI_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
-        elif level >= FIRST_GRANADA_LEVEL:
-            # Since protocol Granada
-            return (level - FIRST_GRANADA_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
+        if level >= FIRST_BOREAS_LEVEL:
+            # Since protocol Boreas
+            return (level - FIRST_BOREAS_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
+        # if level >= FIRST_C_LEVEL:
+        #     # Since protocol C
+        #     return (level - FIRST_C_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
+        # elif level >= FIRST_BOREAS_LEVEL:
+        #     # Since protocol Boreas
+        #     return (level - FIRST_BOREAS_LEVEL) % self.nw["BLOCKS_PER_CYCLE"]
         else:
-            # Until protocol Florence
+            # Until protocol Atlas
             return (level % self.nw["BLOCKS_PER_CYCLE"]) - 1

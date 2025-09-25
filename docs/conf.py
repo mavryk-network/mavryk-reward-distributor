@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Tezos Reward Distributor documentation build configuration file, created by
+# Mavryk Reward Distributor documentation build configuration file, created by
 # sphinx-quickstart on Thu Sep 19 20:34:36 2019.
 #
 # This file is execfile()d with the current directory set to its
@@ -48,9 +48,9 @@ source_suffix = {
 master_doc = "index"
 
 # General information about the project.
-project = "Tezos Reward Distributor (TRD)"
+project = "Mavryk Reward Distributor (MRD)"
 copyright = "2021-2024, see contributors.csv"
-author = "TRD Organization"
+author = "MRD Organization"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -106,7 +106,7 @@ html_static_path = ["_static"]
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "TezosRewardDistributordoc"
+htmlhelp_basename = "MavrykRewardDistributordoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -131,8 +131,8 @@ latex_elements = {
 latex_documents = [
     (
         master_doc,
-        "TezosRewardDistributor.tex",
-        "Tezos Reward Distributor Documentation",
+        "MavrykRewardDistributor.tex",
+        "Mavryk Reward Distributor Documentation",
         "habanoz",
         "manual",
     ),
@@ -145,8 +145,8 @@ latex_documents = [
 man_pages = [
     (
         master_doc,
-        "tezosrewarddistributor",
-        "Tezos Reward Distributor Documentation",
+        "mavrykrewarddistributor",
+        "Mavryk Reward Distributor Documentation",
         [author],
         1,
     )
@@ -160,10 +160,10 @@ man_pages = [
 texinfo_documents = [
     (
         master_doc,
-        "TezosRewardDistributor",
-        "Tezos Reward Distributor Documentation",
+        "MavrykRewardDistributor",
+        "Mavryk Reward Distributor Documentation",
         author,
-        "TezosRewardDistributor",
+        "MavrykRewardDistributor",
         "One line description of project.",
         "Miscellaneous",
     ),

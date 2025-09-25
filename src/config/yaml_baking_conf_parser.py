@@ -230,22 +230,22 @@ class BakingYamlConfParser(YamlConfParser):
 
         if pymnt_addr.startswith("KT"):
             raise ConfigurationException(
-                "KT addresses cannot be used for payments. Only tz addresses are allowed"
+                "KT addresses cannot be used for payments. Only mv addresses are allowed"
             )
 
-        if len(pymnt_addr) == PKH_LENGHT and pymnt_addr.startswith("tz"):
+        if len(pymnt_addr) == PKH_LENGHT and pymnt_addr.startswith("mv"):
             dry_run_no_signer = self.dry_run and self.dry_run == DryRun.NO_SIGNER
             if not dry_run_no_signer:
                 self.clnt_mngr.check_pkh_known_by_signer(pymnt_addr)
 
-            conf_obj[("__%s_type" % PAYMENT_ADDRESS)] = AddrType.TZ
+            conf_obj[("__%s_type" % PAYMENT_ADDRESS)] = AddrType.MV
             conf_obj[("__%s_pkh" % PAYMENT_ADDRESS)] = pymnt_addr
             conf_obj[("__%s_manager" % PAYMENT_ADDRESS)] = pymnt_addr
 
         else:
             raise ConfigurationException(
                 "Payment Address ({}) cannot be translated into a PKH. "
-                "Make sure it is a tz1 address and to first import "
+                "Make sure it is a mv1 address and to first import "
                 "its corresponding secret key to the signer. ".format(pymnt_addr)
             )
 
@@ -346,7 +346,7 @@ class BakingYamlConfParser(YamlConfParser):
         if conf_obj[REWARDS_TYPE] == RewardsType.ESTIMATED:
             raise ConfigurationException(
                 "Setting 'rewards_type' to 'estimated' is no longer supported.\n"
-                "Please see https://tezos-reward-distributor-organization.github.io/tezos-reward-distributor/payouttiming.html\n"
+                "Please see https://mavryk-network.github.io/mavryk-reward-distributor/payouttiming.html\n"
                 "for details on how to configure a improved method."
             )
 

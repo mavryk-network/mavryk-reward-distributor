@@ -3,7 +3,7 @@ from unittest.mock import patch, MagicMock
 from datetime import datetime
 from src.main import start_application
 from tests.utils import Args, make_config
-from src.Constants import TZKT_PUBLIC_API_URL
+from src.Constants import MVKT_PUBLIC_API_URL
 
 
 @pytest.fixture
@@ -11,11 +11,11 @@ def args():
     # Test with PRPC node
     args = Args(
         initial_cycle=201,
-        reward_data_provider="tzkt",
-        api_base_url=TZKT_PUBLIC_API_URL["MAINNET"],
+        reward_data_provider="mvkt",
+        api_base_url=MVKT_PUBLIC_API_URL["MAINNET"],
     )
     args.network = "MAINNET"
-    args.node_endpoint = TZKT_PUBLIC_API_URL["MAINNET"]
+    args.node_endpoint = MVKT_PUBLIC_API_URL["MAINNET"]
     args.docker = True
     args.dry_run = True
     args.syslog = False
@@ -42,8 +42,8 @@ def args():
 def test_dry_run(ConfigParser, args):
     ConfigParser.load_file = MagicMock(
         return_value=make_config(
-            baking_address="tz1NortRftucvAkD1J58L32EhSVrQEWJCEnB",
-            payment_address="tz1Zrqm4TkJwqTxm5TiyVFh6taXG4Wrq7tko",
+            baking_address="mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2",
+            payment_address="mv1PAYPcHEhXqwVcFei4zfsJvhtDp3Bi63BZ",
             service_fee=9,
             min_delegation_amt=10,
             min_payment_amt=10,
@@ -69,13 +69,13 @@ def test_dry_run(ConfigParser, args):
 def test_base_url(ConfigParser, args):
     ConfigParser.load_file = MagicMock(
         return_value=make_config(
-            baking_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
-            payment_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
+            baking_address="mv1FLSR4ExbtVk4DSdq9N9hFnQ8GxSFQQuov",
+            payment_address="mv1FLSR4ExbtVk4DSdq9N9hFnQ8GxSFQQuov",
             service_fee=0,
             min_delegation_amt=0,
             min_payment_amt=0,
         )
     )
     args.initial_cycle = 100
-    args.api_base_url = TZKT_PUBLIC_API_URL["MAINNET"]
+    args.api_base_url = MVKT_PUBLIC_API_URL["MAINNET"]
     assert start_application(args) == 0

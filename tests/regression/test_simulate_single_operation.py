@@ -1,5 +1,5 @@
 from unittest.mock import patch, MagicMock
-from src.pay.batch_payer import BatchPayer, TX_FEES, MUTEZ_PER_GAS_UNIT
+from src.pay.batch_payer import BatchPayer, TX_FEES, MUMAV_PER_GAS_UNIT
 from src.model.reward_log import RewardLog
 from src.cli.client_manager import ClientManager
 from http import HTTPStatus
@@ -33,11 +33,11 @@ run_ops_parsed = {
     MagicMock(return_value=(HTTPStatus.OK, run_ops_parsed)),
 )
 def test_simulate_single_operation():
-    default_fee = int(TX_FEES["TZ1_TO_ALLOCATED_TZ1"]["FEE"])
+    default_fee = int(TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
     network_config = {"BLOCK_TIME_IN_SEC": 60, "MINIMAL_BLOCK_DELAY": 30}
     batch_payer = BatchPayer(
         node_url="node_addr",
-        pymnt_addr="tz1234567890123456789012345678901234",
+        pymnt_addr="mv1234567890123456789012345678901234",
         clnt_mngr=ClientManager(
             node_endpoint=PUBLIC_NODE_URL[CURRENT_TESTNET],
             signer_endpoint=PRIVATE_SIGNER_URL,
@@ -57,14 +57,14 @@ def test_simulate_single_operation():
     )
     reward_log.amount = 15577803
     reward_log.skipped = False
-    # TODO: Simulate operation got deprecated https://tezos.gitlab.io/introduction/breaking_changes.html?highlight=run_operation#deprecation
+    # TODO: Simulate operation got deprecated https://protocol.mavryk.org/introduction/breaking_changes.html?highlight=run_operation#deprecation
     simulation_status, simulation_results = batch_payer.simulate_single_operation(
         reward_log, reward_log.amount, "hash", "unittest"
     )
     assert simulation_status.is_done()
     consumed_gas, tx_fee, storage = simulation_results
     assert 250 == consumed_gas
-    assert 323.0 == default_fee + consumed_gas * MUTEZ_PER_GAS_UNIT
+    assert 323.0 == default_fee + consumed_gas * MUMAV_PER_GAS_UNIT
     assert int == type(storage)  # type of storage should be int
     assert 24 == storage
 
@@ -77,7 +77,7 @@ def test_failed_simulate_single_operation():
     network_config = {"BLOCK_TIME_IN_SEC": 60, "MINIMAL_BLOCK_DELAY": 30}
     batch_payer = BatchPayer(
         node_url="node_addr",
-        pymnt_addr="tz1234567890123456789012345678901234",
+        pymnt_addr="mv1234567890123456789012345678901234",
         clnt_mngr=ClientManager(
             node_endpoint=PUBLIC_NODE_URL[CURRENT_TESTNET],
             signer_endpoint=PRIVATE_SIGNER_URL,

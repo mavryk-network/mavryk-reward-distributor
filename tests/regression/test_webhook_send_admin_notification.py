@@ -51,7 +51,7 @@ cfg = {
 def test_webhook_payload_types():
     """
     Test the type correctness of the generated payload
-    Issue: https://github.com/tezos-reward-distributor-organization/tezos-reward-distributor/issues/417
+    Issue: https://github.com/mavryk-network/mavryk-reward-distributor/issues/417
     """
     webhook_plugin = WebhookPlugin(cfg)
     payload = webhook_plugin.generate_payload(

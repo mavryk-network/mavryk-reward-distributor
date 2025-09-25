@@ -74,19 +74,19 @@ def make_config(
     delegator_pays_ra_fee: true
     delegator_pays_xfer_fee: true
     founders_map:
-        tz3ipHZQpBBFuxv7eKoFgGnTaU3RBhnS93yY: 0.25
-        tz3dKooaL9Av4UY15AUx9uRGL5H6YyqoGSPV: 0.75
+        mv1Bm6GciQqJiKHvm7BvCZoFsZ4YejxTpVpY: 0.25
+        mv1KscSac2FXLeksvSChMMaHB8o1p7eJccg3: 0.75
     min_delegation_amt: {:d}
     min_payment_amt: {:d}
     owners_map:
-        tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD: 1.0
+        mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5: 1.0
     payment_address: {:s}
     reactivate_zeroed: true
     rewards_type: actual
     pay_denunciation_rewards: false
     rules_map:
-        tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP: tz1RMmSzPSWPSSaKU193Voh4PosWSZx1C7Hs
-        tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD: TOB
+        mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw: mv1BhzVeMiwojX8h8TZ5RBnhDbgZe76U3X3w
+        mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5: TOB
         mindelegation: TOB
     service_fee: {:f}
     specials_map: {{}}
@@ -122,11 +122,11 @@ def mock_request_get(url, timeout, **kwargs):
     if path == "/chains/main/blocks/2035713/context/raw/json/cycle/500/roll_snapshot":
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: 10)
     if path in [
-        "/chains/main/blocks/250000/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        "/chains/main/blocks/191232/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        "/chains/main/blocks/195328/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        "/chains/main/blocks/2034432/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-        "/chains/main/blocks/2035713/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+        "/chains/main/blocks/250000/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        "/chains/main/blocks/191232/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        "/chains/main/blocks/195328/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        "/chains/main/blocks/2034432/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+        "/chains/main/blocks/2035713/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
     ]:
         return MagicMock(
             status_code=HTTPStatus.OK,
@@ -134,78 +134,78 @@ def mock_request_get(url, timeout, **kwargs):
                 "balance": "15218028669",
                 "delegating_balance": "191368330803",
                 "delegated_contracts": [
-                    "tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ",
-                    "tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD",
-                    "tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7",
-                    "tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace",
-                    "tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk",
-                    "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
-                    "tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP",
+                    "mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC",
+                    "mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5",
+                    "mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU",
+                    "mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE",
+                    "mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC",
+                    "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+                    "mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw",
                 ],
                 "delegated_balance": "176617802134",
             },
         )
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
-        "/chains/main/blocks/head/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1T5woJN3r7SV5v2HGDyA5kurhbD9Y8ZKHZ/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
+        "/chains/main/blocks/head/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "25689884573")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
-        "/chains/main/blocks/191232/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
-        "/chains/main/blocks/head/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
-        "/chains/main/blocks/195328/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
+        "/chains/main/blocks/head/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "62657825729")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
-        "/chains/main/blocks/head/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1fgX6oRWQb4HYHUT6eRjW8diNFrqjEfgq7/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
+        "/chains/main/blocks/head/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "24916325758")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
-        "/chains/main/blocks/head/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1YTMY7Zewx6AMM2h9eCwc8TyXJ5wgn9ace/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
+        "/chains/main/blocks/head/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "55646701807")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
-        "/chains/main/blocks/head/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1L1XQWKxG38wk1Ain1foGaEZj8zeposcbk/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
+        "/chains/main/blocks/head/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1G2ShgKy4WzXazyfdnC1b1WhiALFJjm8tC/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "981635036")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
-        "/chains/main/blocks/head/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
+        "/chains/main/blocks/head/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "30527208")
     if path in [
-        "/chains/main/blocks/250000/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
-        "/chains/main/blocks/191232/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
-        "/chains/main/blocks/195328/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
-        "/chains/main/blocks/head/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
-        "/chains/main/blocks/2034432/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
-        "/chains/main/blocks/2035713/context/contracts/tz1RRzfechTs3gWdM58y6xLeByta3JWaPqwP/balance",
+        "/chains/main/blocks/250000/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
+        "/chains/main/blocks/191232/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
+        "/chains/main/blocks/195328/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
+        "/chains/main/blocks/head/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
+        "/chains/main/blocks/2034432/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
+        "/chains/main/blocks/2035713/context/contracts/mv1AmXUYnrqp9pwtaFVYwbxRHDVNbEWiSYAw/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "6725429231")
     if path in [
@@ -221,27 +221,27 @@ def mock_request_get(url, timeout, **kwargs):
                     {
                         "kind": "freezer",
                         "category": "deposits",
-                        "delegate": "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+                        "delegate": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                         "cycle": 51,
                         "change": "-14272000000",
                     },
                     {
                         "kind": "freezer",
                         "category": "fees",
-                        "delegate": "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+                        "delegate": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                         "cycle": 51,
                         "change": "-8374",
                     },
                     {
                         "kind": "freezer",
                         "category": "rewards",
-                        "delegate": "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+                        "delegate": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                         "cycle": 51,
                         "change": "-354166658",
                     },
                     {
                         "kind": "contract",
-                        "contract": "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+                        "contract": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                         "change": "14626175032",
                     },
                 ]
@@ -272,18 +272,18 @@ def mock_request_get(url, timeout, **kwargs):
             status_code=HTTPStatus.OK,
             json=lambda: [
                 {
-                    "baker": "tz1irJKkXS2DBWkU1NnmFQx1c1L7pbGg4yhk",
+                    "baker": "mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2",
                     "active_stake": "113536492278227",
                 },
                 {
-                    "baker": "tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V",
+                    "baker": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                     "active_stake": "46585432313415",
                 },
             ],
         )
 
     if path in [
-        "/chains/main/blocks/head/context/delegates/tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V"
+        "/chains/main/blocks/head/context/delegates/mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ"
     ]:
         return MagicMock(
             status_code=HTTPStatus.OK,
@@ -293,21 +293,21 @@ def mock_request_get(url, timeout, **kwargs):
                 "frozen_deposits": "1469667294622",
                 "delegating_balance": "14813298160131",
                 "delegated_contracts": [
-                    "tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88",
-                    "tz2Eepwyt8UobaWZAKkbnMDgjUq8Nsc8NFiH",
+                    "mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH",
+                    "mv19EpZEoF5w8YGVsCS8ueGr6g4q8qDXrHsd",
                 ],
                 "delegated_balance": "13338988201237",
                 "deactivated": False,
                 "grace_period": 564,
                 "voting_power": "14811963201894",
                 "remaining_proposals": 20,
-                "active_consensus_key": "tz1fPKAtsYydh4f1wfWNfeNxWYu72TmM48fu",
+                "active_consensus_key": "mv1FLSR4ExbtVk4DSdq9N9hFnQ8GxSFQQuov",
             },
         )
 
     if path in [
-        "/chains/main/blocks/head/context/contracts/tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88/balance",
-        "/chains/main/blocks/head/context/contracts/tz2Eepwyt8UobaWZAKkbnMDgjUq8Nsc8NFiH/balance",
+        "/chains/main/blocks/head/context/contracts/mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH/balance",
+        "/chains/main/blocks/head/context/contracts/mv19EpZEoF5w8YGVsCS8ueGr6g4q8qDXrHsd/balance",
     ]:
         return MagicMock(status_code=HTTPStatus.OK, json=lambda: "9108283")
 
@@ -321,27 +321,27 @@ def mock_request_get(url, timeout, **kwargs):
                     {
                         "kind": "freezer",
                         "category": "deposits",
-                        "delegate": "tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88",
+                        "delegate": "mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH",
                         "cycle": 51,
                         "change": "-14272000000",
                     },
                     {
                         "kind": "freezer",
                         "category": "fees",
-                        "delegate": "tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88",
+                        "delegate": "mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH",
                         "cycle": 51,
                         "change": "-8374",
                     },
                     {
                         "kind": "freezer",
                         "category": "rewards",
-                        "delegate": "tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88",
+                        "delegate": "mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH",
                         "cycle": 51,
                         "change": "-354166658",
                     },
                     {
                         "kind": "contract",
-                        "contract": "tz2XZdnto54v6riWaJEw4ZzCJpVn9SQuxY88",
+                        "contract": "mv19SMJjs82hrufpJbuC3975e4TD4U3ZanrH",
                         "change": "14626175032",
                     },
                 ]
@@ -352,8 +352,8 @@ def mock_request_get(url, timeout, **kwargs):
 
 
 class Constants:
-    MAINNET_ADDRESS_DELEGATOR = "tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ"
-    MAINNET_ADDRESS_STAKENOW_BAKER = "tz1g8vkmcde6sWKaG2NN9WKzCkDM6Rziq194"
-    MAINNET_ADDRESS_BAKEXTZ4ME_BAKER = "tz1NRGxXV9h6SdNaZLcgmjuLx3hyy2f8YoGN"
-    GHOSTNET_ADDRESS_STAKENOW_BAKER = "tz1iZ9LkpAhN8X1L6RpBtfy3wxpEWzFrXz8j"
-    MAINNET_ADDRESS_BAKEXTZ4ME_PAYOUT = "tz1PayTZoKjNyofxFQxkzhcv9RCdyW7Q64Wc"
+    MAINNET_ADDRESS_DELEGATOR = "mv1Mg1fDVxLHvbE1WhNJZz1N6bKo5edsDQw1"
+    MAINNET_ADDRESS_FOUNDATION_0_BAKER = "mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs"
+    MAINNET_ADDRESS_FOUNDATION_1_BAKER = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
+    BASENET_ADDRESS_FOUNDATION_0_BAKER = "mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g"
+    MAINNET_ADDRESS_FOUNDATION_1_PAYOUT = "mv1PAYPcHEhXqwVcFei4zfsJvhtDp3Bi63BZ"

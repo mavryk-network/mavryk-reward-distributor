@@ -6,8 +6,8 @@ from src.model.reward_log import TYPE_OWNERS_PARENT
 from src.api.provider_factory import ProviderFactory
 from src.Constants import DEFAULT_NETWORK_CONFIG_MAP, RewardsType
 
-BAKING_ADDRESS = "tz1fikAGfa1MTxX2oJ7UCtvDpVKeH4KTp1UY"
-CYCLE = 420
+BAKING_ADDRESS = "mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5"
+CYCLE = 3
 REWARDS_TYPE = RewardsType.ACTUAL
 
 
@@ -20,7 +20,7 @@ class TestCalculatePhase0(TestCase):
     def test_calculate(self):
         nw = DEFAULT_NETWORK_CONFIG_MAP["MAINNET"]
 
-        api = ProviderFactory(provider="tzkt").newRewardApi(nw, BAKING_ADDRESS, "")
+        api = ProviderFactory(provider="mvkt").newRewardApi(nw, BAKING_ADDRESS, "")
 
         model = api.get_rewards_for_cycle_map(CYCLE, REWARDS_TYPE)
 

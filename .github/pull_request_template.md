@@ -5,7 +5,7 @@ labels:
 
 ---
 IMPORTANT NOTICE:
-I read and understood the [guidelines for contributions to the TRD](https://tezos-reward-distributor-organization.github.io/tezos-reward-distributor/contributors.html). The contribution may qualify for being compensated by the TRD grant if approved by the maintainers.
+I read and understood the [guidelines for contributions to the MRD](https://mavryk-network.github.io/mavryk-reward-distributor/contributors.html). The contribution may qualify for being compensated by the MRD grant if approved by the maintainers.
 
 This PR resolves the issue <issue ID>. The following steps were performed:
 

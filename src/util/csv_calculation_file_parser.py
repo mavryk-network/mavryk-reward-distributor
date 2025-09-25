@@ -195,8 +195,8 @@ class CsvCalculationFileParser:
                 csv_writer.writerow(array)
 
                 logger.debug(
-                    "Reward created for {:s} type: {:s}, stake bal: {:<,d} mutez, cur bal: {:<,d} mutez, ratio: {:.6f}, fee_ratio: {:.6f}, "
-                    "amount: {:<,d} mutez, fee_amount: {:<,d} mutez, fee_rate: {:.2f}, overestimate: {}, adjustment: {:<,d}, adjustment_amount: {:<,d}, delegate_transaction_fee: {}, delegator_transaction_fee: {}, payable: {:d}, skipped: {:d}, at-phase: {:d}, "
+                    "Reward created for {:s} type: {:s}, stake bal: {:<,d} mumav, cur bal: {:<,d} mumav, ratio: {:.6f}, fee_ratio: {:.6f}, "
+                    "amount: {:<,d} mumav, fee_amount: {:<,d} mumav, fee_rate: {:.2f}, overestimate: {}, adjustment: {:<,d}, adjustment_amount: {:<,d}, delegate_transaction_fee: {}, delegator_transaction_fee: {}, payable: {:d}, skipped: {:d}, at-phase: {:d}, "
                     "desc: {:s}, pay_addr: {:s}, type: {:s}".format(
                         pymnt_log.address,
                         pymnt_log.type,
