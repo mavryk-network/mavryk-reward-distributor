@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Managing Contribution Payouts &mdash; Mavryk Reward Distributor (MRD) 12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tests" href="testing.html" />
+    <link rel="prev" title="For Developers" href="contributors.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Mavryk Reward Distributor (MRD)
+          </a>
+              <div class="version">
+                12.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">How to get and install MRD?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">How to configure MRD?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paymentaddress.html">Payment Address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mavryksigner.html">How to use the Mavryk Signer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">How to run MRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rundocker.html">How to run MRD in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linuxservice.html">Run as Linux Service (WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state_machine.html">MRD State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">For Developers</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Managing Contribution Payouts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#metadata">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signing-request">Signing Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executing-the-payout">Executing the Payout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Anonymous Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codeofconduct.html">Contributor Covenant Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Mavryk Reward Distributor (MRD)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Managing Contribution Payouts</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/multisig_payouts.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="managing-contribution-payouts">
+<h1>Managing Contribution Payouts<a class="headerlink" href="#managing-contribution-payouts" title="Permalink to this headline">¶</a></h1>
+<p>This document serves to instruct how to manage contribution payouts from the MRD multisig address.</p>
+<div class="section" id="metadata">
+<h2>Metadata<a class="headerlink" href="#metadata" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Multisig Address: KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu</p></li>
+<li><p>Multisig Manager:</p></li>
+<li><p>Authorized Members:</p>
+<ul>
+<li><p>edpkvHzFCaC33D8md4UaeX1phuYx3JKLuaTN7ffpQbMHJRAzJr9Mwy</p></li>
+<li><p>edpkuCFk3sw9besfKP9WKB7Nxrj6Di3dgBrKwf74QzTVpDbNWYu911</p></li>
+<li><p>edpkuB12NBMqeyYdT4WDouYZ7EbD7JyJtJ7taP2KYQf68nkkB3ApEf (Krixt)</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="signing-request">
+<h2>Signing Request<a class="headerlink" href="#signing-request" title="Permalink to this headline">¶</a></h2>
+<p>Payouts must be signed by 2 of the 3 multisig members before it can be executed on the blockchain.</p>
+<p>A multisig member must sign the same transaction using his/her own private key which is authorized on the multisig contract.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>XXX.XX - The amount, in MVRK to transfer
+YYYYYY - The receiver of the funds (ie: tz1...)
+ZZZZZZ - The PKH of the multisig member
+
+$ octez-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
+</pre></div>
+</div>
+<p>The output of the above command will be a single signature: <code class="docutils literal notranslate"><span class="pre">edsigu3WqyPEEYBce5.....</span></code></p>
+<p>2 signatures are required to execute the transaction.</p>
+</div>
+<div class="section" id="executing-the-payout">
+<h2>Executing the Payout<a class="headerlink" href="#executing-the-payout" title="Permalink to this headline">¶</a></h2>
+<p>With 2, or more, signatures, execute the transaction:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>XXX.XX - The amount, in MVRK to transfer
+YYYYYY - The receiver of the funds (ie: tz1...)
+ZZZZZZ - The PKH of the multisig member
+AAAAAA - Signature from above command
+BBBBBB - Signature from another member
+
+$ octez-client from multisig contract KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transfer XXX.XX to YYYYYY on behalf of ZZZZZZ with signatures AAAAAA BBBBBB
+</pre></div>
+</div>
+<p>The transaction will be verified by checking all signatures, and executed on the blockchain.</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="contributors.html" class="btn btn-neutral float-left" title="For Developers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="testing.html" class="btn btn-neutral float-right" title="Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024, see contributors.csv.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mavryk Reward Distributor (MRD) &mdash; Mavryk Reward Distributor (MRD) 12.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How to get and install MRD?" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            Mavryk Reward Distributor (MRD)
+          </a>
+              <div class="version">
+                12.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">How to get and install MRD?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">How to configure MRD?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="paymentaddress.html">Payment Address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mavryksigner.html">How to use the Mavryk Signer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">How to run MRD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rundocker.html">How to run MRD in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linuxservice.html">Run as Linux Service (WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state_machine.html">MRD State Machines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">For Developers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="multisig_payouts.html">Managing Contribution Payouts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Anonymous Statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="codeofconduct.html">Contributor Covenant Code of Conduct</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">Mavryk Reward Distributor (MRD)</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Mavryk Reward Distributor (MRD)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="mavryk-reward-distributor-mrd">
+<h1>Mavryk Reward Distributor (MRD)<a class="headerlink" href="#mavryk-reward-distributor-mrd" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://github.com/mavryk-network/mavryk-reward-distributor/actions"><img alt="Build Status" src="https://github.com/mavryk-network/mavryk-reward-distributor/workflows/CI/badge.svg" /></a> <a class="reference external" href="https://github.com/mavryk-network/mavryk-reward-distributor/actions"><img alt="Docs Status" src="https://github.com/mavryk-network/mavryk-reward-distributor/workflows/Docs/badge.svg" /></a> <a class="reference external" href="https://mavryk-network.github.io/mavryk-reward-distributor/"><img alt="Stable Documentation Status" src="https://img.shields.io/badge/docs-stable-blue.svg" /></a></p>
+<p>DISCLAIMER : MAVRYK REWARD DISTRIBUTOR IS PROVIDED AS IS. IT IS UNDER CONSTANT DEVELOPMENT. EVENT THOUGH IT IS WELL TESTED, PLEASE USE IT WITH CARE. ALWAYS MAKE A PRE-RUN IN DRY MODE BEFORE MAKING ACTUAL PAYMENTS. IF YOU WANT TO RUN IN SERVICE MODE DO IT AFTER YOU ARE CONFIDENT WITH THE APPLICATION. IN SERVICE MODE ONLY UPDATE IF NEEDED.</p>
+<p>PRIVACY : MAVRYK REWARD DISTRIBUTOR COLLECTS ANONYMOUS STATISTICS. PLEASE READ OUR STATISTICS <a class="reference external" href="statistics.html">POLICY</a> FOR MORE INFORMATION.</p>
+<div class="section" id="what-s-mrd">
+<h2>What’s MRD?<a class="headerlink" href="#what-s-mrd" title="Permalink to this headline">¶</a></h2>
+<p>MRD is an open-source software for distributing delegation rewards from bakers to delegators. This is a full scale application which can continuously run in the background as a Linux service. However it does not have to be used as a service, but it can also be used interactively. The tool convinces with its simplicity and yet leaves no configuration wish unfulfilled. Whether minimum delegation threshold, or special fees for some delegators - the MRD covers just about all possible constellations. Furthermore, the tool supports complex payments, pays in batches. It uses <a class="reference external" href="https://api.mavryk.network/">MvKT</a> API as backend. MRD is developed and tested extensively by the community and the source code which can be found in the following <a class="reference external" href="https://github.com/mavryk-network/mavryk-reward-distributor">Github</a> repo.</p>
+<p><strong>Since 2024, Mavryk offers two kind of rewards: delegating rewards and staking rewards. MRD pays out delegation rewards.</strong> Staking rewards are paid by the protocol, and MRD does not concern itself with them.</p>
+</div>
+<div class="section" id="who-needs-mrd">
+<h2>Who needs MRD?<a class="headerlink" href="#who-needs-mrd" title="Permalink to this headline">¶</a></h2>
+<p>The MRD is needed by bakers who want to pay delegation rewards. There are a few payout tools available in the Mavryk ecosystem. However, the MRD is probably the most used open source payout tool by bakers. It ranges from small bakers with a couple of delegators to large bakers with more than thousand delegators. The maintainers strive to keep up with the growing Mavryk ecosystem. This in turn enables MRD users to participate in the exploration of new business areas like baking for liquidity pools or DAOs.</p>
+<p>In 2024, another popular payout distribution software is [TezPay](<a class="reference external" href="https://github.com/mav-capital/tezpay">https://github.com/mav-capital/tezpay</a>).</p>
+</div>
+<div class="section" id="what-else-do-you-need-for-mrd">
+<h2>What else do you need for MRD?<a class="headerlink" href="#what-else-do-you-need-for-mrd" title="Permalink to this headline">¶</a></h2>
+<p>There are currently the following options to run MRD:</p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li><p>If you want to inject your own transactions, at least a Mavryk rolling node is needed.</p></li>
+<li><p>If you don’t want to inject your own transactions, only the Mavryk signer is needed.</p></li>
+</ol>
+</div></blockquote>
+<p>However, for all options the Mavryk signer is needed.</p>
+</div>
+<div class="section" id="mvkt">
+<h2>MvKT<a class="headerlink" href="#mvkt" title="Permalink to this headline">¶</a></h2>
+<p>The backend of the Mavryk Reward Distributor is <a class="reference external" href="https://api.mavryk.network/">Powered by MvKT API</a> under the following terms:</p>
+<blockquote>
+<div><p>MvKT API is free for everyone and for both commercial and non-commercial usage.</p>
+<p>If your application or service uses the MvKT API in any forms: directly on frontend or indirectly on backend, you should mention that fact on your website or application by placing the label “Powered by MvKT API” with a direct link to api.mavryk.network.</p>
+</div></blockquote>
+</div>
+<div class="section" id="funding">
+<h2>Funding<a class="headerlink" href="#funding" title="Permalink to this headline">¶</a></h2>
+<p>MRD is an open source, GPL licensed project. It is maintained by various community members.</p>
+</div>
+<div class="section" id="mrd-art-work">
+<h2>MRD Art Work<a class="headerlink" href="#mrd-art-work" title="Permalink to this headline">¶</a></h2>
+<p>This Github <a class="reference external" href="https://github.com/mavryk-reward-distributor-organization/mrd-art">Repo</a> contains logo images. If you are using MRD and want to let everybody know about it, feel free to place them in your website.</p>
+<div class="toctree-wrapper compound">
+<p class="caption"><span class="caption-text">Content:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">How to get and install MRD?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements-and-setup">Requirements and Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#python-3">Python 3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mavryk">Mavryk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#mrd">MRD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">How to configure MRD?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#fee-setup">Fee Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#baker-configuration">Baker Configuration:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="paymentaddress.html">Payment Address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mavryksigner.html">How to use the Mavryk Signer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="run.html">How to run MRD</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="run.html#command-line-usage">Command Line Usage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#options">Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="run.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rundocker.html">How to run MRD in Docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#email-plugin">Email Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#telegram-plugin">Telegram Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#twitter-plugin">Twitter Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#discord-plugin">Discord Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plugins.html#webhook-plugin">Webhook Plugin</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="linuxservice.html">Run as Linux Service (WIP)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="state_machine.html">MRD State Machines</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="state_machine.html#launch-state-machine-diagram">Launch state machine diagram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="state_machine.html#configuration-state-machine-diagram">Configuration state machine diagram</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="contributors.html">For Developers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html#general">General:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html#visual-studio-code-optional">Visual Studio Code (optional):</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html#principles-on-the-application-evolution">Principles on the application evolution:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributors.html#guidelines-for-rewarding-prs-in-the-context-of-the-mrd-grant">Guidelines for rewarding PRs in the context of the MRD grant:</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="multisig_payouts.html">Managing Contribution Payouts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="multisig_payouts.html#metadata">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisig_payouts.html#signing-request">Signing Request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="multisig_payouts.html#executing-the-payout">Executing the Payout</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#test-execution">Test Execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#structure">Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#unit-tests">Unit tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#regression-tests">Regression tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#integration-tests">Integration tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#smoke-tests">Smoke tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#acceptance-test-wip">Acceptance test (WIP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#non-functional-tests-wip">Non functional tests (WIP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#verification-wip">Verification (WIP)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#test-format">Test Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="testing.html#visual-studio-code-test-execution-optional">Visual Studio Code Test Execution (optional)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">Anonymous Statistics</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#collected-data">Collected Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#transfer">Transfer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#gdpr">GDPR</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="codeofconduct.html">Contributor Covenant Code of Conduct</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#our-pledge">Our Pledge</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#our-standards">Our Standards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#enforcement-responsibilities">Enforcement Responsibilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#scope">Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#enforcement">Enforcement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#enforcement-guidelines">Enforcement Guidelines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="codeofconduct.html#attribution">Attribution</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-right" title="How to get and install MRD?" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024, see contributors.csv.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
