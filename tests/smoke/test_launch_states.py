@@ -8,8 +8,8 @@ from tests.utils import Args, make_config
 
 
 parsed_config = make_config(
-    baking_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
-    payment_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
+    baking_address="mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g",
+    payment_address="mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g",
     service_fee=0,
     min_delegation_amt=0,
     min_payment_amt=0,

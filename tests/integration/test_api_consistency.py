@@ -43,7 +43,7 @@ def test_get_revelation(address_block_api_mvkt):
 def test_get_current_cycle_and_level(address_block_api_mvkt):
     cycle_mvkt, level_mvkt = address_block_api_mvkt.get_current_cycle_and_level()
 
-    assert cycle_mvkt == 751
+    assert cycle_mvkt == 5
 
 
 @vcr.use_cassette(
@@ -74,13 +74,13 @@ def test_get_rewards_for_cycle_map(
     # NOTE: There is currently a level limit query with rpc when querying endorsing rewards in the past
     # thus we are disabling the consistency check with other APIs for now but will hopefully reenable it in the future
 
-    last_cycle = 750
+    last_cycle = 5
     rewards_mvkt = address_reward_api_mvkt.get_rewards_for_cycle_map(
         cycle=last_cycle, rewards_type=RewardsType.ACTUAL
     )
 
     # Check delegator_balance_dict
-    assert len(rewards_mvkt.delegator_balance_dict) == 35
+    assert len(rewards_mvkt.delegator_balance_dict) == 8
     total_delegated_balance = 0
     for (
         mvkt_delegator_adress,
@@ -91,10 +91,10 @@ def test_get_rewards_for_cycle_map(
     assert total_delegated_balance == rewards_mvkt.external_delegated_balance
 
     # Own delegate balance
-    assert rewards_mvkt.own_delegated_balance == 5_099_724_843
+    assert rewards_mvkt.own_delegated_balance == 9_137_159_953_145
 
     # Check num_baking_rights
-    assert rewards_mvkt.num_baking_rights == 1
+    assert rewards_mvkt.num_baking_rights == 3289
 
     # Check denunciation_rewards
     assert rewards_mvkt.denunciation_rewards == 0
@@ -104,12 +104,12 @@ def test_get_rewards_for_cycle_map(
 
     # Check offline_losses
     assert rewards_mvkt.offline_losses == 0
+
     # Check potential_endorsement_rewards
-    # TODO: tzpro total_active_stake does not match rpc and mvkt exactly thus the approximation
-    assert rewards_mvkt.potential_endorsement_rewards == 20_203_344
+    assert rewards_mvkt.potential_endorsement_rewards == 21_822_738_840
 
     # Check rewards_and_fees
-    assert rewards_mvkt.rewards_and_fees == 23_846_700
+    assert rewards_mvkt.rewards_and_fees == 9_479_008_394
 
     # Check computed_reward_amount
     assert rewards_mvkt.computed_reward_amount is None

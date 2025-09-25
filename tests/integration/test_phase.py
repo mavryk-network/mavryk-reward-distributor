@@ -18,7 +18,7 @@ from src.model.baking_conf import BakingConf
 from src.NetworkConfiguration import default_network_config_map
 from tests.utils import mock_request_get, make_config, Constants
 
-PAYOUT_CYCLE = 750
+PAYOUT_CYCLE = 5
 
 logger = logging.getLogger("unittesting")
 logger.setLevel(logging.DEBUG)
@@ -105,7 +105,7 @@ class TestCalculatePhases(TestCase):
             attempts += 1
             try:
                 # Reward data
-                # Fetch cycle 90 of delphinet for tz1gtHbmBF3TSebsgJfJPvUB2e9x8EDeNm6V
+                # Fetch cycle 90 of delphinet for mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ
                 reward_model = rewardApi.get_rewards_for_cycle_map(
                     PAYOUT_CYCLE, RewardsType.ACTUAL
                 )
@@ -155,11 +155,11 @@ class TestCalculatePhases(TestCase):
         total_amount = 0
         for r in reward_logs:
             assert not r.skipped  # no skips needed
-            if r.address == "tz3h7UCrLoFih8nrStVy8GcChtZiVuu1mDYD":
-                assert r.amount == 1_632_815
+            if r.address == "mv1F1uHGUvp6DwfokBqMddz6mPZ7imjjg9X5":
+                assert r.amount == 3_383_259_616
                 continue
 
             assert r.type in "FD"
             assert isinstance(r.paymentaddress, str)
             total_amount += r.amount
-        assert total_amount == 22_213_885
+        assert total_amount == 6_090_500_879

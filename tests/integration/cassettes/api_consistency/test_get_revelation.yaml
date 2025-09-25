@@ -11,33 +11,55 @@ interactions:
       User-Agent:
       - mrd-12.0
     method: GET
-    uri: https://api.mavryk.network/v1/accounts/tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ
+    uri: https://api.mavryk.network/v1/accounts/mv1Mg1fDVxLHvbE1WhNJZz1N6bKo5edsDQw1
   response:
     body:
-      string: '{"id":810833,"type":"user","address":"tz1N4UfQCahHkRShBanv9QP9TnmXNgCaqCyZ","publicKey":"edpkuoocAEKZvkjJGRq4jUywMHUWo3CZH12tsdfDiHC3JE4Uyi1So3","revealed":true,"balance":6566968190,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":0,"unstakedBalance":0,"counter":7117400,"delegate":{"alias":"Bakerman_CH","address":"tz1Q7eNkwYGTKZNqQ2mq31rcZtNvCjwhTwU2","active":true},"delegationLevel":4797825,"delegationTime":"2023-12-23T11:46:51Z","numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":3,"tokenBalancesCount":6,"tokenTransfersCount":9,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numActivations":0,"numDelegations":2,"numOriginations":1,"numTransactions":487,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"stakingUpdatesCount":0,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":1155256,"firstActivityTime":"2020-10-03T14:40:12Z","lastActivity":5931203,"lastActivityTime":"2024-06-29T09:47:15Z","lostBalance":0}'
+      string: '{"id":757,"type":"user","address":"mv1Mg1fDVxLHvbE1WhNJZz1N6bKo5edsDQw1","publicKey":"edpkvCPuoZXadDMT9hfZ2koSeEddiPiQnP3M2FwJxaoSbSKYht379z","revealed":true,"balance":2999389,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":0,"unstakedBalance":0,"counter":1887,"delegate":{"address":"mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2","active":true},"delegationLevel":78060,"delegationTime":"2025-09-20T11:36:19Z","numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numActivations":0,"numDelegations":1,"numOriginations":0,"numTransactions":1,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"stakingUpdatesCount":0,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":78055,"firstActivityTime":"2025-09-20T11:35:29Z","lastActivity":78060,"lastActivityTime":"2025-09-20T11:36:19Z","lostBalance":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490fbf2b0219d5-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Sun, 30 Jun 2024 14:22:14 GMT
+      - Thu, 25 Sep 2025 08:13:18 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=HsaxAWVtsg0fpyRkd6krszv3phPxCFTOVuP%2F4x67kyNK3CH8iI00MsnY72LA%2FPEL7UO6kjT422X9wc7jiXgelQW3mGkcG1GX9IqHN36TOtRxzsSIH7hwhtVz6NqDGw%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Mvkt-Known-Level:
-      - '5941222'
-      Mvkt-Level:
-      - '5941222'
-      Mvkt-Synced-At:
-      - '2024-06-30T14:22:05Z'
-      Mvkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '1634'
+      - '1595'
+      mvkt-known-level:
+      - '119991'
+      mvkt-level:
+      - '119991'
+      mvkt-synced-at:
+      - '2025-09-25T08:13:09Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK

@@ -36,7 +36,7 @@ dummy_addr_dict = dict(
 def test_update_current_balances():
     log_items = [
         RewardLog(
-            address="KT1Np1h72jGkRkfxNHLXNNJLHNbj9doPz4bR",
+            address="mv1FWz2yj1J46kNnw4NkUcuaJdRgZp1tUkz2",
             type="D",
             delegating_balance=100500,
             current_balance=0,
@@ -44,7 +44,7 @@ def test_update_current_balances():
     ]
     mvkt_impl = MvKTRewardApiImpl(
         nw=DEFAULT_NETWORK_CONFIG_MAP["MAINNET"],
-        baking_address="tz1gk3TDbU7cJuiBRMhwQXVvgDnjsxuWhcEA",
+        baking_address="mv1C2iEY1WuBeFQqS9ihxtunHkbUJ28HyeN6",
     )
     mvkt_impl.update_current_balances(log_items)
     assert 0 != log_items[0].current_balance

@@ -14,30 +14,52 @@ interactions:
     uri: https://api.mavryk.network/v1/accounts/mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs
   response:
     body:
-      string: '{"id":13748,"type":"delegate","address":"mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs","active":true,"publicKey":"edpkvRKe9jhBeaMMhbYoRmbe6euy2QWyCCGac7kb3MSBqmU9BY3j3A","revealed":true,"balance":50780085238,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":50076184480,"unstakedBalance":49719881,"unstakedBaker":{"address":"mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs"},"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":50076184480,"stakersCount":0,"frozenDepositLimit":50000000000,"counter":37713,"activationLevel":22763,"activationTime":"2018-07-17T20:39:27Z","stakingBalance":948277302490,"delegatedBalance":897497217252,"numContracts":1,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":4,"tokenBalancesCount":22,"tokenTransfersCount":41,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":1118,"numBlocks":15945,"numEndorsements":4065617,"numPreendorsements":1186,"numBallots":36,"numProposals":18,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":261,"vdfRevelationsCount":0,"numRevelationPenalties":2,"numEndorsingRewards":283,"numDelegations":4977,"numOriginations":59,"numTransactions":643,"numReveals":1,"numRegisterConstants":0,"numSetDepositsLimits":18,"numMigrations":0,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":45,"stakingUpdatesCount":87,"setDelegateParametersOpsCount":0,"dalPublishCommitmentOpsCount":0,"firstActivity":22657,"firstActivityTime":"2018-07-17T18:39:42Z","lastActivity":5941222,"lastActivityTime":"2024-06-30T14:22:05Z","software":{"date":"2024-06-18T09:10:50Z"},"lostBalance":0,"frozenDeposit":50076184480,"frozenDeposits":50076184480,"frozenRewards":0,"frozenFees":0}'
+      string: '{"id":3,"type":"delegate","address":"mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs","active":true,"publicKey":"edpkvRKe9jhBeaMMhbYoRmbe6euy2QWyCCGac7kb3MSBqmU9BY3j3A","revealed":true,"balance":12058928995785,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":12049833335879,"unstakedBalance":0,"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":12049833335879,"stakersCount":0,"counter":11,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":297959506537184,"delegatedBalance":285900577541399,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":90,"numBlocks":14875,"numEndorsements":119947,"numPreendorsements":3,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":69,"vdfRevelationsCount":0,"numRevelationPenalties":0,"numEndorsingRewards":5,"numDelegations":102,"numOriginations":0,"numTransactions":10,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":5,"stakingUpdatesCount":8,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":119991,"lastActivityTime":"2025-09-25T08:13:09Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":12049833335879,"frozenDeposits":12049833335879,"frozenRewards":0,"frozenFees":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490fc1b822cffb-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Sun, 30 Jun 2024 14:22:15 GMT
+      - Thu, 25 Sep 2025 08:13:19 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=0UDq8p534YhcbndkKl5E5PFpQpvW2sBOJPA0tV8PzgvOGdIcP%2BrcFn7wveiBi%2BI0QsOvdxL9mqLLfAA8kbDUMZKwrbATn9cXfefqSXLT0rerTAyqu%2BTHhGHkpeeyUQ%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Mvkt-Known-Level:
-      - '5941222'
-      Mvkt-Level:
-      - '5941222'
-      Mvkt-Synced-At:
-      - '2024-06-30T14:22:05Z'
-      Mvkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '2340'
+      - '2219'
+      mvkt-known-level:
+      - '119991'
+      mvkt-level:
+      - '119991'
+      mvkt-synced-at:
+      - '2025-09-25T08:13:19Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK

@@ -14,30 +14,52 @@ interactions:
     uri: https://api.mavryk.network/v1/head
   response:
     body:
-      string: '{"chain":"mainnet","chainId":"NetXXAAR1wWQhhe","cycle":751,"level":5941222,"hash":"BKwP3aJU4Tr4UQuxdquFYFSRp4qZ3RTriwJzLRW24EffJUzGiab","protocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","nextProtocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","timestamp":"2024-06-30T14:22:05Z","votingEpoch":61,"votingPeriod":125,"knownLevel":5941222,"lastSync":"2024-06-30T14:22:05Z","synced":true,"quoteLevel":5941222,"quoteBtc":1.2628986165349365E-05,"quoteEur":0.7261468247986486,"quoteUsd":0.7781022695404011,"quoteCny":5.654702623430958,"quoteJpy":125.18498363500731,"quoteKrw":1074.7771028707643,"quoteEth":0.00022934638058584448,"quoteGbp":0.6149793535494119}'
+      string: '{"chain":"mainnet","chainId":"NetXXAAR1wWQhhe","cycle":5,"level":119991,"hash":"BL4CgQQntuG4UTgPztcoay3b5Fn1TTmsFsCE53VdakCU3vEuwoE","protocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","nextProtocol":"PtBoreasK2KPuKbeYtXeEdudEHS7YcMFHE9amwheUc4kejTxgRi","timestamp":"2025-09-25T08:13:09Z","votingEpoch":0,"votingPeriod":0,"knownLevel":119991,"lastSync":"2025-09-25T08:13:09Z","synced":true,"quoteLevel":-1,"quoteBtc":0,"quoteEur":0,"quoteUsd":0,"quoteCny":0,"quoteJpy":0,"quoteKrw":0,"quoteEth":0,"quoteGbp":0}'
     headers:
-      Access-Control-Allow-Origin:
-      - '*'
+      CF-RAY:
+      - 98490fc05e3b96c8-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Sun, 30 Jun 2024 14:22:14 GMT
+      - Thu, 25 Sep 2025 08:13:18 GMT
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1RS1sjdwyYT%2FOxfGQG2XTDCBTiZC3FbZyuY8jpmvziB5SpYufJuGBumnOcbHZod%2FrqDKWuabVHHjfcr6SzHXG%2BTXDwujMP6gk0Uc5mn3yAHGLVnb%2BSmWj9XEOpWNEQ%3D%3D"}]}'
       Server:
-      - nginx
+      - cloudflare
       Transfer-Encoding:
       - chunked
-      Mvkt-Known-Level:
-      - '5941222'
-      Mvkt-Level:
-      - '5941222'
-      Mvkt-Synced-At:
-      - '2024-06-30T14:22:05Z'
-      Mvkt-Version:
-      - 1.14.3.0
+      access-control-allow-credentials:
+      - 'true'
+      access-control-allow-headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      access-control-allow-methods:
+      - GET, POST, OPTIONS
+      access-control-allow-origin:
+      - '*'
+      access-control-expose-headers:
+      - '*'
+      access-control-max-age:
+      - '1728000'
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
       content-length:
-      - '678'
+      - '523'
+      mvkt-known-level:
+      - '119991'
+      mvkt-level:
+      - '119991'
+      mvkt-synced-at:
+      - '2025-09-25T08:13:09Z'
+      mvkt-version:
+      - 1.14.4.0
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains
     status:
       code: 200
       message: OK

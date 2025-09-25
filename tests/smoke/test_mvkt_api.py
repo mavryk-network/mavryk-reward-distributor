@@ -42,8 +42,8 @@ def args():
 def test_dry_run(ConfigParser, args):
     ConfigParser.load_file = MagicMock(
         return_value=make_config(
-            baking_address="tz1NortRftucvAkD1J58L32EhSVrQEWJCEnB",
-            payment_address="tz1Zrqm4TkJwqTxm5TiyVFh6taXG4Wrq7tko",
+            baking_address="mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2",
+            payment_address="mv1PAYPcHEhXqwVcFei4zfsJvhtDp3Bi63BZ",
             service_fee=9,
             min_delegation_amt=10,
             min_payment_amt=10,
@@ -69,8 +69,8 @@ def test_dry_run(ConfigParser, args):
 def test_base_url(ConfigParser, args):
     ConfigParser.load_file = MagicMock(
         return_value=make_config(
-            baking_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
-            payment_address="tz1aWXP237BLwNHJcCD4b3DutCevhqq2T1Z9",
+            baking_address="mv1FLSR4ExbtVk4DSdq9N9hFnQ8GxSFQQuov",
+            payment_address="mv1FLSR4ExbtVk4DSdq9N9hFnQ8GxSFQQuov",
             service_fee=0,
             min_delegation_amt=0,
             min_payment_amt=0,
