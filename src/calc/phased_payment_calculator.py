@@ -153,6 +153,7 @@ class PhasedPaymentCalculator:
         if self.min_payment_amnt and self.min_payment_amnt > int(
             min([rl.adjusted_amount for rl in rwrd_logs if not rl.skipped])
         ):
+            previous_min_delegation_amnt = self.min_delegation_amnt
             self.min_delegation_amnt = int(
                 min(
                     [
@@ -164,14 +165,24 @@ class PhasedPaymentCalculator:
                     ]
                 )
             )
-            logger.info(
-                "Setting min_delegation_amt to {:<,d} mumav due to min_payment_amt set to {:<,d}. Running calculations again.".format(
-                    self.min_delegation_amnt, self.min_payment_amnt
+            
+            # Check if min_delegation_amnt actually changed to prevent infinite loop
+            if self.min_delegation_amnt == previous_min_delegation_amnt:
+                logger.warning(
+                    "min_delegation_amt did not change ({:<,d} mumav). Breaking loop to prevent infinite recursion. "
+                    "This may indicate that no delegators meet the min_payment_amt requirement of {:<,d} mumav.".format(
+                        self.min_delegation_amnt, self.min_payment_amnt
+                    )
                 )
-            )
-            rwrd_logs, total_rwrd_amnt = self.calculate(
-                reward_provider_model, adjustments, True
-            )
+            else:
+                logger.info(
+                    "Setting min_delegation_amt to {:<,d} mumav due to min_payment_amt set to {:<,d}. Running calculations again.".format(
+                        self.min_delegation_amnt, self.min_payment_amnt
+                    )
+                )
+                rwrd_logs, total_rwrd_amnt = self.calculate(
+                    reward_provider_model, adjustments, True
+                )
         elif rerun:
             return rwrd_logs, total_rwrd_amnt
 
