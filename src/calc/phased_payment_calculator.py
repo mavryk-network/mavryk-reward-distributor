@@ -153,28 +153,17 @@ class PhasedPaymentCalculator:
         if self.min_payment_amnt and self.min_payment_amnt > int(
             min([rl.adjusted_amount for rl in rwrd_logs if not rl.skipped])
         ):
-            # Find delegators whose adjusted_amount is at least min_payment_amt
-            # and set min_delegation_amt to the minimum balance among them
-            eligible_delegators = [
-                rl.delegating_balance
-                for rl in rwrd_logs
-                if not rl.skipped
-                and rl.adjusted_amount >= self.min_payment_amnt
-                and rl.delegating_balance > 0
-            ]
-            
-            if eligible_delegators:
-                self.min_delegation_amnt = int(min(eligible_delegators))
-            else:
-                # If no delegators meet the min_payment_amt threshold,
-                # disable the min_delegation_amt filter to allow all delegators
-                logger.warning(
-                    "No delegators meet the min_payment_amt threshold of {:<,d} mumav. "
-                    "Disabling min_delegation_amt filter to allow all delegators.".format(
-                        self.min_payment_amnt
-                    )
+            self.min_delegation_amnt = int(
+                min(
+                    [
+                        rl.delegating_balance
+                        for rl in rwrd_logs
+                        if not rl.skipped
+                        and rl.adjusted_amount > self.min_payment_amnt
+                        and rl.delegating_balance
+                    ]
                 )
-                self.min_delegation_amnt = 0
+            )
             logger.info(
                 "Setting min_delegation_amt to {:<,d} mumav due to min_payment_amt set to {:<,d}. Running calculations again.".format(
                     self.min_delegation_amnt, self.min_payment_amnt
