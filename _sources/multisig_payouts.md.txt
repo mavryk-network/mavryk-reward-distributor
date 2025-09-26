@@ -21,7 +21,7 @@ A multisig member must sign the same transaction using his/her own private key w
 	YYYYYY - The receiver of the funds (ie: tz1...)
 	ZZZZZZ - The PKH of the multisig member
 
-    $ mavkit-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
+    $ octez-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
 
 The output of the above command will be a single signature: `edsigu3WqyPEEYBce5.....`
 
@@ -37,7 +37,7 @@ With 2, or more, signatures, execute the transaction:
     AAAAAA - Signature from above command
     BBBBBB - Signature from another member
 
-    $ mavkit-client from multisig contract KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transfer XXX.XX to YYYYYY on behalf of ZZZZZZ with signatures AAAAAA BBBBBB
+    $ octez-client from multisig contract KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transfer XXX.XX to YYYYYY on behalf of ZZZZZZ with signatures AAAAAA BBBBBB
 
 The transaction will be verified by checking all signatures, and executed on the blockchain.
 

@@ -9,6 +9,6 @@ An address can only be used for payments if it satisfies the following criteria:
 
   ::
 
-      ./mavkit-client reveal key for <alias>
+      ./octez-client reveal key for <alias>
 
 - The payment address must be an implicit address (mv). The secret key of the address must be known and imported to the signer before running the MRD. Please refer to the Mavryk signer section for detailed instructions. 
