@@ -110,4 +110,4 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Build the docker image
-      run: docker build -t mavrykdynamicsmavryk-reward-distributor .
+      run: docker build -t mavrykdynamics/mavryk-reward-distributor .
