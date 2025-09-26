@@ -25,7 +25,8 @@ NEW_PROTOCOL_NAME = "Q"
 
 LOCAL_HOST = "127.0.0.1"
 EXIT_PAYMENT_TYPE = "exit"
-TESTNET_PREFIX = "base"
+# TESTNET_PREFIX = "base"
+# TESTNET_PREFIX = "atlas"
 TESTNET_SUFFIX = "net"
 CURRENT_TESTNET = (TESTNET_PREFIX + TESTNET_SUFFIX).upper()
 
@@ -51,7 +52,8 @@ PRIVATE_NODE_URL = "http://{}:{}".format(LOCAL_HOST, MAVRYK_RPC_PORT)
 # Public RPC
 PUBLIC_NODE_URL = {
     "MAINNET": "https://rpc.mavryk.network",
-    CURRENT_TESTNET: "https://basenet.rpc.mavryk.network",
+    # CURRENT_TESTNET: "https://basenet.rpc.mavryk.network",
+    CURRENT_TESTNET: "https://atlasnet.rpc.mavryk.network",
 }
 
 # MvKT
