@@ -114,7 +114,7 @@
 YYYYYY - The receiver of the funds (ie: tz1...)
 ZZZZZZ - The PKH of the multisig member
 
-$ octez-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
+$ mavkit-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
 </pre></div>
 </div>
 <p>The output of the above command will be a single signature: <code class="docutils literal notranslate"><span class="pre">edsigu3WqyPEEYBce5.....</span></code></p>
@@ -129,7 +129,7 @@ ZZZZZZ - The PKH of the multisig member
 AAAAAA - Signature from above command
 BBBBBB - Signature from another member
 
-$ octez-client from multisig contract KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transfer XXX.XX to YYYYYY on behalf of ZZZZZZ with signatures AAAAAA BBBBBB
+$ mavkit-client from multisig contract KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transfer XXX.XX to YYYYYY on behalf of ZZZZZZ with signatures AAAAAA BBBBBB
 </pre></div>
 </div>
 <p>The transaction will be verified by checking all signatures, and executed on the blockchain.</p>

@@ -18,19 +18,19 @@ Here are the steps:
 
   ::
 
-    docker build -t mavrykdynamicsmavryk-reward-distributor .
+    docker build -t mavrykdynamics/mavryk-reward-distributor .
 
 2. Alternatively, you can pull directly the official mavryk-reward-distributor Docker image:
 
   ::
 
-    docker pull mavrykdynamicsmavryk-reward-distributor
+    docker pull mavrykdynamics/mavryk-reward-distributor
 
 3. Run the container:
 
   ::
 
-      docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z mavrykdynamicsmavryk-reward-distributor --base_directory /app/pymnt <ARGS>
+      docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z mavrykdynamics/mavryk-reward-distributor --base_directory /app/pymnt <ARGS>
 
 <ARGS> are the other arguments that you would normally pass to the MRD program.
 

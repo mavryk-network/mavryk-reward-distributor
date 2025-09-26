@@ -101,7 +101,7 @@
 <li><p>Build the Docker container:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">build</span> <span class="o">-</span><span class="n">t</span> <span class="n">mavrykdynamicsmavryk</span><span class="o">-</span><span class="n">reward</span><span class="o">-</span><span class="n">distributor</span> <span class="o">.</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">build</span> <span class="o">-</span><span class="n">t</span> <span class="n">mavrykdynamics</span><span class="o">/</span><span class="n">mavryk</span><span class="o">-</span><span class="n">reward</span><span class="o">-</span><span class="n">distributor</span> <span class="o">.</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -109,7 +109,7 @@
 <li><p>Alternatively, you can pull directly the official mavryk-reward-distributor Docker image:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mavrykdynamicsmavryk</span><span class="o">-</span><span class="n">reward</span><span class="o">-</span><span class="n">distributor</span>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">mavrykdynamics</span><span class="o">/</span><span class="n">mavryk</span><span class="o">-</span><span class="n">reward</span><span class="o">-</span><span class="n">distributor</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -117,7 +117,7 @@
 <li><p>Run the container:</p></li>
 </ol>
 <blockquote>
-<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z mavrykdynamicsmavryk-reward-distributor --base_directory /app/pymnt &lt;ARGS&gt;
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run --network=host -v $(pwd)/pymnt:/app/pymnt:z mavrykdynamics/mavryk-reward-distributor --base_directory /app/pymnt &lt;ARGS&gt;
 </pre></div>
 </div>
 </div></blockquote>
