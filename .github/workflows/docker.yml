@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: trdo/mavryk-reward-distributor
+          images: mavrykdynamicsmavryk-reward-distributor
           tags: |
             type=ref,event=branch
             type=ref,event=pr

@@ -119,7 +119,6 @@ def onpaymentaddress(input):
     try:
         AddressValidator("payouts address").validate(input)
 
-        global parser
         parser.set(PAYMENT_ADDRESS, input)
         parser.validate_payment_address(parser.get_conf_obj())
     except Exception as e:
@@ -131,7 +130,6 @@ def onpaymentaddress(input):
 
 def onservicefee(input):
     try:
-        global parser
         parser.set(SERVICE_FEE, float(input))
         parser.validate_service_fee(parser.get_conf_obj())
     except Exception as e:
@@ -147,7 +145,6 @@ def onrewardstype(input):
     if not input:
         input = RewardsType.ACTUAL.value
     try:
-        global parser
         rt = RewardsType(input.lower())
         parser.set(REWARDS_TYPE, str(rt))
         if not input == RewardsType.ACTUAL.value:
@@ -161,7 +158,6 @@ def onrewardstype(input):
 
 def onfoundersmap(input):
     try:
-        global parser
         dict = ast.literal_eval("{" + input + "}")
         parser.set(FOUNDERS_MAP, dict)
         parser.validate_share_map(parser.get_conf_obj(), FOUNDERS_MAP)
@@ -174,7 +170,6 @@ def onfoundersmap(input):
 
 def onownersmap(input):
     try:
-        global parser
         dict = ast.literal_eval("{" + input + "}")
         parser.set(OWNERS_MAP, dict)
         parser.validate_share_map(parser.get_conf_obj(), OWNERS_MAP)
@@ -189,7 +184,6 @@ def onmindelegation(input):
     try:
         if not input:
             input = "0"
-        global parser
         parser.set(MIN_DELEGATION_AMT, float(input))
         parser.validate_min_delegation_amt(parser.get_conf_obj())
     except Exception:
@@ -202,7 +196,6 @@ def onminpayment(input):
     try:
         if not input:
             input = "0"
-        global parser
         parser.set(MIN_PAYMENT_AMT, float(input))
         parser.validate_min_payment_amt(parser.get_conf_obj())
     except Exception:
@@ -221,7 +214,6 @@ def onmindelegationtarget(input):
             printe("Invalid target, available options are {}".format(options))
             return
 
-        global parser
         conf_obj = parser.get_conf_obj()
         if RULES_MAP not in conf_obj:
             conf_obj[RULES_MAP] = dict()
@@ -241,7 +233,6 @@ def onexclude(input):
         return
 
     try:
-        global parser
 
         dict = ast.literal_eval("{" + input + "}")
         parser.set(RULES_MAP, dict)
@@ -259,7 +250,6 @@ def onspecials(input):
         return
 
     try:
-        global parser
         dict = ast.literal_eval("{" + input + "}")
         parser.set(SPECIALS_MAP, dict)
 
@@ -276,7 +266,6 @@ def onsupporters(input):
         return
 
     try:
-        global parser
         dict = ast.literal_eval("{" + input + "}")
         parser.set(SUPPORTERS_SET, dict)
         parser.validate_address_set(parser.get_conf_obj(), SUPPORTERS_SET)
@@ -293,7 +282,6 @@ def onredirect(input):
         return
 
     try:
-        global parser
 
         dict = ast.literal_eval("{" + input + "}")
         parser.set(RULES_MAP, dict)
@@ -311,7 +299,6 @@ def ondelegatorpaysxfrfee(input):
             input = "0"
         if input != "0" and input != "1":
             raise Exception("Please enter '0' or '1'")
-        global parser
         parser.set(DELEGATOR_PAYS_XFER_FEE, input != "1")
     except Exception as e:
         printe("Invalid input: {}".format(str(e)))
@@ -325,7 +312,6 @@ def ondelegatorpaysrafee(input):
             input = "0"
         if input != "0" and input != "1":
             raise Exception("Please enter '0' or '1'")
-        global parser
         parser.set(DELEGATOR_PAYS_RA_FEE, input != "1")
     except Exception as e:
         printe("Invalid input: {}".format(str(e)))
@@ -339,7 +325,6 @@ def onpaydenunciationrewards(input):
             input = "1"
         if input != "0" and input != "1":
             raise Exception("Please enter '0' or '1'")
-        global parser
         parser.set(PAY_DENUNCIATION_REWARDS, input != "1")
     except Exception as e:
         printe("Invalid input: {}".format(str(e)))
@@ -353,7 +338,6 @@ def onreactivatezeroed(input):
             input = "0"
         if input != "0" and input != "1":
             raise Exception("Please enter '0' or '1'")
-        global parser
         parser.set(REACTIVATE_ZEROED, input != "1")
     except Exception as e:
         printe("Invalid input: {}".format(str(e)))
