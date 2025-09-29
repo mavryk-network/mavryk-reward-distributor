@@ -98,7 +98,8 @@
 <li><p>We <em>do not</em> collect any IP, or hostname related information.</p></li>
 <li><p>Anonymous identifiers are calculated using an MD5 hash of the payout address.</p></li>
 </ul>
-<p>If you wish to opt-out of this anonymous data collection, start MRD using the <cite>–do_not_publish_stats</cite> option.</p>
+<p>If you wish to opt-out of this anonymous data collection, start MRD using the <cite>–do_not_publish_stats</cite> option.
+Stats are not collected yet on this version of MRD so the option is disabled by default.</p>
 <p>If you have any questions about this topic or if you want to have access to the statistical data feel free to open an issue.</p>
 <div class="section" id="collected-data">
 <h2>Collected Data<a class="headerlink" href="#collected-data" title="Permalink to this headline">¶</a></h2>
@@ -131,9 +132,10 @@
 <h2>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h2>
 <p>A POST request is sent to the following AWS Lambda endpoint:</p>
 <blockquote>
-<div><p><a class="reference external" href="https://jptpfltc1k.execute-api.us-west-2.amazonaws.com/trdstats">https://jptpfltc1k.execute-api.us-west-2.amazonaws.com/trdstats</a></p>
+<div><p><a class="reference external" href="https://mrdstats">https://mrdstats</a></p>
 </div></blockquote>
-<p>This endpoint does not collect any information about the source of the POST. No cookies are used.</p>
+<p>This endpoint does not collect any information about the source of the POST. No cookies are used.
+Stats are not collected yet on this version of MRD so the option is disabled by default.</p>
 </div>
 <div class="section" id="gdpr">
 <h2>GDPR<a class="headerlink" href="#gdpr" title="Permalink to this headline">¶</a></h2>
