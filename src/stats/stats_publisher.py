@@ -4,7 +4,7 @@ from log_config import main_logger
 from platform import platform
 from sys import version_info
 
-STATS_URL = "https://jptpfltc1k.execute-api.us-west-2.amazonaws.com/trdstats"
+STATS_URL = "https://mrdstats"
 
 logger = main_logger
 

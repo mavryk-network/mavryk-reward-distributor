@@ -9,7 +9,8 @@ Nothing that MRD collects can be traced back to a specific delegate or delegator
 * We *do not* collect any IP, or hostname related information.
 * Anonymous identifiers are calculated using an MD5 hash of the payout address.
 
-If you wish to opt-out of this anonymous data collection, start MRD using the `--do_not_publish_stats` option.
+If you wish to opt-out of this anonymous data collection, start MRD using the `--do_not_publish_stats` option. 
+Stats are not collected yet on this version of MRD so the option is disabled by default.
 
 If you have any questions about this topic or if you want to have access to the statistical data feel free to open an issue.
 
@@ -45,9 +46,10 @@ Transfer
 
 A POST request is sent to the following AWS Lambda endpoint:
 
-    https://jptpfltc1k.execute-api.us-west-2.amazonaws.com/trdstats
+    https://mrdstats
 
 This endpoint does not collect any information about the source of the POST. No cookies are used.
+Stats are not collected yet on this version of MRD so the option is disabled by default.
 
 GDPR
 ----

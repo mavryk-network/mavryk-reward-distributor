@@ -18,47 +18,47 @@ interactions:
 
         '
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
       CF-RAY:
-      - 98419fb07a88006a-KIX
+      - 986a478d8d6b9656-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Wed, 24 Sep 2025 10:33:28 GMT
+      - Mon, 29 Sep 2025 08:58:35 GMT
       Nel:
       - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       Report-To:
-      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=SEDjkU57ssXRBDuu0Eotl0slEstWeHd2yNLoryjY0HE0U7frJ%2BpcUoNpp3igsrGkcP8i2npRPP7bmetCNcyoq8u43nloQGAxsx0DDjPvRgbfbwq%2FAkTVi%2F9A6%2FAVig%3D%3D"}]}'
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=g%2BOstAE0i4wjpZlMLODEom3J%2BzFvtqS6c6WawZsbqY2ax1G488iWLHngaQpgOI0rZd3ss7bxj7Lsye5C8rdIdewGEmopwgFOp6rxQpag2tUldfX5Fnq8nGW54fJYAA%3D%3D"}]}'
       Server:
       - cloudflare
-      access-control-allow-credentials:
-      - 'true'
-      access-control-allow-headers:
-      - Content-Type,Authorization
-      access-control-allow-methods:
-      - GET, POST
-      access-control-allow-origin:
-      - '*'
-      access-control-max-age:
-      - '1728000'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1500'
+      X-Ratelimit-Remaining:
+      - '1499'
+      X-Ratelimit-Reset:
+      - '1759136375'
       alt-svc:
       - h3=":443"; ma=86400
       cf-cache-status:
       - DYNAMIC
       content-length:
       - '3870'
-      strict-transport-security:
-      - max-age=31536000; includeSubDomains
-      vary:
-      - Origin
-      - Accept-Encoding
-      x-ratelimit-limit:
-      - '1500'
-      x-ratelimit-remaining:
-      - '1498'
-      x-ratelimit-reset:
-      - '1758710068'
     status:
       code: 200
       message: OK

@@ -25,13 +25,15 @@ class DiscordPlugin(plugins.Plugin):
         if self.send_admin:
             self.post_to_discord(admin_text, "ADMIN")
 
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators):
+    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
         # Do template replacements
         payout_message = (
             self.discord_text.replace("%CYCLE%", str(cycle))
             .replace("%TREWARDS%", str(round(payout_amount / MUMAV_PER_MAV, 2)))
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
+        if baking_address is not None:
+            payout_message = payout_message.replace("%BAKER%", str(baking_address))
         self.post_to_discord(payout_message, "PAYOUT")
 
     def post_to_discord(self, message, type):

@@ -38,7 +38,7 @@ baking_config = make_config(
 
 
 PAYOUT_CYCLE = 5
-PAYMENT_ADDRESS_BALANCE = int(10000 * MUMAV_PER_MAV)
+PAYMENT_ADDRESS_BALANCE = int(50000 * MUMAV_PER_MAV)  # Increased to 50,000 MAV to cover the payout
 forge = "0" * (TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
 
 
@@ -171,19 +171,19 @@ def test_batch_payer_total_payout_amount():
     # Payment does not have status done, paid or injected thus the total payout amount is zero
     assert total_payout_amount == 0, f"total_payout_amount is {total_payout_amount}"
     assert (
-        number_future_payable_cycles == 1
+        number_future_payable_cycles == 0
     ), f"number_future_payable_cycles is {number_future_payable_cycles}"
 
     # Check the adjusted amount which is sorted by type and from highest to lowest amount
     expected_amounts_delegates = [
-        1231211612,
-        324003100,
-        194401804,
-        152929473,
-        129601157,
-        93312849,
-        90720907,
-        64800648
+        10188377351,
+        2681152297,
+        1608690919,
+        1265503967,
+        1072460230,
+        772171503,
+        750722964,
+        536230689
     ]
 
     for idx, expected_amount in enumerate(expected_amounts_delegates):

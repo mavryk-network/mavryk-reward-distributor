@@ -18,47 +18,47 @@ interactions:
 
         '
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - Content-Type,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
       CF-RAY:
-      - 98419fab3b89d3e9-KIX
+      - 986a478778c71b3a-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json
       Date:
-      - Wed, 24 Sep 2025 10:33:28 GMT
+      - Mon, 29 Sep 2025 08:58:34 GMT
       Nel:
       - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       Report-To:
-      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=URArRo3MMHbsjmMjGwafAaDzvdOObd%2FpPkw4rA1yEMExIRm6iqFF7DgfoojirMeCiIGkW0plYDZxgyR1xlubTdwbIBB5qnqA%2B8a9%2FZ4OwvDxazj0xF9jOdKLttptqQ%3D%3D"}]}'
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=WYhAYLqfDNncUL5CfJcTDK%2Bxq61hVRXzaijSA0M%2F9yRIaLUZdjlHPvy%2FciltRXY9b%2FG%2FwJfw%2FUC1tMHNKKxB6CmUm5UD7q9u8uRpJq7LmDhQCjhN2lA6GWMo97XEwQ%3D%3D"}]}'
       Server:
       - cloudflare
-      access-control-allow-credentials:
-      - 'true'
-      access-control-allow-headers:
-      - Content-Type,Authorization
-      access-control-allow-methods:
-      - GET, POST
-      access-control-allow-origin:
-      - '*'
-      access-control-max-age:
-      - '1728000'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Vary:
+      - Origin
+      - Accept-Encoding
+      X-Ratelimit-Limit:
+      - '1500'
+      X-Ratelimit-Remaining:
+      - '1499'
+      X-Ratelimit-Reset:
+      - '1759136374'
       alt-svc:
       - h3=":443"; ma=86400
       cf-cache-status:
       - DYNAMIC
       content-length:
       - '3870'
-      strict-transport-security:
-      - max-age=31536000; includeSubDomains
-      vary:
-      - Origin
-      - Accept-Encoding
-      x-ratelimit-limit:
-      - '1500'
-      x-ratelimit-remaining:
-      - '1499'
-      x-ratelimit-reset:
-      - '1758710068'
     status:
       code: 200
       message: OK

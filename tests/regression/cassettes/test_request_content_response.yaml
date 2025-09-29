@@ -14,52 +14,52 @@ interactions:
     uri: https://api.mavryk.network/v1/rewards/split/mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D/5?offset=0&limit=10000
   response:
     body:
-      string: '{"cycle":5,"bakingPower":13588383509806,"totalBakingPower":101977583096576,"ownDelegatedBalance":9137159953145,"externalDelegatedBalance":16448599000000,"delegatorsCount":8,"ownStakedBalance":2842862105905,"externalStakedBalance":0,"stakersCount":0,"expectedBlocks":3274,"expectedEndorsements":22923045,"futureBlocks":2496,"futureBlockRewards":16635483072,"blocks":792,"blockRewardsDelegated":4161046795,"blockRewardsStakedOwn":1100859115,"blockRewardsStakedEdge":0,"blockRewardsStakedShared":0,"missedBlocks":0,"missedBlockRewards":0,"futureEndorsements":17582233,"futureEndorsementRewards":21822738840,"endorsements":5343217,"endorsementRewardsDelegated":0,"endorsementRewardsStakedOwn":0,"endorsementRewardsStakedEdge":0,"endorsementRewardsStakedShared":0,"missedEndorsements":0,"missedEndorsementRewards":0,"blockFees":6187,"missedBlockFees":0,"doubleBakingRewards":0,"doubleBakingLostStaked":0,"doubleBakingLostUnstaked":0,"doubleBakingLostExternalStaked":0,"doubleBakingLostExternalUnstaked":0,"doubleEndorsingRewards":0,"doubleEndorsingLostStaked":0,"doubleEndorsingLostUnstaked":0,"doubleEndorsingLostExternalStaked":0,"doubleEndorsingLostExternalUnstaked":0,"doublePreendorsingRewards":0,"doublePreendorsingLostStaked":0,"doublePreendorsingLostUnstaked":0,"doublePreendorsingLostExternalStaked":0,"doublePreendorsingLostExternalUnstaked":0,"vdfRevelationRewardsDelegated":0,"vdfRevelationRewardsStakedOwn":0,"vdfRevelationRewardsStakedEdge":0,"vdfRevelationRewardsStakedShared":0,"nonceRevelationRewardsDelegated":12652416,"nonceRevelationRewardsStakedOwn":3347456,"nonceRevelationRewardsStakedEdge":0,"nonceRevelationRewardsStakedShared":0,"nonceRevelationLosses":0,"delegators":[{"address":"KT1WUjHpHtLdtnw6S3A6kH7cia6HCEzWLGqi","delegatedBalance":8878505000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":8878505000000,"currentBalance":514},{"address":"KT1Lao27WpW7sf4qAopUUKjc5QZFPxn6ZYfj","delegatedBalance":2336449000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":2336449000000,"currentBalance":514},{"address":"KT1XL6VdDrxt9c9LRgAtMsBLFkTfrZmy9g96","delegatedBalance":1401869000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1401869000000,"currentBalance":514},{"address":"KT194AS7JC1hovTVmy38YtwsoQFV97CT7BTw","delegatedBalance":1102804000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1102804000000,"currentBalance":514},{"address":"KT1FzTamJEMovvBzauVpu4REw6tedb5SegPN","delegatedBalance":934579000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":934579000000,"currentBalance":514},{"address":"KT19nd6Z7Ca963q4GBeCu7JraB5n8BbVhPzm","delegatedBalance":672897000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":672897000000,"currentBalance":514},{"address":"KT1UXmR9LtR14RHyNqhShLaDjoG7EiY9MEQ6","delegatedBalance":654206000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":654206000000,"currentBalance":514},{"address":"KT1Fu6UNSa6PdiVokY5NJCagVgWB7anXXYzs","delegatedBalance":467290000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":467290000000,"currentBalance":514}],"blockRewardsLiquid":4161046795,"endorsementRewardsLiquid":0,"nonceRevelationRewardsLiquid":12652416,"vdfRevelationRewardsLiquid":0,"revelationRewards":15999872,"revelationLosses":0,"doublePreendorsingLosses":0,"doubleEndorsingLosses":0,"doubleBakingLosses":0,"endorsementRewards":0,"blockRewards":5261905910,"stakingBalance":28428621059050,"activeStake":13588383509806,"selectedStake":101977583096576,"delegatedBalance":16448599000000,"numDelegators":8,"ownBlocks":792,"extraBlocks":0,"missedOwnBlocks":0,"missedExtraBlocks":0,"uncoveredOwnBlocks":0,"uncoveredExtraBlocks":0,"uncoveredEndorsements":0,"ownBlockRewards":5261905910,"extraBlockRewards":0,"missedOwnBlockRewards":0,"missedExtraBlockRewards":0,"uncoveredOwnBlockRewards":0,"uncoveredExtraBlockRewards":0,"uncoveredEndorsementRewards":0,"ownBlockFees":6187,"extraBlockFees":0,"missedOwnBlockFees":0,"missedExtraBlockFees":0,"uncoveredOwnBlockFees":0,"uncoveredExtraBlockFees":0,"doubleBakingLostDeposits":0,"doubleBakingLostRewards":0,"doubleBakingLostFees":0,"doubleEndorsingLostDeposits":0,"doubleEndorsingLostRewards":0,"doubleEndorsingLostFees":0,"revelationLostRewards":0,"revelationLostFees":0,"futureBlockDeposits":0,"blockDeposits":0,"futureEndorsementDeposits":0,"endorsementDeposits":0}'
+      string: '{"cycle":5,"bakingPower":13588383509806,"totalBakingPower":101977583096576,"ownDelegatedBalance":9137159953145,"externalDelegatedBalance":16448599000000,"delegatorsCount":8,"ownStakedBalance":2842862105905,"externalStakedBalance":0,"stakersCount":0,"expectedBlocks":3274,"expectedEndorsements":22923045,"futureBlocks":0,"futureBlockRewards":0,"blocks":3286,"blockRewardsDelegated":17267807761,"blockRewardsStakedOwn":4571569090,"blockRewardsStakedEdge":0,"blockRewardsStakedShared":0,"missedBlocks":4,"missedBlockRewards":21308712,"futureEndorsements":0,"futureEndorsementRewards":0,"endorsements":22901186,"endorsementRewardsDelegated":17257145202,"endorsementRewardsStakedOwn":4565593638,"endorsementRewardsStakedEdge":0,"endorsementRewardsStakedShared":0,"missedEndorsements":24264,"missedEndorsementRewards":0,"blockFees":15874221,"missedBlockFees":0,"doubleBakingRewards":0,"doubleBakingLostStaked":0,"doubleBakingLostUnstaked":0,"doubleBakingLostExternalStaked":0,"doubleBakingLostExternalUnstaked":0,"doubleEndorsingRewards":0,"doubleEndorsingLostStaked":0,"doubleEndorsingLostUnstaked":0,"doubleEndorsingLostExternalStaked":0,"doubleEndorsingLostExternalUnstaked":0,"doublePreendorsingRewards":0,"doublePreendorsingLostStaked":0,"doublePreendorsingLostUnstaked":0,"doublePreendorsingLostExternalStaked":0,"doublePreendorsingLostExternalUnstaked":0,"vdfRevelationRewardsDelegated":98847,"vdfRevelationRewardsStakedOwn":26152,"vdfRevelationRewardsStakedEdge":0,"vdfRevelationRewardsStakedShared":0,"nonceRevelationRewardsDelegated":12652416,"nonceRevelationRewardsStakedOwn":3347456,"nonceRevelationRewardsStakedEdge":0,"nonceRevelationRewardsStakedShared":0,"nonceRevelationLosses":0,"delegators":[{"address":"KT1WUjHpHtLdtnw6S3A6kH7cia6HCEzWLGqi","delegatedBalance":8878505000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":8878505000000,"currentBalance":514},{"address":"KT1Lao27WpW7sf4qAopUUKjc5QZFPxn6ZYfj","delegatedBalance":2336449000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":2336449000000,"currentBalance":514},{"address":"KT1XL6VdDrxt9c9LRgAtMsBLFkTfrZmy9g96","delegatedBalance":1401869000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1401869000000,"currentBalance":514},{"address":"KT194AS7JC1hovTVmy38YtwsoQFV97CT7BTw","delegatedBalance":1102804000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":1102804000000,"currentBalance":514},{"address":"KT1FzTamJEMovvBzauVpu4REw6tedb5SegPN","delegatedBalance":934579000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":934579000000,"currentBalance":514},{"address":"KT19nd6Z7Ca963q4GBeCu7JraB5n8BbVhPzm","delegatedBalance":672897000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":672897000000,"currentBalance":514},{"address":"KT1UXmR9LtR14RHyNqhShLaDjoG7EiY9MEQ6","delegatedBalance":654206000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":654206000000,"currentBalance":514},{"address":"KT1Fu6UNSa6PdiVokY5NJCagVgWB7anXXYzs","delegatedBalance":467290000000,"stakedBalance":0,"emptied":false,"currentDelegatedBalance":257,"currentStakedBalance":257,"balance":467290000000,"currentBalance":514}],"blockRewardsLiquid":17267807761,"endorsementRewardsLiquid":17257145202,"nonceRevelationRewardsLiquid":12652416,"vdfRevelationRewardsLiquid":98847,"revelationRewards":16124871,"revelationLosses":0,"doublePreendorsingLosses":0,"doubleEndorsingLosses":0,"doubleBakingLosses":0,"endorsementRewards":21822738840,"blockRewards":21839376851,"stakingBalance":28428621059050,"activeStake":13588383509806,"selectedStake":101977583096576,"delegatedBalance":16448599000000,"numDelegators":8,"ownBlocks":3286,"extraBlocks":0,"missedOwnBlocks":4,"missedExtraBlocks":0,"uncoveredOwnBlocks":0,"uncoveredExtraBlocks":0,"uncoveredEndorsements":0,"ownBlockRewards":21839376851,"extraBlockRewards":0,"missedOwnBlockRewards":21308712,"missedExtraBlockRewards":0,"uncoveredOwnBlockRewards":0,"uncoveredExtraBlockRewards":0,"uncoveredEndorsementRewards":0,"ownBlockFees":15874221,"extraBlockFees":0,"missedOwnBlockFees":0,"missedExtraBlockFees":0,"uncoveredOwnBlockFees":0,"uncoveredExtraBlockFees":0,"doubleBakingLostDeposits":0,"doubleBakingLostRewards":0,"doubleBakingLostFees":0,"doubleEndorsingLostDeposits":0,"doubleEndorsingLostRewards":0,"doubleEndorsingLostFees":0,"revelationLostRewards":0,"revelationLostFees":0,"futureBlockDeposits":0,"blockDeposits":0,"futureEndorsementDeposits":0,"endorsementDeposits":0}'
     headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
       CF-RAY:
-      - 9841a019bb86d788-NRT
+      - 986a47ebac60d41b-KIX
       Connection:
       - keep-alive
       Content-Type:
       - application/json; charset=utf-8
       Date:
-      - Wed, 24 Sep 2025 10:33:45 GMT
+      - Mon, 29 Sep 2025 08:58:49 GMT
+      Mvkt-Known-Level:
+      - '154797'
+      Mvkt-Level:
+      - '154797'
+      Mvkt-Synced-At:
+      - '2025-09-29T08:58:39Z'
+      Mvkt-Version:
+      - 1.14.4.0
       Nel:
       - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
       Report-To:
-      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=ra%2FR8s4dfjG566xPtkncvmyZsRrFHUFLi3kW0nTGtvctGkbWVjFW0desV5GZM4wrH%2FYRUhEsnJ0KD6Rlr1UXt5khblXCRwyMmzRQrbtp99zncj00aNUtBjaobrcg5Q%3D%3D"}]}'
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=PL532mp0DzrNv885yqVH%2Fz1WLiqmkzXiwSqyyoDwC7gtrFUj8VlTNt099c9SOoQZlSf5QnKP4bsOI%2FyEVP806Vvau%2FkyS9b1wDeSmDBlhoAG4Xf6hZ0aQUiymyiZ%2FQ%3D%3D"}]}'
       Server:
       - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
       Transfer-Encoding:
       - chunked
-      access-control-allow-credentials:
-      - 'true'
-      access-control-allow-headers:
-      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
-      access-control-allow-methods:
-      - GET, POST, OPTIONS
-      access-control-allow-origin:
-      - '*'
-      access-control-expose-headers:
-      - '*'
-      access-control-max-age:
-      - '1728000'
       alt-svc:
       - h3=":443"; ma=86400
       cf-cache-status:
       - DYNAMIC
       content-length:
-      - '4701'
-      mvkt-known-level:
-      - '112224'
-      mvkt-level:
-      - '112224'
-      mvkt-synced-at:
-      - '2025-09-24T10:33:40Z'
-      mvkt-version:
-      - 1.14.4.0
-      strict-transport-security:
-      - max-age=31536000; includeSubDomains
+      - '4755'
     status:
       code: 200
       message: OK

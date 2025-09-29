@@ -38,66 +38,66 @@
     }
 
     // get servers from AWS API Gateway
-    $.ajax({
-      dataType: "json",
-      url: "https://jptpfltc1k.execute-api.us-west-2.amazonaws.com/trdstats",
-      data: { "network": network, "cycle": cycle },
-      beforeSend: function() {
-        $("#loaderDiv").show();
-      },
-      complete: function() {
-        $("#loaderDiv").hide();
-      },
-      success: function(data) {
+    // $.ajax({
+    //   dataType: "json",
+    //   url: "https://mrdstats",
+    //   data: { "network": network, "cycle": cycle },
+    //   beforeSend: function() {
+    //     $("#loaderDiv").show();
+    //   },
+    //   complete: function() {
+    //     $("#loaderDiv").hide();
+    //   },
+    //   success: function(data) {
 
-        if (data.length < 1) {
-          showError("No data found")
-          return
-        }
+    //     if (data.length < 1) {
+    //       showError("No data found")
+    //       return
+    //     }
         
-        // Some globals
-        var tbody = $("#statsTableBody")
-        var oddRow = true
+    //     // Some globals
+    //     var tbody = $("#statsTableBody")
+    //     var oddRow = true
         
-        // Loop over data from DynamoDB and construct table.
-        $.each(data, function(i, o) {
+    //     // Loop over data from DynamoDB and construct table.
+    //     $.each(data, function(i, o) {
 
-          var row = $("<tr/>")
+    //       var row = $("<tr/>")
           
-          row.append($("<td/>").text(o["cycle"]))
-          row.append($("<td/>").text(o["total_amount"]))
-          row.append($("<td/>").text(o["m_prov"]))
+    //       row.append($("<td/>").text(o["cycle"]))
+    //       row.append($("<td/>").text(o["total_amount"]))
+    //       row.append($("<td/>").text(o["m_prov"]))
 
-          row.append($("<td/>").text(o["nb_delegators"]))
-          row.append($("<td/>").text(o["nb_pay"]))
-          row.append($("<td/>").text(o["nb_failed"]))
-          row.append($("<td/>").text(o["nb_unknown"]))
-          row.append($("<td/>").text(o["nb_merged"]))
+    //       row.append($("<td/>").text(o["nb_delegators"]))
+    //       row.append($("<td/>").text(o["nb_pay"]))
+    //       row.append($("<td/>").text(o["nb_failed"]))
+    //       row.append($("<td/>").text(o["nb_unknown"]))
+    //       row.append($("<td/>").text(o["nb_merged"]))
 
-          row.append($("<td/>").text(o["nb_owners"]))
-          row.append($("<td/>").text(o["nb_founders"]))
+    //       row.append($("<td/>").text(o["nb_owners"]))
+    //       row.append($("<td/>").text(o["nb_founders"]))
 
-          row.append($("<td/>").text(o["pay_xfer_fee"]))
-          row.append($("<td/>").text(o["pay_ra_fee"]))
+    //       row.append($("<td/>").text(o["pay_xfer_fee"]))
+    //       row.append($("<td/>").text(o["pay_ra_fee"]))
 
-          row.append($("<td/>").text(o["m_relov"]))
-          row.append($("<td/>").text(o["m_offset"]))
+    //       row.append($("<td/>").text(o["m_relov"]))
+    //       row.append($("<td/>").text(o["m_offset"]))
 
-          row.append($("<td/>").text(o["pythonver"]))
-          row.append($("<td/>").text(o["m_run"]))
-          row.append($("<td/>").text(o["m_docker"]))
+    //       row.append($("<td/>").text(o["pythonver"]))
+    //       row.append($("<td/>").text(o["m_run"]))
+    //       row.append($("<td/>").text(o["m_docker"]))
 
-          // append the created rows to the main table
-          tbody.append(row)
+    //       // append the created rows to the main table
+    //       tbody.append(row)
           
-          oddRow = (!oddRow)
-        });
+    //       oddRow = (!oddRow)
+    //     });
         
-      },
-      error: function(xhr, e, d) {
-        showError(xhr.responseText)
-      }
-    });
+    //   },
+    //   error: function(xhr, e, d) {
+    //     showError(xhr.responseText)
+    //   }
+    // });
   }
   
   

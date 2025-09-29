@@ -57,13 +57,15 @@ class TwitterPlugin(plugins.Plugin):
         logger.debug("[TwitterPlugin] Admin notifications not implemented")
         return
 
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators):
+    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
         # Replace template variables
         tweet = (
             self.tweet_text.replace("%CYCLE%", str(cycle))
             .replace("%TREWARDS%", str(round(payout_amount / MUMAV_PER_MAV, 2)))
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
+        if baking_address is not None:
+            tweet = tweet.replace("%BAKER%", str(baking_address))
 
         # Truncate message to max tweet length
         tweet = tweet[: self.MAX_TWEET_LEN]

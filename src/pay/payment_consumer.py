@@ -218,9 +218,12 @@ class PaymentConsumer(threading.Thread):
                     number_future_payable_cycles
                 )
 
-                # Payout notification receives cycle, rewards total, number of delegators
+                # Payout notification receives cycle, rewards total, number of delegators, baking address
                 self.plugins_manager.send_payout_notification(
-                    pymnt_cycle, total_payout_amount, (nb_paid + nb_failed + nb_unknown)
+                    pymnt_cycle,
+                    total_payout_amount,
+                    (nb_paid + nb_failed + nb_unknown),
+                    baking_address=self.baking_address,
                 )
 
                 # Admin notification receives subject, message, CSV report, raw log objects
@@ -228,23 +231,28 @@ class PaymentConsumer(threading.Thread):
                     subject, admin_message, [report_file], payment_logs
                 )
 
-            # 9- publish anonymous stats
-            if self.publish_stats and self.args and not self.dry_run:
-                stats_dict = self.create_stats_dict(
-                    self.key_name,
-                    nb_failed,
-                    nb_unknown,
-                    pymnt_cycle,
-                    payment_logs,
-                    total_attempts,
-                )
-                stats_publisher(stats_dict)
-            else:
-                logger.info(
-                    "Anonymous statistics disabled{:s}".format(
-                        ", (Dry run)" if self.dry_run else ""
-                    )
-                )
+            # 9- publish anonymous stats (DISABLED)
+            # Anonymous stats collection has been disabled for privacy/security reasons
+            # To re-enable, uncomment the following code block:
+            # if self.publish_stats and self.args and not self.dry_run:
+            #     stats_dict = self.create_stats_dict(
+            #         self.key_name,
+            #         nb_failed,
+            #         nb_unknown,
+            #         pymnt_cycle,
+            #         payment_logs,
+            #         total_attempts,
+            #     )
+            #     stats_publisher(stats_dict)
+            # else:
+            #     logger.info(
+            #         "Anonymous statistics disabled{:s}".format(
+            #             ", (Dry run)" if self.dry_run else ""
+            #         )
+            #     )
+            
+            # Stats are now permanently disabled
+            logger.info("Anonymous statistics collection is disabled")
 
             # - if caught error we can exit
             if exit_code is not None:
