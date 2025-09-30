@@ -10,7 +10,9 @@ from src.Constants import (
 from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl, RewardLog
 from tests.utils import Constants
 
-MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
+MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = (
+    Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
+)
 CYCLE = 100
 
 """

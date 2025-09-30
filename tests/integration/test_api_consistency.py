@@ -12,9 +12,15 @@ from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 from src.mvkt.mvkt_reward_api import MvKTRewardApiImpl
 
 MAINNET_ADDRESS_DELEGATOR = Constants.MAINNET_ADDRESS_DELEGATOR
-MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
-MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR = Constants.MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR
-BASENET_ADDRESS_FOUNDATION_0_VALIDATOR = Constants.BASENET_ADDRESS_FOUNDATION_0_VALIDATOR
+MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = (
+    Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
+)
+MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR = (
+    Constants.MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR
+)
+BASENET_ADDRESS_FOUNDATION_0_VALIDATOR = (
+    Constants.BASENET_ADDRESS_FOUNDATION_0_VALIDATOR
+)
 MAINNET_ADDRESS_FOUNDATION_1_PAYOUT = Constants.MAINNET_ADDRESS_FOUNDATION_1_PAYOUT
 
 # These tests should not be mocked but test the overall consistency
@@ -52,7 +58,9 @@ def test_get_current_cycle_and_level(address_block_api_mvkt):
     decode_compressed_response=True,
 )
 def test_get_delegatable(address_block_api_mvkt):
-    assert address_block_api_mvkt.get_delegatable(MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR)
+    assert address_block_api_mvkt.get_delegatable(
+        MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
+    )
 
 
 # NOTE: We are using a testnet validator where we can manage the amount of delegates
