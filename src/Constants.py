@@ -2,7 +2,7 @@ from enum import Enum
 from datetime import date
 
 # General
-VERSION = 12.0
+VERSION = 1.0
 PYTHON_MAJOR = 3
 PYTHON_MINOR = 8
 LINER = "--------------------------------------------"
