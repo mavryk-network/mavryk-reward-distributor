@@ -165,7 +165,7 @@ class PhasedPaymentCalculator:
                     ]
                 )
             )
-            
+
             # Check if min_delegation_amnt actually changed to prevent infinite loop
             if self.min_delegation_amnt == previous_min_delegation_amnt:
                 logger.warning(

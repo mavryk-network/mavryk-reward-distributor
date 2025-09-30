@@ -250,7 +250,7 @@ class PaymentConsumer(threading.Thread):
             #             ", (Dry run)" if self.dry_run else ""
             #         )
             #     )
-            
+
             # Stats are now permanently disabled
             logger.info("Anonymous statistics collection is disabled")
 

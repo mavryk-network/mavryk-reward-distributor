@@ -269,7 +269,7 @@ class ProcessLifeCycle:
             )
 
         # publish_stats = not self.args.do_not_publish_stats
-        publish_stats = False
+        # publish_stats = False
         # msg = "will" if publish_stats else "will not"
         msg = "will not"
         logger.info(
