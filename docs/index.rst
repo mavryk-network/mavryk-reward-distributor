@@ -5,8 +5,6 @@ Mavryk Reward Distributor (MRD)
 
 DISCLAIMER : MAVRYK REWARD DISTRIBUTOR IS PROVIDED AS IS. IT IS UNDER CONSTANT DEVELOPMENT. EVENT THOUGH IT IS WELL TESTED, PLEASE USE IT WITH CARE. ALWAYS MAKE A PRE-RUN IN DRY MODE BEFORE MAKING ACTUAL PAYMENTS. IF YOU WANT TO RUN IN SERVICE MODE DO IT AFTER YOU ARE CONFIDENT WITH THE APPLICATION. IN SERVICE MODE ONLY UPDATE IF NEEDED.
 
-PRIVACY : MAVRYK REWARD DISTRIBUTOR COLLECTS ANONYMOUS STATISTICS. PLEASE READ OUR STATISTICS POLICY_ FOR MORE INFORMATION.
-
 What's MRD?
 ------------------------------------------------
 
@@ -40,7 +38,7 @@ The backend of the Mavryk Reward Distributor is `Powered by MvKT API`__ under th
     
     If your application or service uses the MvKT API in any forms: directly on frontend or indirectly on backend, you should mention that fact on your website or application by placing the label "Powered by MvKT API" with a direct link to api.mavryk.network.
 
-.. _POLICY : statistics.html
+
 
 .. _article : https://medium.com/@huseyinabanox/mavryk-reward-distributor-e6588c4d27e7
 
@@ -88,5 +86,4 @@ This Github Repo_ contains logo images. If you are using MRD and want to let eve
    contributors
    multisig_payouts
    testing
-   statistics
    codeofconduct
