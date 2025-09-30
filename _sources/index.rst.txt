@@ -17,7 +17,7 @@ Who needs MRD?
 
 The MRD is needed by validators who want to pay delegation rewards. There are a few payout tools available in the Mavryk ecosystem. However, the MRD is probably the most used open source payout tool by validators. It ranges from small validators with a couple of delegators to large validators with more than thousand delegators. The maintainers strive to keep up with the growing Mavryk ecosystem. This in turn enables MRD users to participate in the exploration of new business areas like baking for liquidity pools or DAOs.
 
-Another popular payout distribution software is [MavPay](https://github.com/mavryk-network/mavpay).
+Another payout distribution software is [MavPay](https://github.com/mavryk-network/mavpay) but it still a WIP.
 
 What else do you need for MRD?
 ------------------------------------------------
