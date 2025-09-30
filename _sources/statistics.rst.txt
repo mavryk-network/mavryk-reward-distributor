@@ -1,7 +1,11 @@
-Anonymous Statistics
-====================
+.. orphan::
 
-The Mavryk Reward Distributor collects anonymous statistics after each payout. These statistics are purely for analytical purposes e.g. to evaluate the prioritization of feature requests or to communicate the usage data for marketing purposes.
+Anonymous Statistics (Disabled)
+================================
+
+Note: This page is currently disabled from the documentation navigation and cross-links. Anonymous statistics collection is not active in this version of MRD. Keep this page for potential future re-enablement.
+
+The Mavryk Reward Distributor previously collected anonymous statistics after each payout. These statistics were purely for analytical purposes.
 
 Nothing that MRD collects can be traced back to a specific delegate or delegator. The goal of the statistics is not to correlate nor discover specific bakeries that are using MRD.
 
@@ -9,8 +13,7 @@ Nothing that MRD collects can be traced back to a specific delegate or delegator
 * We *do not* collect any IP, or hostname related information.
 * Anonymous identifiers are calculated using an MD5 hash of the payout address.
 
-If you wish to opt-out of this anonymous data collection, start MRD using the `--do_not_publish_stats` option. 
-Stats are not collected yet on this version of MRD so the option is disabled by default.
+Stats are not collected in this version of MRD. The `--do_not_publish_stats` option is not needed.
 
 If you have any questions about this topic or if you want to have access to the statistical data feel free to open an issue.
 
@@ -44,12 +47,12 @@ MRD collects the following statistics after each payout:
 Transfer
 --------
 
-A POST request is sent to the following AWS Lambda endpoint:
+Previously, a POST request was sent to the following AWS Lambda endpoint:
 
     https://mrdstats
 
-This endpoint does not collect any information about the source of the POST. No cookies are used.
-Stats are not collected yet on this version of MRD so the option is disabled by default.
+This endpoint did not collect any information about the source of the POST. No cookies were used.
+Stats are not collected in this version of MRD so the functionality remains disabled.
 
 GDPR
 ----

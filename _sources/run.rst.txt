@@ -65,8 +65,7 @@ Options
 ``-s --background_service``
     Marker to indicate that MRD is running in daemon mode. When not given it indicates that MRD is in interactive mode.
 
-``-Dp --do_not_publish_stats``
-    Do not publish anonymous usage statistics. Stats are not collected yet on this version of MRD so the option is disabled by default.
+
 
 ``-V --verbose <on|off>``
     Produces a lot of logs. Default value: ``on``. Good for troubleshooting. Verbose logs go into app_verbose log file. App verbose log file is named with cycle number and creation date. For each cycle a new file is created and old file is moved to archive_backup directory after being zipped.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anonymous Statistics &mdash; Mavryk Reward Distributor (MRD) 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Anonymous Statistics (Disabled) &mdash; Mavryk Reward Distributor (MRD) 1.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -15,9 +15,7 @@
         <script src="_static/language_data.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Contributor Covenant Code of Conduct" href="codeofconduct.html" />
-    <link rel="prev" title="Tests" href="testing.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +41,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption"><span class="caption-text">Content:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">How to get and install MRD?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">How to configure MRD?</a></li>
 <li class="toctree-l1"><a class="reference internal" href="paymentaddress.html">Payment Address</a></li>
@@ -56,12 +54,6 @@
 <li class="toctree-l1"><a class="reference internal" href="contributors.html">For Developers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="multisig_payouts.html">Managing Contribution Payouts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="testing.html">Tests</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Anonymous Statistics</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#collected-data">Collected Data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#transfer">Transfer</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#gdpr">GDPR</a></li>
-</ul>
-</li>
 <li class="toctree-l1"><a class="reference internal" href="codeofconduct.html">Contributor Covenant Code of Conduct</a></li>
 </ul>
 
@@ -79,7 +71,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Anonymous Statistics</li>
+      <li class="breadcrumb-item active">Anonymous Statistics (Disabled)</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/statistics.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,17 +81,17 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="anonymous-statistics">
-<h1>Anonymous Statistics<a class="headerlink" href="#anonymous-statistics" title="Permalink to this headline">¶</a></h1>
-<p>The Mavryk Reward Distributor collects anonymous statistics after each payout. These statistics are purely for analytical purposes e.g. to evaluate the prioritization of feature requests or to communicate the usage data for marketing purposes.</p>
+  <div class="section" id="anonymous-statistics-disabled">
+<h1>Anonymous Statistics (Disabled)<a class="headerlink" href="#anonymous-statistics-disabled" title="Permalink to this headline">¶</a></h1>
+<p>Note: This page is currently disabled from the documentation navigation and cross-links. Anonymous statistics collection is not active in this version of MRD. Keep this page for potential future re-enablement.</p>
+<p>The Mavryk Reward Distributor previously collected anonymous statistics after each payout. These statistics were purely for analytical purposes.</p>
 <p>Nothing that MRD collects can be traced back to a specific delegate or delegator. The goal of the statistics is not to correlate nor discover specific bakeries that are using MRD.</p>
 <ul class="simple">
 <li><p>We <em>do not</em> collect any implicit or originated addresses.</p></li>
 <li><p>We <em>do not</em> collect any IP, or hostname related information.</p></li>
 <li><p>Anonymous identifiers are calculated using an MD5 hash of the payout address.</p></li>
 </ul>
-<p>If you wish to opt-out of this anonymous data collection, start MRD using the <cite>–do_not_publish_stats</cite> option.
-Stats are not collected yet on this version of MRD so the option is disabled by default.</p>
+<p>Stats are not collected in this version of MRD. The <cite>–do_not_publish_stats</cite> option is not needed.</p>
 <p>If you have any questions about this topic or if you want to have access to the statistical data feel free to open an issue.</p>
 <div class="section" id="collected-data">
 <h2>Collected Data<a class="headerlink" href="#collected-data" title="Permalink to this headline">¶</a></h2>
@@ -130,12 +122,12 @@ Stats are not collected yet on this version of MRD so the option is disabled by 
 </div>
 <div class="section" id="transfer">
 <h2>Transfer<a class="headerlink" href="#transfer" title="Permalink to this headline">¶</a></h2>
-<p>A POST request is sent to the following AWS Lambda endpoint:</p>
+<p>Previously, a POST request was sent to the following AWS Lambda endpoint:</p>
 <blockquote>
 <div><p><a class="reference external" href="https://mrdstats">https://mrdstats</a></p>
 </div></blockquote>
-<p>This endpoint does not collect any information about the source of the POST. No cookies are used.
-Stats are not collected yet on this version of MRD so the option is disabled by default.</p>
+<p>This endpoint did not collect any information about the source of the POST. No cookies were used.
+Stats are not collected in this version of MRD so the functionality remains disabled.</p>
 </div>
 <div class="section" id="gdpr">
 <h2>GDPR<a class="headerlink" href="#gdpr" title="Permalink to this headline">¶</a></h2>
@@ -147,10 +139,7 @@ Stats are not collected yet on this version of MRD so the option is disabled by 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="testing.html" class="btn btn-neutral float-left" title="Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="codeofconduct.html" class="btn btn-neutral float-right" title="Contributor Covenant Code of Conduct" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 
