@@ -33,7 +33,9 @@ class TelegramPlugin(plugins.Plugin):
         for c in self.admin_chat_ids:
             self.postMessage(c, admin_text, "ADMIN")
 
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
+    def send_payout_notification(
+        self, cycle, payout_amount, nb_delegators, baking_address=None
+    ):
         # Do template replacements
         payout_message = (
             self.telegram_text.replace("%CYCLE%", str(cycle))

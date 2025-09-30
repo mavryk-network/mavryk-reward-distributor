@@ -57,7 +57,9 @@ class TwitterPlugin(plugins.Plugin):
         logger.debug("[TwitterPlugin] Admin notifications not implemented")
         return
 
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
+    def send_payout_notification(
+        self, cycle, payout_amount, nb_delegators, baking_address=None
+    ):
         # Replace template variables
         tweet = (
             self.tweet_text.replace("%CYCLE%", str(cycle))

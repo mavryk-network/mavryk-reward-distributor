@@ -62,14 +62,18 @@ class PluginManager(object):
 
     # Go through each plugin module and call send_payout_notification
     # TODO: Optimize DRY
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
+    def send_payout_notification(
+        self, cycle, payout_amount, nb_delegators, baking_address=None
+    ):
         if not self.plugins:
             logger.info("[Plugins] Not sending notification; no plugins enabled")
 
         for p in self.plugins:
             if not self.dry_run:
                 try:
-                    p.send_payout_notification(cycle, payout_amount, nb_delegators, baking_address)
+                    p.send_payout_notification(
+                        cycle, payout_amount, nb_delegators, baking_address
+                    )
                 except Exception as e:
                     logger.error(
                         "[Plugins] [{:s}] Unknown Error: {:s}".format(p.name, str(e))
@@ -120,7 +124,9 @@ class Plugin(object):
     def send_admin_notification(self, subject, message, attachments, reward_data):
         raise NotImplementedError
 
-    def send_payout_notification(self, cycle, payout_amount, nb_delegators, baking_address=None):
+    def send_payout_notification(
+        self, cycle, payout_amount, nb_delegators, baking_address=None
+    ):
         raise NotImplementedError
 
     def validateConfig(self):

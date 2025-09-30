@@ -930,10 +930,8 @@ class BatchPayer:
             logger.debug(
                 "Operation {} is not included at level {}".format(operation_hash, i)
             )
-        error_message = (
-            "Investigate on https://nexus.mavryk.org/explorer - Operation {} wait is timed out.".format(
-                operation_hash
-            )
+        error_message = "Investigate on https://nexus.mavryk.org/explorer - Operation {} wait is timed out.".format(
+            operation_hash
         )
         logger.warning(error_message)
         return PaymentStatus.INJECTED, operation_hash, error_message

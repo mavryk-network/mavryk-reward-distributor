@@ -38,7 +38,9 @@ baking_config = make_config(
 
 
 PAYOUT_CYCLE = 5
-PAYMENT_ADDRESS_BALANCE = int(50000 * MUMAV_PER_MAV)  # Increased to 50,000 MAV to cover the payout
+PAYMENT_ADDRESS_BALANCE = int(
+    50000 * MUMAV_PER_MAV
+)  # Increased to 50,000 MAV to cover the payout
 forge = "0" * (TX_FEES["MV1_TO_ALLOCATED_MV1"]["FEE"])
 
 
@@ -183,7 +185,7 @@ def test_batch_payer_total_payout_amount():
         1072460230,
         772171503,
         750722964,
-        536230689
+        536230689,
     ]
 
     for idx, expected_amount in enumerate(expected_amounts_delegates):
