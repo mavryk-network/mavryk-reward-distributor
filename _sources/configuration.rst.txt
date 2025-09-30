@@ -6,14 +6,14 @@ Fee Setup
 
 | **Advanced user**: You can change the values at *src/pay/batch_payer.py*
 
-Baker Configuration:
+Validator Configuration:
 --------------------
 
-Each baker has its own configuration and policy. Therefore, a payment system should be flexible enough to cover the needs of bakers. The application uses a yaml file for loading baker specific configurations and is loaded at every start.
+Each validator has its own configuration and policy. Therefore, a payment system should be flexible enough to cover the needs of validators. The application uses a yaml file for loading validator specific configurations and is loaded at every start.
 There are two options to create a custom yaml file:
 
     a. You can use the interactive configuration tool (configure.py)
-    b. You can copy&paste the example config from ~/mavryk-reward-distributor/examples into ~/pymnt/cfg, rename and change it according to your baker policy.
+    b. You can copy&paste the example config from ~/mavryk-reward-distributor/examples into ~/pymnt/cfg, rename and change it according to your validator policy.
 
 If you want to use Option a, you can use
 ::
@@ -33,13 +33,13 @@ If you want to use Option b, you can use
     # Edit the file with nano
     nano ~/pymnt/cfg/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml
 
-By default, configuration files are kept under ~/pymnt/cfg directory. The configuration directory can be changed with "-f" configuration option. The name of a configuration file should be the baker's address (e.g. mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml).
+By default, configuration files are kept under ~/pymnt/cfg directory. The configuration directory can be changed with "-f" configuration option. The name of a configuration file should be the validator's address (e.g. mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml).
 If you want to use with a decimal operator within your config, please use a decimal point. 
 
 Available configuration parameters are:
 
 **baking_address**
-  Address of the baker. It must be an implicit account (tz1). No alias is allowed.
+  Address of the validator. It must be an implicit account (tz1). No alias is allowed.
 
   Example::
 
@@ -53,9 +53,9 @@ Available configuration parameters are:
     payment_address: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N
 
 **rewards_type**
-  There are two options for calculating the total rewards earned by a baker at the end of each cycle. If this parameter is missing, 'actual' rewards take affect.
+  There are two options for calculating the total rewards earned by a validator at the end of each cycle. If this parameter is missing, 'actual' rewards take affect.
   
-  - 'actual': Rewards are calculated based on the actual number of bakes, at any round. Transaction fees, bonuses and other block rewards are included in the rewards when earned. If a bake is missed, rewards are not earned and therefore not included. If endorsement rewards are not earned due to a failure to reveal a nonce or excessive unavailability of your baker, is it not included.
+  - 'actual': Rewards are calculated based on the actual number of bakes, at any round. Transaction fees, bonuses and other block rewards are included in the rewards when earned. If a bake is missed, rewards are not earned and therefore not included. If endorsement rewards are not earned due to a failure to reveal a nonce or excessive unavailability of your validator, is it not included.
   - 'ideal': Deprecated.
 
   Example::
@@ -63,7 +63,7 @@ Available configuration parameters are:
     rewards_type: actual
     
 **service_fee**
-  A decimal in range [0-100]. Also known as the baker's fee. This is evaluated as a percentage value. Example: If set to 5, then 5% of baking rewards are kept as a service fee by the baker.
+  A decimal in range [0-100]. Also known as the validator's fee. This is evaluated as a percentage value. Example: If set to 5, then 5% of baking rewards are kept as a service fee by the validator.
 
   Example::
 
@@ -78,14 +78,14 @@ Available configuration parameters are:
         {'tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 0.6,
          'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 0.4}
   
-  Alice and Bob are both founders of Acme Bakery. Their bakery fee is 10%. Alice has a 60% (0.6) interest in the bakery, and Bob has a 40% (0.4) interest. When rewards are delivered at the end of each cycle, 10% is taken as the bakery fee (ie: *service_fee*). That 10% is then divided between Alice and Bob according to their ratios.
+  Alice and Bob are both founders of Mavryk Validator. Their validatory fee is 10%. Alice has a 60% (0.6) interest in the validatory, and Bob has a 40% (0.4) interest. When rewards are delivered at the end of each cycle, 10% is taken as the validatory fee (ie: *service_fee*). That 10% is then divided between Alice and Bob according to their ratios.
   
 **owners_map**
   A dictionary of PKH and ratio ( decimal in the range [0-1]) pairs. Each item in this dictionary represents PKH of each balance owner and his ratio of the amount he owns in the total baking balance. Implicit or originated addresses are accepted. It is important that the sum of all ratios equals to 1. This map is optional if owners do not want to be paid for baking rewards, in this case, baking rewards remain in baking balance.
   
   Example::
 
-    Current Baker Balance: 17,400 mav
+    Current Validator Balance: 17,400 mav
     Total Delegations: 69,520 mav
     Total Staked: 86,920 mav
 
@@ -95,8 +95,8 @@ Available configuration parameters are:
        'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 0.4,
        'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 0.2}
   
-  Charlie, and Dave, have each transfered 6,960 mav to the baker address. Edwin has transfered 3,480 mav. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the bakery fee (ie: *service_fee*). That 9% is dispersed to any *founders*. If there are no founders, that 9% remains in the baker's balance.
-  The baker address is technically a delegator to itself. Its share of rewards are part of the overall cycle rewards. Charlie, Dave, and Edwin divide the "baker address rewards" as per the ratios in *owners_map*. Additionally, owners are *not* subject to the *service_fee*.
+  Charlie, and Dave, have each transfered 6,960 mav to the validator address. Edwin has transfered 3,480 mav. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the validatory fee (ie: *service_fee*). That 9% is dispersed to any *founders*. If there are no founders, that 9% remains in the validator's balance.
+  The validator address is technically a delegator to itself. Its share of rewards are part of the overall cycle rewards. Charlie, Dave, and Edwin divide the "validator address rewards" as per the ratios in *owners_map*. Additionally, owners are *not* subject to the *service_fee*.
 
 **specials_map**
   A dictionary of PKH and fee (decimal in the range [0-100] ) pairs. This dictionary can be used to set special service fee values for desired delegators.
@@ -107,7 +107,7 @@ Available configuration parameters are:
                     'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 5}
   
 **supporters_set**
-  A set of PKH values. Each PKH represents a supporter of the baker. Supporters are not charged with a service fee. Founders and balance owners are natural supporters, they are not needed to be added.
+  A set of PKH values. Each PKH represents a supporter of the validator. Supporters are not charged with a service fee. Founders and balance owners are natural supporters, they are not needed to be added.
 
   Example::
 
@@ -143,7 +143,7 @@ Available configuration parameters are:
     delegator_pays_xfer_fee : False
 
 **delegator_pays_ra_fee**
-  True/False - Functions just like delegator_pays_xfer_fee, except refers to the burn/reactivation fee. If True, the burn fee is subtracted from the reward payment (ie: delegate pays). If False, burn fee is paid for by baker. If reactivate_zeroed: True and delegator_pays_ra_fee: True but the reward is smaller than the burn fee, their rewards will be ignored and will simply remain at the bakers address.
+  True/False - Functions just like delegator_pays_xfer_fee, except refers to the burn/reactivation fee. If True, the burn fee is subtracted from the reward payment (ie: delegate pays). If False, burn fee is paid for by validator. If reactivate_zeroed: True and delegator_pays_ra_fee: True but the reward is smaller than the burn fee, their rewards will be ignored and will simply remain at the validators address.
 
   Example::
 
@@ -152,20 +152,20 @@ Available configuration parameters are:
     Note: This option does also apply to the burn fee needed to payout to kt accounts.
 
 **pay_denunciation_rewards**
-  True/False - Baker may get rewarded for denunciating another baker's equivocation (double baking or double endorsing). The protocol rewards the baker including the denunciation. When True, these rewards will be distributed. When False, they will remain in the baker's account, allowing the baker to reimburse the party at fault if they desire.
+  True/False - Validator may get rewarded for denunciating another validator's equivocation (double baking or double endorsing). The protocol rewards the validator including the denunciation. When True, these rewards will be distributed. When False, they will remain in the validator's account, allowing the validator to reimburse the party at fault if they desire.
 
   Example::
 
     pay_denunciation_rewards: True
 
 **rules_map**
-  The rules_map is needed to redirect payments. A pre-defined source (left side) is mindelegation. Pre-defined destinations (right side) are: TOF = to founders balance, TOB = to bakers balance, and TOE = to everyone. Variable sources and destinations are PKHs.
+  The rules_map is needed to redirect payments. A pre-defined source (left side) is mindelegation. Pre-defined destinations (right side) are: TOF = to founders balance, TOB = to validators balance, and TOE = to everyone. Variable sources and destinations are PKHs.
 
   Example::
 
      rules_map:
        mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC: TOF                                         #(redirects payment from mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC to founders)
-       mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE: TOB                                         #(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the bakers balance)
+       mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE: TOB                                         #(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the validators balance)
        tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU        #(redirects payment from tz1V9S... to tz1fgX...)
        mindelegation: TOE                                                                #(mindelegation will be shared with everyone)
 

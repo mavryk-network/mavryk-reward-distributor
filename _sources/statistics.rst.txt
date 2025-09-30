@@ -7,7 +7,7 @@ Note: This page is currently disabled from the documentation navigation and cros
 
 The Mavryk Reward Distributor previously collected anonymous statistics after each payout. These statistics were purely for analytical purposes.
 
-Nothing that MRD collects can be traced back to a specific delegate or delegator. The goal of the statistics is not to correlate nor discover specific bakeries that are using MRD.
+Nothing that MRD collects can be traced back to a specific delegate or delegator. The goal of the statistics is not to correlate nor discover specific validatories that are using MRD.
 
 * We *do not* collect any implicit or originated addresses.
 * We *do not* collect any IP, or hostname related information.
@@ -33,8 +33,8 @@ MRD collects the following statistics after each payout:
 * Number of failed transactions
 * Number of injected transactions
 * Number of attempts
-* If baker pays transfer fee
-* If baker pays reactivation fee
+* If validator pays transfer fee
+* If validator pays reactivation fee
 * If MRD is running as a background service
 * Which RPC provider is in use
 * Release override setting

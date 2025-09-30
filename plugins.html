@@ -114,7 +114,7 @@
 <h1>Plugins<a class="headerlink" href="#plugins" title="Permalink to this headline">¶</a></h1>
 <p>The Mavryk Reward Distributor uses a plugin style subsystem for sending out payment notifications. If a message is labeled ‘administrative style’ it will contain information which are in general not meant for the end user of e.g. a staking service but for the adminstrators who monitor the quality of the service.</p>
 <p>Each plugin and its configuration are detailed out below. Some plugins may require additional libraries that are not installed with MRD.</p>
-<p>The configuration parameters for all plugins are located in the bakers .yaml config file. Please take a look at <a class="reference external" href="https://github.com/mavryk-network/mavryk-reward-distributor/blob/master/examples/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml">the example config</a>.</p>
+<p>The configuration parameters for all plugins are located in the validators .yaml config file. Please take a look at <a class="reference external" href="https://github.com/mavryk-network/mavryk-reward-distributor/blob/master/examples/mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N.yaml">the example config</a>.</p>
 <p>Individual plugins will not load if not properly configured.</p>
 <p>You must specify which plugins to enable by adding their name to the “enabled” list. No plugins are enabled by default.</p>
 <p>In this example, even though the webhook plugin is properly configured, it is <em>not</em> listed in the ‘enabled’ section, and therefor will not activate.</p>
@@ -209,7 +209,7 @@
 <li><p>admin_chat_ids: A required YAML list containing chat IDs of users and/or groups to receive administrative-related messages. This might include failed payouts, or lack of funds messages.  Must be list format even if only 1 ID.</p></li>
 <li><p>public_chat_ids: An, optional, YAML list containing chat IDs of users and/or groups to receive completed payouts message as defined by <code class="docutils literal notranslate"><span class="pre">telegram_text</span></code>. Must be list format even if only 1 ID.</p></li>
 <li><p>bot_api_key: This is the API token that you get from &#64;TheBotFather after creating your bot.</p></li>
-<li><p>telegram_text: This text will be sent to all chat ids list in ‘payouts_chat_ids’. The text will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%BAKER%</span></code>. Basic HTML formatting is supported; see Telegram Docs for supported HTML tags. Emojis and other unicode characters are supported.</p></li>
+<li><p>telegram_text: This text will be sent to all chat ids list in ‘payouts_chat_ids’. The text will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%VALIDATOR%</span></code>. Basic HTML formatting is supported; see Telegram Docs for supported HTML tags. Emojis and other unicode characters are supported.</p></li>
 </ul>
 </div>
 <div class="section" id="id2">
@@ -224,7 +224,7 @@
       <span class="o">-</span> <span class="mi">827384777</span>
     <span class="n">bot_api_key</span><span class="p">:</span> <span class="mi">988877766</span><span class="p">:</span><span class="n">SKDJFLSJDFJLJSKDFJLKSDJFLKJDF</span>
     <span class="n">telegram_text</span><span class="p">:</span> <span class="o">&gt;</span>
-      <span class="o">&amp;</span><span class="c1">#x2728; Reward for cycle %CYCLE% &lt;b&gt;complete&lt;/b&gt;! Baker: %BAKER%. We had %NDELEGATORS% &lt;i&gt;delegators&lt;/i&gt; in the cycle and paid out %TREWARDS% mav in rewards!</span>
+      <span class="o">&amp;</span><span class="c1">#x2728; Reward for cycle %CYCLE% &lt;b&gt;complete&lt;/b&gt;! Validator: %VALIDATOR%. We had %NDELEGATORS% &lt;i&gt;delegators&lt;/i&gt; in the cycle and paid out %TREWARDS% mav in rewards!</span>
 </pre></div>
 </div>
 </div>
@@ -255,7 +255,7 @@
 <div class="section" id="id3">
 <h3>Example Config<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p><strong>NOTE</strong>: All 4 pieces of keys and tokens are required.</p>
-<p><strong>NOTE</strong>: <code class="docutils literal notranslate"><span class="pre">tweet_text</span></code> will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%BAKER%</span></code></p>
+<p><strong>NOTE</strong>: <code class="docutils literal notranslate"><span class="pre">tweet_text</span></code> will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%VALIDATOR%</span></code></p>
 <p><strong>NOTE</strong>: The twitter plugin only supports payouts notifications; administrative notifications will not be sent via twitter plugin</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>plugins:
   twitter:
@@ -264,13 +264,13 @@
     access_token: YYYYYYYY
     access_secret: WWWWWWWW
     tweet_text: &gt;
-      Reward for cycle %CYCLE% complete! Baker: %BAKER%. We had %NDELEGATORS% delegators in the cycle and paid out %TREWARDS% mav in rewards. #ourbakery #rewards #mavryk
+      Reward for cycle %CYCLE% complete! Validator: %VALIDATOR%. We had %NDELEGATORS% delegators in the cycle and paid out %TREWARDS% mav in rewards. #rewards #mavryk
 </pre></div>
 </div>
 <p>The above example configuration will produce a tweet that looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Reward for cycle 290 complete! Baker: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N. We had 133 delegators
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Reward for cycle 290 complete! Validator: mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N. We had 133 delegators
 in the cycle and paid out 1234.98 mav in rewards.
-#ourbakery #rewards #mavryk
+#rewards #mavryk
 </pre></div>
 </div>
 </div>
@@ -285,7 +285,7 @@ in the cycle and paid out 1234.98 mav in rewards.
 <ul class="simple">
 <li><p>endpoint: The webhook URL generated by your discord server</p></li>
 <li><p>send_admin: [True|False] - Whether or not to send administrative-style messages using the bot. These messages will appear alongside general user-style messages.</p></li>
-<li><p>discord_text: This text will be sent to the channel configured for your bot. The text will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%BAKER%</span></code>. Markdown formatting is supported; Emojis and other unicode characters are supported.</p></li>
+<li><p>discord_text: This text will be sent to the channel configured for your bot. The text will be passed through a filter to replace the following placeholders: <code class="docutils literal notranslate"><span class="pre">%CYCLE%</span></code>, <code class="docutils literal notranslate"><span class="pre">%NDELEGATORS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%TREWARDS%</span></code>, <code class="docutils literal notranslate"><span class="pre">%VALIDATOR%</span></code>. Markdown formatting is supported; Emojis and other unicode characters are supported.</p></li>
 </ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span><span class="p">:</span>
   <span class="n">enabled</span><span class="p">:</span>
@@ -294,7 +294,7 @@ in the cycle and paid out 1234.98 mav in rewards.
     <span class="n">endpoint</span><span class="p">:</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">discord</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">api</span><span class="o">/</span><span class="n">webhooks</span><span class="o">/</span><span class="mi">9876543212345678</span><span class="o">/</span><span class="n">OmAfadfasdfasdfasdfasdfasdfasfsdf</span>
     <span class="n">send_admin</span><span class="p">:</span> <span class="kc">False</span>
     <span class="n">discord_text</span><span class="p">:</span> <span class="o">&gt;</span>
-      <span class="n">Rewards</span> <span class="k">for</span> <span class="n">cycle</span> <span class="o">%</span><span class="n">CYCLE</span><span class="o">%</span> <span class="n">are</span> <span class="n">completed</span><span class="o">.</span> <span class="n">Baker</span><span class="p">:</span> <span class="o">%</span><span class="n">BAKER</span><span class="o">%.</span>
+      <span class="n">Rewards</span> <span class="k">for</span> <span class="n">cycle</span> <span class="o">%</span><span class="n">CYCLE</span><span class="o">%</span> <span class="n">are</span> <span class="n">completed</span><span class="o">.</span> <span class="n">Validator</span><span class="p">:</span> <span class="o">%</span><span class="n">VALIDATOR</span><span class="o">%.</span>
       <span class="n">We</span> <span class="n">paid</span> <span class="n">out</span> <span class="o">%</span><span class="n">TREWARDS</span><span class="o">%</span> <span class="n">mav</span> <span class="ow">in</span> <span class="n">rewards</span> <span class="n">to</span> <span class="o">%</span><span class="n">NDELEGATORS</span><span class="o">%</span> <span class="n">delegators</span><span class="o">.</span>        
 </pre></div>
 </div>
