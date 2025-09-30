@@ -5,7 +5,7 @@ from src.mvkt.mvkt_block_api import MvKTBlockApiImpl
 from tests.utils import Constants
 
 MAINNET_ADDRESS_DELEGATOR = Constants.MAINNET_ADDRESS_DELEGATOR
-MAINNET_ADDRESS_FOUNDATION_0_BAKER = Constants.MAINNET_ADDRESS_FOUNDATION_0_BAKER
+MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
 
 
 class MockResponse:
@@ -57,8 +57,8 @@ class MockDelegatableResponse(MockResponse):
     "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockDelegatableResponse()),
 )
-def test_get_delegatable_baker(address_api):
-    assert address_api.get_delegatable(MAINNET_ADDRESS_FOUNDATION_0_BAKER)
+def test_get_delegatable_validator(address_api):
+    assert address_api.get_delegatable(MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR)
 
 
 class MockNonDelegatableResponse(MockResponse):
@@ -70,5 +70,5 @@ class MockNonDelegatableResponse(MockResponse):
     "src.mvkt.mvkt_api.requests.get",
     MagicMock(return_value=MockNonDelegatableResponse()),
 )
-def test_get_delegatable_non_baker(address_api):
+def test_get_delegatable_non_validator(address_api):
     assert not address_api.get_delegatable(MAINNET_ADDRESS_DELEGATOR)

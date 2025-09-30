@@ -43,9 +43,9 @@ class TelegramPlugin(plugins.Plugin):
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
 
-        # Optional baker placeholder
+        # Optional validator placeholder
         if baking_address is not None:
-            payout_message = payout_message.replace("%BAKER%", str(baking_address))
+            payout_message = payout_message.replace("%VALIDATOR%", str(baking_address))
 
         # For each chat id, send message
         for c in self.payouts_chat_ids:

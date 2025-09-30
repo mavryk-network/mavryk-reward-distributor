@@ -18,8 +18,8 @@ network = {"NAME": "MAINNET"}
         pytest.param(MvKTBlockApiImpl(network), id="MvKTBlockApiImpl"),
     ],
 )
-def test_address_is_baker_address(block_api):
-    cassette_path = f"tests/regression/cassettes/test_address_is_baker_address_{block_api.__class__.__name__}.yaml"
+def test_address_is_validator_address(block_api):
+    cassette_path = f"tests/regression/cassettes/test_address_is_validator_address_{block_api.__class__.__name__}.yaml"
     with vcr.use_cassette(
         cassette_path,
         filter_headers=["X-API-Key", "authorization"],
@@ -29,7 +29,7 @@ def test_address_is_baker_address(block_api):
         version: 1.0
         baking_address: {0}
         """.format(
-            Constants.MAINNET_ADDRESS_FOUNDATION_0_BAKER
+            Constants.MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR
         )
 
         wallet_client_manager = ClientManager(node_endpoint, PRIVATE_SIGNER_URL)
@@ -52,8 +52,8 @@ def test_address_is_baker_address(block_api):
         pytest.param(MvKTBlockApiImpl(network), id="MvKTBlockApiImpl"),
     ],
 )
-def test_address_is_not_baker_address(block_api):
-    cassette_path = f"tests/regression/cassettes/test_address_is_not_baker_address_{block_api.__class__.__name__}.yaml"
+def test_address_is_not_validator_address(block_api):
+    cassette_path = f"tests/regression/cassettes/test_address_is_not_validator_address_{block_api.__class__.__name__}.yaml"
     with vcr.use_cassette(
         cassette_path,
         filter_headers=["X-API-Key", "authorization"],

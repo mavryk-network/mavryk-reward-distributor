@@ -57,5 +57,5 @@ class AddressValidator:
             )
         if baking_address.startswith("KT"):
             raise ConfigurationException(
-                "KT addresses cannot act as bakers. Only mv addresses can be registered to bake."
+                "KT addresses cannot act as validators. Only mv addresses can be registered to bake."
             )

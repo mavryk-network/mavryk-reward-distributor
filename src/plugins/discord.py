@@ -35,7 +35,7 @@ class DiscordPlugin(plugins.Plugin):
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
         if baking_address is not None:
-            payout_message = payout_message.replace("%BAKER%", str(baking_address))
+            payout_message = payout_message.replace("%VALIDATOR%", str(baking_address))
         self.post_to_discord(payout_message, "PAYOUT")
 
     def post_to_discord(self, message, type):

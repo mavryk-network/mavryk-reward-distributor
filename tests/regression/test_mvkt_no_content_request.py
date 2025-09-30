@@ -18,13 +18,13 @@ def test_request_no_content_response():
     https://github.com/mavryk-network/mavryk-reward-distributor/issues/404
     """
 
-    # The baker address exists **only** on the mainnet
-    baker_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
+    # The validator address exists **only** on the mainnet
+    validator_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
     base_url = ""
     timeout = 30
     cycle = 5
     mvkt = MvKTApi(base_url, timeout)
-    request_path = f"rewards/split/{baker_address}/{cycle}"
+    request_path = f"rewards/split/{validator_address}/{cycle}"
     res = mvkt._request(request_path, offset=0, limit=10000)
     assert res is None
 
@@ -32,13 +32,13 @@ def test_request_no_content_response():
 def test_request_dns_lookup_error():
     """Test the handling of API calls which respond with a DNS lookup error."""
 
-    # The baker address exists **only** on the mainnet
-    baker_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
+    # The validator address exists **only** on the mainnet
+    validator_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
     base_url = "https://not_existent_domain_name.com"
     timeout = 30
     cycle = 5
     mvkt = MvKTApi(base_url, timeout)
-    request_path = f"rewards/split/{baker_address}/{cycle}"
+    request_path = f"rewards/split/{validator_address}/{cycle}"
     with pytest.raises(MvKTApiError, match="DNS lookup failed"):
         _ = mvkt._request(request_path, offset=0, limit=10000)
 
@@ -50,12 +50,12 @@ def test_request_dns_lookup_error():
 )
 def test_request_content_response():
     """Test the handling of API calls which respond with a content (200)."""
-    baker_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
+    validator_address = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
     base_url = MVKT_PUBLIC_API_URL["MAINNET"]
     timeout = 30
     cycle = 5
     mvkt = MvKTApi(base_url, timeout)
-    request_path = f"rewards/split/{baker_address}/{cycle}"
+    request_path = f"rewards/split/{validator_address}/{cycle}"
     response = mvkt._request(request_path, offset=0, limit=10000)
     assert isinstance(response, dict)
     assert response["cycle"] == cycle

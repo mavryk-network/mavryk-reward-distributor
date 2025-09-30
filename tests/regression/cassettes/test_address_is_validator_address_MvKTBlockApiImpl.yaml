@@ -1,0 +1,130 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mrd-1.0
+    method: GET
+    uri: https://api.mavryk.network/v1/accounts/mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs
+  response:
+    body:
+      string: '{"id":3,"type":"delegate","address":"mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs","active":true,"publicKey":"edpkvRKe9jhBeaMMhbYoRmbe6euy2QWyCCGac7kb3MSBqmU9BY3j3A","revealed":true,"balance":12140318777274,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":12130699997421,"unstakedBalance":0,"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":12130699997421,"stakersCount":0,"counter":11,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":298049878332928,"delegatedBalance":285909559555654,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":156,"numBlocks":21014,"numEndorsements":164188,"numPreendorsements":4,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":98,"vdfRevelationsCount":0,"numRevelationPenalties":0,"numEndorsingRewards":7,"numDelegations":182,"numOriginations":0,"numTransactions":10,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":7,"stakingUpdatesCount":10,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":164248,"lastActivityTime":"2025-09-30T11:17:39Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":12130699997421,"frozenDeposits":12130699997421,"frozenRewards":0,"frozenFees":0}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      CF-RAY:
+      - 987350bcdf4f067d-NRT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 Sep 2025 11:17:42 GMT
+      Mvkt-Known-Level:
+      - '164248'
+      Mvkt-Level:
+      - '164248'
+      Mvkt-Synced-At:
+      - '2025-09-30T11:17:39Z'
+      Mvkt-Version:
+      - 1.14.4.0
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4UR4LIY5%2BukTAPVdWWAAjoP8VSIMkjZgJ3k6%2Fdz%2BWr%2BRsmei0Qs5K3Pa%2B1%2F83JSqrcKs82nS1cSL9%2BZopAddDIDKy5hCinWyU%2F2gHByj8GAcc0cM%2BExkx3MLttgLIQ%3D%3D"}]}'
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      content-length:
+      - '2221'
+    status:
+      code: 200
+      message: OK
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - mrd-1.0
+    method: GET
+    uri: https://api.mavryk.network/v1/accounts/mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs
+  response:
+    body:
+      string: '{"id":3,"type":"delegate","address":"mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs","active":true,"publicKey":"edpkvRKe9jhBeaMMhbYoRmbe6euy2QWyCCGac7kb3MSBqmU9BY3j3A","revealed":true,"balance":12140318777274,"rollupBonds":0,"smartRollupBonds":0,"stakedBalance":12130699997421,"unstakedBalance":0,"externalStakedBalance":0,"externalUnstakedBalance":0,"roundingError":0,"totalStakedBalance":12130699997421,"stakersCount":0,"counter":11,"activationLevel":1,"activationTime":"2025-09-09T13:04:11Z","stakingBalance":298049878332928,"delegatedBalance":285909559555654,"numContracts":0,"rollupsCount":0,"smartRollupsCount":0,"activeTokensCount":0,"tokenBalancesCount":0,"tokenTransfersCount":0,"activeTicketsCount":0,"ticketBalancesCount":0,"ticketTransfersCount":0,"numDelegators":156,"numBlocks":21014,"numEndorsements":164188,"numPreendorsements":4,"numBallots":0,"numProposals":0,"numActivations":0,"numDoubleBaking":0,"numDoubleEndorsing":0,"numDoublePreendorsing":0,"numNonceRevelations":98,"vdfRevelationsCount":0,"numRevelationPenalties":0,"numEndorsingRewards":7,"numDelegations":182,"numOriginations":0,"numTransactions":10,"numReveals":0,"numRegisterConstants":0,"numSetDepositsLimits":0,"numMigrations":1,"txRollupOriginationCount":0,"txRollupSubmitBatchCount":0,"txRollupCommitCount":0,"txRollupReturnBondCount":0,"txRollupFinalizeCommitmentCount":0,"txRollupRemoveCommitmentCount":0,"txRollupRejectionCount":0,"txRollupDispatchTicketsCount":0,"transferTicketCount":0,"increasePaidStorageCount":0,"updateConsensusKeyCount":0,"drainDelegateCount":0,"smartRollupAddMessagesCount":0,"smartRollupCementCount":0,"smartRollupExecuteCount":0,"smartRollupOriginateCount":0,"smartRollupPublishCount":0,"smartRollupRecoverBondCount":0,"smartRollupRefuteCount":0,"refutationGamesCount":0,"activeRefutationGamesCount":0,"stakingOpsCount":0,"autostakingOpsCount":7,"stakingUpdatesCount":10,"setDelegateParametersOpsCount":1,"dalPublishCommitmentOpsCount":0,"firstActivity":1,"firstActivityTime":"2025-09-09T13:04:11Z","lastActivity":164248,"lastActivityTime":"2025-09-30T11:17:39Z","software":{"date":"2025-09-13T00:41:01Z"},"lostBalance":0,"frozenDeposit":12130699997421,"frozenDeposits":12130699997421,"frozenRewards":0,"frozenFees":0}'
+    headers:
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Access-Control-Allow-Headers:
+      - DNT,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range,Authorization
+      Access-Control-Allow-Methods:
+      - GET, POST, OPTIONS
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Expose-Headers:
+      - '*'
+      Access-Control-Max-Age:
+      - '1728000'
+      CF-RAY:
+      - 987350bf7a0ce397-NRT
+      Connection:
+      - keep-alive
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 30 Sep 2025 11:17:43 GMT
+      Mvkt-Known-Level:
+      - '164248'
+      Mvkt-Level:
+      - '164248'
+      Mvkt-Synced-At:
+      - '2025-09-30T11:17:39Z'
+      Mvkt-Version:
+      - 1.14.4.0
+      Nel:
+      - '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}'
+      Report-To:
+      - '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=IqU2WDbhsBiys%2BpIs%2FGezCOSnR%2BIbHaTd8fz%2Favm7lMbURwyP76jumzEXGtVLdaN%2F5qt7orPtdjgMaQXX3m1r3A94aag1X2QJdRxHTc9PtPs9DNPHN%2BDR0CHFnYtaA%3D%3D"}]}'
+      Server:
+      - cloudflare
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+      Transfer-Encoding:
+      - chunked
+      alt-svc:
+      - h3=":443"; ma=86400
+      cf-cache-status:
+      - DYNAMIC
+      content-length:
+      - '2221'
+    status:
+      code: 200
+      message: OK
+version: 1

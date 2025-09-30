@@ -27,7 +27,7 @@ logger.addHandler(logging.StreamHandler())
 
 class TestCalculatePhases(TestCase):
     baking_config = make_config(
-        baking_address=Constants.MAINNET_ADDRESS_FOUNDATION_1_BAKER,
+        baking_address=Constants.MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR,
         payment_address=Constants.MAINNET_ADDRESS_FOUNDATION_1_PAYOUT,
         service_fee=10.0,
         min_delegation_amt=0,

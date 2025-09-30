@@ -25,7 +25,7 @@ class CsvCalculationFileParser:
                 if row["address"] != baking_address
             ]
 
-            baker_record = [
+            validator_record = [
                 self.from_payment_csv_dict_row(row)
                 for row in dict_rows
                 if row["address"] == baking_address
@@ -33,7 +33,7 @@ class CsvCalculationFileParser:
 
             return (
                 records,
-                baker_record.amount,
+                validator_record.amount,
                 RewardsType.ACTUAL,
                 False,
             )
@@ -118,7 +118,7 @@ class CsvCalculationFileParser:
             )
 
             # Note: values for True and False are marked with "0" and "1" in the excel for backwards compatibility
-            # First row is for the baker
+            # First row is for the validator
             csv_writer.writerow(
                 [
                     str(baking_address),  # address
@@ -154,7 +154,7 @@ class CsvCalculationFileParser:
                     int(0),  # not payable
                     int(0),  # not skipped
                     int(-1),  # atphase
-                    str("Baker"),  # desc
+                    str("Validator"),  # desc
                     str("None"),  # payment_address
                     str(rt),  # rewards_type
                 ]

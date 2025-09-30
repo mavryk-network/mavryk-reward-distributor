@@ -57,11 +57,11 @@ from util.exit_program import exit_program, ExitCode
 logger = main_logger
 
 messages = {
-    "hello": "This application will help you configure MRD to manage payouts for your bakery. Press enter to continue",
+    "hello": "This application will help you configure MRD to manage payouts for your validator. Press enter to continue",
     "bakingaddress": "Specify your baking address public key hash (Processing may take a few seconds)",
     "paymentaddress": "Specify your payouts public key hash. It can be the same as your baking address, or a different one.",
-    "servicefee": "Specify bakery fee, valid range is between 0 and 100",
-    "rewardstype": "Specify if baker pays 'ideal' or 'actual' rewards (Be sure to read the documentation to understand the difference). Press enter for 'actual'",
+    "servicefee": "Specify validator fee, valid range is between 0 and 100",
+    "rewardstype": "Specify if validator pays 'ideal' or 'actual' rewards (Be sure to read the documentation to understand the difference). Press enter for 'actual'",
     "foundersmap": "Specify FOUNDERS in form 'mv-address':share1,'mv-address':share2,... (Mind quotes, sum must equal 1, e.g: 'mv1a...':0.3, 'mv1b..':0.7) Press enter to leave empty",
     "ownersmap": "Specify OWNERS in form 'mv-address':share1,'mv-address':share2,... (Mind quotes, sum must equal 1, e.g: 'mv1a...':0.3, 'mv1b..':0.7) Press enter to leave empty",
     "mindelegation": "Specify minimum delegation amount in mav. Press enter for 0",
@@ -75,8 +75,8 @@ messages = {
     "reactivatezeroed": "If a destination address has 0 balance, should burn fee be paid to reactivate? 1 for Yes, 0 for No. Press enter for Yes",
     "delegatorpaysxfrfee": "Who is going to pay for transfer fees: 0 for delegator, 1 for delegate. Press enter for delegator",
     "delegatorpaysrafee": "Who is going to pay for 0 balance reactivation or burn fees for kt accounts in general: 0 for delegator, 1 for delegate. Press enter for delegator",
-    "paydenunciationrewards": "If you denounce another baker for baking or endorsing, you will get rewarded. Distribute denunciation rewards to your delegators? 1 for Yes, 0 for No. Press enter for No",
-    "supporters": "Add supporter addresses in form of 'mv-address1', 'mv-address2'. Supporters do not pay bakery fee. Press enter to skip",
+    "paydenunciationrewards": "If you denounce another validator for baking or endorsing, you will get rewarded. Distribute denunciation rewards to your delegators? 1 for Yes, 0 for No. Press enter for No",
+    "supporters": "Add supporter addresses in form of 'mv-address1', 'mv-address2'. Supporters do not pay validator fee. Press enter to skip",
     "specials": "Add any addresses with a special fee in form of 'mv-address1':fee, 'mv-address2':fee. Press enter to skip",
     "noplugins": "No plugins are enabled by default. If you wish to use the email, twitter, or telegram plugins, please read the documentation and edit the configuration file manually.",
     "minpayment": "Specify minimum payment amount in mav. Press enter for 0",
@@ -524,7 +524,7 @@ if __name__ == "__main__":
 
     init(False, args.log_file, args.verbose == "on", mode="configure")
 
-    script_name = " Baker Configuration Tool"
+    script_name = " Validator Configuration Tool"
     print_banner(args, script_name)
 
     main(args)

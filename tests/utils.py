@@ -57,7 +57,7 @@ def make_config(
     min_delegation_amt,
     min_payment_amt,
 ):
-    """This helper function creates a YAML bakers config
+    """This helper function creates a YAML validators config
 
     Args:
         baking_address (str): The baking address.
@@ -272,11 +272,11 @@ def mock_request_get(url, timeout, **kwargs):
             status_code=HTTPStatus.OK,
             json=lambda: [
                 {
-                    "baker": "mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2",
+                    "validator": "mv1DYzNBa1zgmgQieaQKzLxU1sV3aQSArNJ2",
                     "active_stake": "113536492278227",
                 },
                 {
-                    "baker": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
+                    "validator": "mv1ATo99QyhrXwvsqHMeuwJ4FiRUJ4NopoGJ",
                     "active_stake": "46585432313415",
                 },
             ],
@@ -353,7 +353,7 @@ def mock_request_get(url, timeout, **kwargs):
 
 class Constants:
     MAINNET_ADDRESS_DELEGATOR = "mv1Mg1fDVxLHvbE1WhNJZz1N6bKo5edsDQw1"
-    MAINNET_ADDRESS_FOUNDATION_0_BAKER = "mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs"
-    MAINNET_ADDRESS_FOUNDATION_1_BAKER = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
-    BASENET_ADDRESS_FOUNDATION_0_BAKER = "mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g"
+    MAINNET_ADDRESS_FOUNDATION_0_VALIDATOR = "mv1T9xoFWkkNgy6wH5xeDg9XgdwnqznpuDXs"
+    MAINNET_ADDRESS_FOUNDATION_1_VALIDATOR = "mv1CjNm5kcHDBKs5ZwaejxzMUcMVvNGyLC9D"
+    BASENET_ADDRESS_FOUNDATION_0_VALIDATOR = "mv1V4h45W3p4e1sjSBvRkK2uYbvkTnSuHg8g"
     MAINNET_ADDRESS_FOUNDATION_1_PAYOUT = "mv1PAYPcHEhXqwVcFei4zfsJvhtDp3Bi63BZ"

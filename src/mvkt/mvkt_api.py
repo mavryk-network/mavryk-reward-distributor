@@ -123,9 +123,9 @@ class MvKTApi:
 
     def get_reward_split(self, address, cycle, fetch_delegators=True) -> dict:
         """
-        Returns baker rewards for the specified cycle with all delegator balances at that cycle
+        Returns validator rewards for the specified cycle with all delegator balances at that cycle
         to allow rewards distribution in proportion to shares.
-        :param address: Baker address
+        :param address: Validator address
         :param cycle: Rewards cycle
         :param fetch_delegators: Load snapshotted balances for all delegators
         :returns: {

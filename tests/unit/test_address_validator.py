@@ -94,7 +94,7 @@ def test_validate_baking_address():
     # Test KT address
     with pytest.raises(
         Exception,
-        match="KT addresses cannot act as bakers. Only mv addresses can be registered to bake.",
+        match="KT addresses cannot act as validators. Only mv addresses can be registered to bake.",
     ):
         baking_address = "KT1qwertyuiopasdfghjklzxcvbnm1234567"
         validator.validate_baking_address(baking_address)

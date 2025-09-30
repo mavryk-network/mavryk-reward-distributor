@@ -57,7 +57,7 @@ plugins:
     access_token: YYYYYYYY
     access_secret: WWWWWWWW
     extra_tags:
-      - "#our_baker"
+      - "#our_validator"
       - "#mavryk"
       - "#rewards"
   webhook:

@@ -9,7 +9,7 @@ class CalculatePhaseZeroBalance(CalculatePhaseBase):
     """
     -- Check if current delegator balance is 0 --
 
-    Check each delegator's current balance. If 0, and baker is not reactivating,
+    Check each delegator's current balance. If 0, and validator is not reactivating,
     then mark payment as not-payable
     """
 

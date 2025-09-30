@@ -8,16 +8,16 @@ DISCLAIMER : MAVRYK REWARD DISTRIBUTOR IS PROVIDED AS IS. IT IS UNDER CONSTANT D
 What's MRD?
 ------------------------------------------------
 
-MRD is an open-source software for distributing delegation rewards from bakers to delegators. This is a full scale application which can continuously run in the background as a Linux service. However it does not have to be used as a service, but it can also be used interactively. The tool convinces with its simplicity and yet leaves no configuration wish unfulfilled. Whether minimum delegation threshold, or special fees for some delegators - the MRD covers just about all possible constellations. Furthermore, the tool supports complex payments, pays in batches. It uses MvKT_ API as backend. MRD is developed and tested extensively by the community and the source code which can be found in the following Github_ repo.
+MRD is an open-source software for distributing delegation rewards from validators to delegators. This is a full scale application which can continuously run in the background as a Linux service. However it does not have to be used as a service, but it can also be used interactively. The tool convinces with its simplicity and yet leaves no configuration wish unfulfilled. Whether minimum delegation threshold, or special fees for some delegators - the MRD covers just about all possible constellations. Furthermore, the tool supports complex payments, pays in batches. It uses MvKT_ API as backend. MRD is developed and tested extensively by the community and the source code which can be found in the following Github_ repo.
 
 **Since 2024, Mavryk offers two kind of rewards: delegating rewards and staking rewards. MRD pays out delegation rewards.** Staking rewards are paid by the protocol, and MRD does not concern itself with them.
 
 Who needs MRD?
 ------------------------------------------------
 
-The MRD is needed by bakers who want to pay delegation rewards. There are a few payout tools available in the Mavryk ecosystem. However, the MRD is probably the most used open source payout tool by bakers. It ranges from small bakers with a couple of delegators to large bakers with more than thousand delegators. The maintainers strive to keep up with the growing Mavryk ecosystem. This in turn enables MRD users to participate in the exploration of new business areas like baking for liquidity pools or DAOs.
+The MRD is needed by validators who want to pay delegation rewards. There are a few payout tools available in the Mavryk ecosystem. However, the MRD is probably the most used open source payout tool by validators. It ranges from small validators with a couple of delegators to large validators with more than thousand delegators. The maintainers strive to keep up with the growing Mavryk ecosystem. This in turn enables MRD users to participate in the exploration of new business areas like baking for liquidity pools or DAOs.
 
-In 2024, another popular payout distribution software is [TezPay](https://github.com/mav-capital/tezpay).
+Another popular payout distribution software is [MavPay](https://github.com/mavryk-network/mavpay).
 
 What else do you need for MRD?
 ------------------------------------------------
@@ -56,11 +56,6 @@ Funding
 ------------------------
 
 MRD is an open source, GPL licensed project. It is maintained by various community members.
-
-MRD Art Work
-------------------------
-
-This Github Repo_ contains logo images. If you are using MRD and want to let everybody know about it, feel free to place them in your website.
 
 .. |Build Status| image:: https://github.com/mavryk-network/mavryk-reward-distributor/workflows/CI/badge.svg
    :target: https://github.com/mavryk-network/mavryk-reward-distributor/actions

@@ -78,7 +78,7 @@ git pull
 
 ## Sample configuration
 
-Before running MRD, you need to configure it by adding your baker's address and payout settings.
+Before running MRD, you need to configure it by adding your validator's address and payout settings.
 The configuration file should be included in the `~/pymnt/cfg/` directory by default. You can use the following command to copy and modify the example configuration:
 
 ```bash

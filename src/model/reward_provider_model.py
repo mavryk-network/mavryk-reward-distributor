@@ -22,7 +22,7 @@ class RewardProviderModel:
         # endorsement rewards, if paid, will equal this amount
         self.potential_endorsement_rewards = potential_endorsement_rewards
 
-        # rewards that should have been earned, had the baker been online
+        # rewards that should have been earned, had the validator been online
         self.offline_losses = offline_losses
 
         # total reward as recorded in-protocol

@@ -67,7 +67,7 @@ class TwitterPlugin(plugins.Plugin):
             .replace("%NDELEGATORS%", str(nb_delegators))
         )
         if baking_address is not None:
-            tweet = tweet.replace("%BAKER%", str(baking_address))
+            tweet = tweet.replace("%VALIDATOR%", str(baking_address))
 
         # Truncate message to max tweet length
         tweet = tweet[: self.MAX_TWEET_LEN]
