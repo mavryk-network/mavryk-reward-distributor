@@ -84,6 +84,5 @@ This Github Repo_ contains logo images. If you are using MRD and want to let eve
    linuxservice
    state_machine
    contributors
-   multisig_payouts
    testing
    codeofconduct

@@ -1,6 +1,8 @@
-# Managing Contribution Payouts
+# Managing Contribution Payouts (Disabled)
 
-This document serves to instruct how to manage contribution payouts from the MRD multisig address.
+> Note: This page is currently disabled and not included in the documentation navigation. Keep it for potential future re-enablement.
+
+This document previously served to instruct how to manage contribution payouts from the MRD multisig address.
 
 ### Metadata
 
