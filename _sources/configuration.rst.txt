@@ -39,7 +39,7 @@ If you want to use with a decimal operator within your config, please use a deci
 Available configuration parameters are:
 
 **baking_address**
-  Address of the validator. It must be an implicit account (tz1). No alias is allowed.
+  Address of the validator. It must be an implicit account (mv1). No alias is allowed.
 
   Example::
 
@@ -75,8 +75,8 @@ Available configuration parameters are:
   Example::
 
     founders_map:
-        {'tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 0.6,
-         'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 0.4}
+        {'mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH' : 0.6,
+         'mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh' : 0.4}
   
   Alice and Bob are both founders of Mavryk Validator. Their validatory fee is 10%. Alice has a 60% (0.6) interest in the validatory, and Bob has a 40% (0.4) interest. When rewards are delivered at the end of each cycle, 10% is taken as the validatory fee (ie: *service_fee*). That 10% is then divided between Alice and Bob according to their ratios.
   
@@ -91,9 +91,9 @@ Available configuration parameters are:
 
     service_fee: 9
     owners_map:
-      {'tz1PV5g16m9hHMAVJ4Hx6NzzUHgksDnTLFcK' : 0.4,
-       'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 0.4,
-       'tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 0.2}
+      {'mv1WEKCZsVewhvcgWQucCHqfByuvJ7uqm2Mm' : 0.4,
+       'mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh' : 0.4,
+       'mv19WvKgLJz3JvEcHusqpcFF4ZS4FN3w3eJj' : 0.2}
   
   Charlie, and Dave, have each transfered 6,960 mav to the validator address. Edwin has transfered 3,480 mav. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the validatory fee (ie: *service_fee*). That 9% is dispersed to any *founders*. If there are no founders, that 9% remains in the validator's balance.
   The validator address is technically a delegator to itself. Its share of rewards are part of the overall cycle rewards. Charlie, Dave, and Edwin divide the "validator address rewards" as per the ratios in *owners_map*. Additionally, owners are *not* subject to the *service_fee*.
@@ -103,16 +103,16 @@ Available configuration parameters are:
 
   Example::
 
-    specials_map : {'tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf' : 5,
-                    'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17' : 5}
+    specials_map : {'mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH' : 5,
+                    'mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh' : 5}
   
 **supporters_set**
   A set of PKH values. Each PKH represents a supporter of the validator. Supporters are not charged with a service fee. Founders and balance owners are natural supporters, they are not needed to be added.
 
   Example::
 
-    supporters_set : {'tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf',
-                    'tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17'}
+    supporters_set : {'mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH',
+                    'mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh'}
 
 **min_delegation_amt**
   A minimum delegation amount can be set here. If this value is set to 10, 10 mav are required as minimum. It is important to define what happens to the rewards of excluded delegates that are below the minimum delegation balance in rules_map.
@@ -166,7 +166,7 @@ Available configuration parameters are:
      rules_map:
        mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC: TOF                                         #(redirects payment from mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC to founders)
        mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE: TOB                                         #(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the validators balance)
-       tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT: mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU        #(redirects payment from tz1V9S... to tz1fgX...)
+       mv1BhK6azgP11EAAwzG88kPrdLZYtKDYLCY5: mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU        #(redirects payment from mv1BhK... to mv1DqP...)
        mindelegation: TOE                                                                #(mindelegation will be shared with everyone)
 
 **plugins**

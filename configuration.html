@@ -124,7 +124,7 @@ There are two options to create a custom yaml file:</p>
 If you want to use with a decimal operator within your config, please use a decimal point.</p>
 <p>Available configuration parameters are:</p>
 <dl>
-<dt><strong>baking_address</strong></dt><dd><p>Address of the validator. It must be an implicit account (tz1). No alias is allowed.</p>
+<dt><strong>baking_address</strong></dt><dd><p>Address of the validator. It must be an implicit account (mv1). No alias is allowed.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">baking_address</span><span class="p">:</span> <span class="n">mv1BooTWe9vnuvN1o756pE6yC8jNcsVDCp9N</span>
 </pre></div>
@@ -155,8 +155,8 @@ If you want to use with a decimal operator within your config, please use a deci
 <dt><strong>founders_map</strong></dt><dd><p>A dictionary of PKH and ratio (decimal in the range [0-1]) pairs. Each item in this dictionary represents PKH of each founder and their ratio of the shares coming from the service fee. Implicit or originated addresses are accepted. It is important that the sum of all ratios equals to 1. This map is optional if founders do not want to be paid from service fees, in this case, service fee remains in baking balance.</p>
 <p>Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">founders_map</span><span class="p">:</span>
-    <span class="p">{</span><span class="s1">&#39;tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf&#39;</span> <span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
-     <span class="s1">&#39;tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">}</span>
+    <span class="p">{</span><span class="s1">&#39;mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH&#39;</span> <span class="p">:</span> <span class="mf">0.6</span><span class="p">,</span>
+     <span class="s1">&#39;mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Alice and Bob are both founders of Mavryk Validator. Their validatory fee is 10%. Alice has a 60% (0.6) interest in the validatory, and Bob has a 40% (0.4) interest. When rewards are delivered at the end of each cycle, 10% is taken as the validatory fee (ie: <em>service_fee</em>). That 10% is then divided between Alice and Bob according to their ratios.</p>
@@ -169,9 +169,9 @@ If you want to use with a decimal operator within your config, please use a deci
 
 <span class="n">service_fee</span><span class="p">:</span> <span class="mi">9</span>
 <span class="n">owners_map</span><span class="p">:</span>
-  <span class="p">{</span><span class="s1">&#39;tz1PV5g16m9hHMAVJ4Hx6NzzUHgksDnTLFcK&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-   <span class="s1">&#39;tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
-   <span class="s1">&#39;tz1VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf&#39;</span> <span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
+  <span class="p">{</span><span class="s1">&#39;mv1WEKCZsVewhvcgWQucCHqfByuvJ7uqm2Mm&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
+   <span class="s1">&#39;mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh&#39;</span> <span class="p">:</span> <span class="mf">0.4</span><span class="p">,</span>
+   <span class="s1">&#39;mv19WvKgLJz3JvEcHusqpcFF4ZS4FN3w3eJj&#39;</span> <span class="p">:</span> <span class="mf">0.2</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>Charlie, and Dave, have each transfered 6,960 mav to the validator address. Edwin has transfered 3,480 mav. They are each partial owners of the baking balance. When rewards are delivered at the end of each cycle, 9% is taken as the validatory fee (ie: <em>service_fee</em>). That 9% is dispersed to any <em>founders</em>. If there are no founders, that 9% remains in the validator’s balance.
@@ -179,15 +179,15 @@ The validator address is technically a delegator to itself. Its share of rewards
 </dd>
 <dt><strong>specials_map</strong></dt><dd><p>A dictionary of PKH and fee (decimal in the range [0-100] ) pairs. This dictionary can be used to set special service fee values for desired delegators.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">specials_map</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
-                <span class="s1">&#39;tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">specials_map</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+                <span class="s1">&#39;mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh&#39;</span> <span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
 </pre></div>
 </div>
 </dd>
 <dt><strong>supporters_set</strong></dt><dd><p>A set of PKH values. Each PKH represents a supporter of the validator. Supporters are not charged with a service fee. Founders and balance owners are natural supporters, they are not needed to be added.</p>
 <p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">supporters_set</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;tz3VxS7ff4YnZRs8b4mMP4WaMVpoQjuo1rjf&#39;</span><span class="p">,</span>
-                <span class="s1">&#39;tz1PirboZKFVqkfE45hVLpkpXaZtLk3mqC17&#39;</span><span class="p">}</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">supporters_set</span> <span class="p">:</span> <span class="p">{</span><span class="s1">&#39;mv3PoFo7ktKD92Kph4p9KWB4PnuLbGMNeeCH&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;mv19xvTwe3X3b7e1xNQLPMJqrLVtMzPRbLWh&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 </dd>
@@ -234,7 +234,7 @@ The validator address is technically a delegator to itself. Its share of rewards
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rules_map</span><span class="p">:</span>
   <span class="n">mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC</span><span class="p">:</span> <span class="n">TOF</span>                                         <span class="c1">#(redirects payment from mv1HrdvtZssXQPHkyScfr95XPzREH8fRstdC to founders)</span>
   <span class="n">mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE</span><span class="p">:</span> <span class="n">TOB</span>                                         <span class="c1">#(payment to mv1GUckNUECJfoz6Xj4Mwe2Wa3WVdyvF6vLE will remain in the validators balance)</span>
-  <span class="n">tz1V9SpwXaGFiYdDfGJtWjA61EumAH3DwSyT</span><span class="p">:</span> <span class="n">mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU</span>        <span class="c1">#(redirects payment from tz1V9S... to tz1fgX...)</span>
+  <span class="n">mv1BhK6azgP11EAAwzG88kPrdLZYtKDYLCY5</span><span class="p">:</span> <span class="n">mv1DqPoFa2cK2CDTuyyMua2gzPGWVgZixJEU</span>        <span class="c1">#(redirects payment from mv1BhK... to mv1DqP...)</span>
   <span class="n">mindelegation</span><span class="p">:</span> <span class="n">TOE</span>                                                                <span class="c1">#(mindelegation will be shared with everyone)</span>
 </pre></div>
 </div>
