@@ -13,18 +13,18 @@ class TestCalculatePhaseZeroBalance(unittest.TestCase):
         self.reactivate_zeroed = False
         self.reward_logs = [
             RewardLog(
-                address="tz1eyuACLrFdapu9rzjSgrEasTa4sFu1Epnz",
+                address="mv1ECyK9zWCEaS7NnRMCM6pKWwvLHL4hWjHq",
                 type=reward_log.TYPE_DELEGATOR,
                 delegating_balance=5500000,
                 current_balance=0,
-                originaladdress="tz1eyuACLrFdapu9rzjSgrEasTa4sFu1Epnz",
+                originaladdress="mv1ECyK9zWCEaS7NnRMCM6pKWwvLHL4hWjHq",
             ),
             RewardLog(
-                address="tz1eyuACLrFdapu9rzjSgrEasTa4sFu1Epn1",
+                address="mv1NMKxCyYAKvPoSrdcKmuqu95YaSBqQwyGP",
                 type=reward_log.TYPE_OWNER,
                 delegating_balance=5500000,
                 current_balance=233,
-                originaladdress="tz1eyuACLrFdapu9rzjSgrEasTa4sFu1Epnz",
+                originaladdress="mv1ECyK9zWCEaS7NnRMCM6pKWwvLHL4hWjHq",
             ),
         ]
 

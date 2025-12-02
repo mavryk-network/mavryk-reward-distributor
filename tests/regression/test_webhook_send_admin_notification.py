@@ -6,7 +6,7 @@ from src.model.reward_log import RewardLog
 
 # Default rewardlog
 rewardlog = RewardLog(
-    "tz1LrHNbbCLgNJZsEsTUYFvWz2THgJC8fHyX",
+    "mv1Tu8hKvUKY3NBiezAfKHEfwdkda5g2EbVJ",
     "D",
     delegating_balance=65116664916,
     current_balance=100000000000,

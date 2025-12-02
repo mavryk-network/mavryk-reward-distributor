@@ -229,8 +229,8 @@ Your script can return a short message in the response body. This will be displa
   "message": "Much longer message example containing more information",
   "payouts": [
     {
-      "address": "tz1LrHNbbCLgNJZsEsTUYFvWz2THgJC8fHyX",
-      "paymentAddress": "tz1LrHNbbCLgNJZsEsTUYFvWz2THgJC8fHyX",
+      "address": "mv1Tu8hKvUKY3NBiezAfKHEfwdkda5g2EbVJ",
+      "paymentAddress": "mv1Tu8hKvUKY3NBiezAfKHEfwdkda5g2EbVJ",
       "addressType": "D",
       "cycle": 415,
       "stakingBalance": 65116664916,

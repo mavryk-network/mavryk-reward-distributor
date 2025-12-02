@@ -11,7 +11,7 @@ class TestCalculatePhaseMerge(TestCase):
         #
         # Alice is a delegate, owner and founder
         rlAD = RewardLog(
-            address="tz1Alice01",
+            address="mv1Alice01",
             type="D",
             delegating_balance=10000,
             current_balance=20000,
@@ -20,13 +20,13 @@ class TestCalculatePhaseMerge(TestCase):
         rewards.append(rlAD)
 
         rlAO = RewardLog(
-            address="tz1Alice01", type="O", delegating_balance=10000, current_balance=0
+            address="mv1Alice01", type="O", delegating_balance=10000, current_balance=0
         )
         rlAO.amount = 2345
         rewards.append(rlAO)
 
         rlAF = RewardLog(
-            address="tz1Alice01", type="F", delegating_balance=10000, current_balance=0
+            address="mv1Alice01", type="F", delegating_balance=10000, current_balance=0
         )
         rlAF.amount = 3456
         rewards.append(rlAF)
@@ -34,7 +34,7 @@ class TestCalculatePhaseMerge(TestCase):
         #
         # Bob is only a delegate
         rlBD = RewardLog(
-            address="tz1Bob01", type="D", delegating_balance=10000, current_balance=0
+            address="mv1Bob01", type="D", delegating_balance=10000, current_balance=0
         )
         rlBD.amount = 5000
         rewards.append(rlBD)
@@ -42,7 +42,7 @@ class TestCalculatePhaseMerge(TestCase):
         #
         # Charlie is an Owner and Founder, not a delegate
         rlCO = RewardLog(
-            address="tz1Charlie01",
+            address="mv1Charlie01",
             type="O",
             delegating_balance=10000,
             current_balance=0,
@@ -51,7 +51,7 @@ class TestCalculatePhaseMerge(TestCase):
         rewards.append(rlCO)
 
         rlCF = RewardLog(
-            address="tz1Charlie01",
+            address="mv1Charlie01",
             type="F",
             delegating_balance=10000,
             current_balance=0,
@@ -73,12 +73,12 @@ class TestCalculatePhaseMerge(TestCase):
         charlieSum = 3355
 
         for r in mergedRewards:
-            if r.address == "tz1Alice01":
+            if r.address == "mv1Alice01":
                 self.assertEqual(r.amount, aliceSum)
                 self.assertEqual(r.type, TYPE_MERGED)
-            elif r.address == "tz1Bob01":
+            elif r.address == "mv1Bob01":
                 self.assertEqual(r.amount, bobSum)
                 self.assertEqual(r.type, TYPE_DELEGATOR)
-            elif r.address == "tz1Charlie01":
+            elif r.address == "mv1Charlie01":
                 self.assertEqual(r.amount, charlieSum)
                 self.assertEqual(r.type, TYPE_MERGED)

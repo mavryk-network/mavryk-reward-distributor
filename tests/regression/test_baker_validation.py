@@ -91,7 +91,7 @@ def test_address_is_not_validator_address(block_api):
 def test_invalid_baking_address(block_api):
     data_fine = """
     version: 1.0
-    baking_address: tz123
+    baking_address: mv123
     """
 
     wallet_client_manager = ClientManager(node_endpoint, PRIVATE_SIGNER_URL)

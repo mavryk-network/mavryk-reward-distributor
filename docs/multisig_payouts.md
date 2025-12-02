@@ -20,7 +20,7 @@ Payouts must be signed by 2 of the 3 multisig members before it can be executed 
 A multisig member must sign the same transaction using his/her own private key which is authorized on the multisig contract.
 
 	XXX.XX - The amount, in MVRK to transfer
-	YYYYYY - The receiver of the funds (ie: tz1...)
+	YYYYYY - The receiver of the funds (ie: mv1...)
 	ZZZZZZ - The PKH of the multisig member
 
     $ mavkit-client sign multisig transaction on KT1Hir1o22RGE1Hyrrzpp3rXjhTcoUurSYKu transferring XXX.XX to YYYYYY using secret key ZZZZZZ
@@ -34,7 +34,7 @@ The output of the above command will be a single signature: `edsigu3WqyPEEYBce5.
 With 2, or more, signatures, execute the transaction:
 
     XXX.XX - The amount, in MVRK to transfer
-    YYYYYY - The receiver of the funds (ie: tz1...)
+    YYYYYY - The receiver of the funds (ie: mv1...)
     ZZZZZZ - The PKH of the multisig member
     AAAAAA - Signature from above command
     BBBBBB - Signature from another member
